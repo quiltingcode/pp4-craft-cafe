@@ -17,6 +17,7 @@ As a **role** I can **capability** so that **received benefit**
 
 ## Tasks:
 
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
+- [ ] Design
+- [ ] Create HTML, CSS, JS, Python code
+- [ ] Create MVC code
+- [ ] Test completed functionality
