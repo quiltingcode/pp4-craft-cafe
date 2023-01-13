@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['craft_cafe.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['craft-cafe.herokuapp.com', 'localhost']
 
 
 # Application definition
