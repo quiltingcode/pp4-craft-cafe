@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from community.views import HomeView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("community.urls"), name="home-urls"),
+    path('craft-community/', include("community.urls"), name="home-urls"),
     path('summernote/', include('django_summernote.urls')),
-    path('craft-community/', include('community.urls'), name='community-urls'),
+    # path('craft-community/', include('community.urls'), name='community-urls'),
+    path('', HomeView.as_view(), name='home')
 ]
