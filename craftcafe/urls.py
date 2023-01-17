@@ -20,8 +20,7 @@ from community.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('craft-community/', include("community.urls"), name="home-urls"),
+    path('craft-community/', include("community.urls"), name="community"),
     path('summernote/', include('django_summernote.urls')),
-    # path('craft-community/', include('community.urls'), name='community-urls'),
-    path('', HomeView.as_view(), name='home')
+    path('', HomeView.as_view(), name='home'),
 ]
