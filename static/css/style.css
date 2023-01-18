@@ -2,6 +2,22 @@ body {
     background-color: #F9FAFC;
 }
 
+/* Navigation Bar */
+
 .navbar-nav {
     margin-left: auto;
+}
+
+/* Callout Container */
+.callout-container {
+    height: 100vh;
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674039432/cafe-background_yfjzow.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
