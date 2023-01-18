@@ -42,6 +42,17 @@ h1, h2 {
     font-size: 1.5rem;
 }
 
+.btn-info {
+    background-color: #29b3ad;
+    border-color: #1d486a;
+    font-family: 'Noto Sans JP', sans-serif;;
+}
+
+.btn-info:hover {
+    background-color: #3dd2cc;
+    border-color: #1d486a;
+}
+
 
 /* Media Queries */
 
