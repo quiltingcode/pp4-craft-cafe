@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Rowdies:wght@300&display=swap');
+
 body {
     background-color: #F9FAFC;
 }
@@ -20,4 +22,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    color: white;
+    margin-bottom: 18rem;
+    margin-right: 18rem;
+}
+
+h1, h2 {
+    font-family: 'Rowdies', cursive;
+    text-transform: uppercase;
+}
+
+.jumbotron-text {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* Media Queries */
+
+/* for small screen size from 767px wide and down */
+@media screen and (max-width: 767px) {
+   
+    .jumbotron {
+        margin-right: 1rem;
+    }
+
 }
