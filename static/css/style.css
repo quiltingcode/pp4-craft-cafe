@@ -57,6 +57,7 @@ h1, h2 {
 
 .food-container {
     background-color: #3dd2cc;
+    display: flex;
 }
 
 
