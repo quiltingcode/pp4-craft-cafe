@@ -23,5 +23,5 @@ urlpatterns = [
     path('craft-community/', include("community.urls"), name="community"),
     path('summernote/', include('django_summernote.urls')),
     path('', HomeView.as_view(), name='home'),
-    path('accounts/', include(allauth.urls)),
+    path('accounts/', include('allauth.urls')),
 ]
