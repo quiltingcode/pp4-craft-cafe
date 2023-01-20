@@ -45,7 +45,7 @@ h1, h2 {
 .btn-info {
     background-color: #29b3ad;
     border-color: #1d486a;
-    font-family: 'Noto Sans JP', sans-serif;;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .btn-info:hover {
@@ -58,6 +58,22 @@ h1, h2 {
 .food-container {
     background-color: #3dd2cc;
     display: flex;
+}
+
+/* Login Page */
+
+.btn-login {
+    margin-left: 20px;
+    background-color: #29b3ad;
+    border-color: #1d486a;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.btn-login:hover {
+    background-color: #3dd2cc;
+    border-color: #1d486a;
 }
 
 
