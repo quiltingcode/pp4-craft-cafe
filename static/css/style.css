@@ -62,6 +62,10 @@ h1, h2 {
 
 /* Login Page */
 
+.account-container {
+    margin-bottom: 90px;
+}
+
 .btn-login {
     margin-left: 20px;
     background-color: #29b3ad;
