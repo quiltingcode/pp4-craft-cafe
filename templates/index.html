@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load static %}
+
 <div class="container-fluid mt-3 callout-container">
     <!-- Callout -->
     <div class="row">
@@ -28,21 +30,21 @@
       </div>
       <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          <img class="card-img-top" src="{% static 'images/menu-food.jpg' %}" alt="plate of colourful salad">
             <div class="card-body">
               <h5 class="card-title">Food</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
         </div> 
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          <img class="card-img-top" src="{% static 'images/menu-tea2.jpg' %}" alt="Cup of tea">
             <div class="card-body">
               <h5 class="card-title">Drinks</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
             </div>
         </div> 
         <div class="col-12 col-sm-12 col-md-6 offset-md-3 offset-lg-0 col-lg-4 food-container card">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          <img class="card-img-top" src="{% static 'images/menu-cake2.jpg' %}" alt="Plate of desserts">
             <div class="card-body">
               <h5 class="card-title">Desserts</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>

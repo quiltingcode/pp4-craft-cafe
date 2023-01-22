@@ -54,10 +54,10 @@ h1, h2 {
 
 /* Menu */
 
-/* .food-container {
-    background-color: #3dd2cc;
-    display: flex;
-} */
+.card-img-top {
+    height: 250px;
+    width: 286px;
+}
 
 /* Login Page */
 
