@@ -3,14 +3,17 @@ from django.views import generic, View
 from .models import Post
 from django.views.generic import TemplateView
 from .forms import CommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class PostList(generic.ListView):
+class PostList(LoginRequiredMixin, generic.ListView):
+    login_url = '/accounts/login/'
+    redirect_field_name = '/craft-community'
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'craft-community.html'
     paginate_by = 6
-
+   
 
 class HomeView(TemplateView):
     template_name = 'index.html'
