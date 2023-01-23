@@ -54,6 +54,14 @@ h1, h2 {
 
 /* Menu */
 
+.menu-container {
+    background-color: white;
+}
+
+.food-container {
+    border-color: transparent;
+}
+
 .card-img-top {
     height: 250px;
     width: 286px;
