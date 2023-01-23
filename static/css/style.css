@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Rowdies:wght@300&display=swap');
 
 body {
-    background-color: #F9FAFC;
+    background-color: white;
 }
 
 /* Navigation Bar */
@@ -65,6 +65,18 @@ h1, h2 {
 .card-img-top {
     height: 250px;
     width: 286px;
+}
+
+/* Post-Details Page */
+
+.comment-card {
+    border: none;
+    background-color: transparent;
+}
+
+.post-title {
+    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 /* Login Page */
