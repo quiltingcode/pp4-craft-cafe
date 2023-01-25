@@ -63,8 +63,8 @@ LOGOUT_REDIRECT_URL = '/'
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
         messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
+        messages.SUCCESS: 'alert-info',
+        messages.WARNING: 'alert-danger',
         messages.ERROR: 'alert-danger',
     }
 
