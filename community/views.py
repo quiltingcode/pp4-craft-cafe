@@ -5,6 +5,7 @@ from .models import Post
 from django.views.generic import TemplateView
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 
 
 class PostList(LoginRequiredMixin, generic.ListView):
@@ -57,6 +58,9 @@ class PostDetails(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment posted successfully, awaiting approval.')
         else:
             comment_form = CommentForm()
 
