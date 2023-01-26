@@ -7,7 +7,7 @@ class BookingAdmin(admin.ModelAdmin):
 
     list_display = ('user', 'workshop', 'day', 'time', 'created_on', 'places')
     search_fields = ['user', 'workshop', ]
-    list_filter = ('status', 'created_on')
+    list_filter = ('approved', 'created_on')
     actions = ['approve_booking']
 
     def approve_comments(self, request, queryset):
