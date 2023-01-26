@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'community', 
+    'community',
 ]
 
 SITE_ID = 1
