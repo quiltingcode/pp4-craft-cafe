@@ -4,6 +4,15 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+WORKSHOP_CATEGORIES = (
+    ("All things Wool", "All things Wool"),
+    ("Quilting", "Quilting"),
+    ("Clothing", "Clothing"),
+    ("Home Decor", "Home Decor"),
+    ("Textiles", "Textiles"),
+    ("Kids Crafts", "Kids Crafts"),
+)
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -12,6 +21,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="community_posts"
     )
     featured_image = CloudinaryField('image', default='placeholder')
+    craft_categories = models.CharField(max_length=50, choices=WORKSHOP_CATEGORIES, default="All Things Wool")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -40,6 +50,7 @@ class Comment(models.Model):
     comment_content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+
 
     class Meta:
         ordering = ["created_on"]
