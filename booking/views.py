@@ -102,16 +102,16 @@ class BookingView(View):
         #Only show the time of the day that has not been selected before:
         x = []
         for k in times:
-            if Appointment.objects.filter(day=day, time=k).count() < 1:
+            if WorkshopBooking.objects.filter(day=day, time=k).count() < 1:
                 x.append(k)
         return x
 
     def checkEditTime(times, day, id):
         #Only show the time of the day that has not been selected before:
         x = []
-        appointment = Appointment.objects.get(pk=id)
-        time = appointment.time
+        booking = WorkshopBooking.objects.get(pk=id)
+        time = booking.time
         for k in times:
-            if Appointment.objects.filter(day=day, time=k).count() < 1 or time == k:
+            if WorkshopBooking.objects.filter(day=day, time=k).count() < 1 or time == k:
                 x.append(k)
         return x
