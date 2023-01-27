@@ -21,7 +21,7 @@
   <!-- Callout -->
 
   <!-- Cafe Menu -->
-  <div class="container-fluid menu-container" id="menu">
+  <div class="container menu-container" id="menu">
     <section class="menu">
       <div class="row">
         <div class="col-12 my-5">
@@ -29,6 +29,7 @@
         </div>
       </div>
       <div class="row">
+        <!-- Food Menu Card -->
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
           <img class="card-img-top" src="{% static 'images/menu-food.jpg' %}" alt="plate of colourful salad">
             <div class="card-body">
@@ -53,6 +54,7 @@
               </div>
             </div>
         </div> 
+        <!-- Drinks Menu Card -->
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
           <img class="card-img-top" src="{% static 'images/menu-tea2.jpg' %}" alt="Cup of tea">
             <div class="card-body">
@@ -73,6 +75,7 @@
               </table>
             </div>
         </div> 
+        <!-- Desserts Menu Card -->
         <div class="col-12 col-sm-12 col-md-6 offset-md-3 offset-lg-0 col-lg-4 food-container card">
           <img class="card-img-top" src="{% static 'images/menu-cake2.jpg' %}" alt="Plate of desserts">
             <div class="card-body">
@@ -100,24 +103,39 @@
 
   <!-- Craft Workshops Info -->
   <div class="container workshops-container">
-    <section class="workshops">
-      <div class="row">
-        <div class="col-12 my-5">
-          <h2>Craft Cafe Workshops</h2>
+    <div class="row">
+      <div class="col-12 my-5">
+        <h2>Craft Cafe Workshops</h2>
+      </div>
+    </div>
+
+    <!-- Craft Workshops Info Cards -->
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-         
-        </div> 
-      </div>
-        <div class="row text-center">
-          <div class="col-12">
-            <a class="btn btn-lg btn-info" href="{% url 'contact' %}">Click here to book</a>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
-        </div> 
-      
-    </section>
+        </div>
+      </div>
+    </div>
+    <!-- Workshops booking Button -->
+    <div class="row text-center">
+      <div class="col-12">
+        <a class="btn btn-lg btn-info" href="{% url 'contact' %}">Click here to book</a>
+      </div>
+    </div> 
   </div>
   <!-- Craft Workshops info -->
 
