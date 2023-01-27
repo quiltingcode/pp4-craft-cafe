@@ -1,4 +1,4 @@
-from .models import Comment
+from .models import WorkshopBooking
 from django import forms
 
 

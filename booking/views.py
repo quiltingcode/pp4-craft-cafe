@@ -2,6 +2,14 @@ from django.shortcuts import render, redirect
 from datetime import datetime, timedelta
 from .models import WorkshopBooking
 from django.contrib import messages
+from django.views.generic import TemplateView
+from django.views import generic, View
+from .forms import BookingForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class WorkshopsView(TemplateView):
+    template_name = 'workshops.html'
 
 
 def contact(request):
