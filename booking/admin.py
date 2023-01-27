@@ -10,5 +10,5 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'created_on')
     actions = ['approve_booking']
 
-    def approve_comments(self, request, queryset):
+    def approve_booking(self, request, queryset):
         queryset.update(approved=True)
