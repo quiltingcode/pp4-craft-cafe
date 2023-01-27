@@ -1,10 +1,12 @@
 from . import views
 from django.urls import path
+from django.views.generic import TemplateView
+from booking.views import WorkshopsView
 
 urlpatterns = [
 
     path('contact', views.booking, name='contact'),
-    path('workshops', views.WorkshopsView.as_view(), name="workshops"),
+    path('workshops/', WorkshopsView.as_view(), name='workshops'),
     path('booking-submit', views.bookingSubmit, name='bookingSubmit'),
     # path('user-panel', views.userPanel, name='userPanel'),
     # path('user-update/<int:id>', views.userUpdate, name='userUpdate'),
