@@ -71,6 +71,12 @@ h2, h3 {
     width: 286px;
 }
 
+/* Homepage Workshops Overview */
+
+.workshops-container {
+    background-color: #66dcd7;
+}
+
 /* craft Community Page */
 
 .post-link {
