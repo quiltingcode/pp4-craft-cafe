@@ -75,11 +75,26 @@ h2, h3 {
     max-width: 280px;
 }
 
-
 /* Homepage Workshops Overview */
 
 .workshops-container {
     background-color: #66dcd7;
+}
+
+.ws-overview-card {
+    max-width: 350px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btn-overview {
+    background-color: #1d486a;
+    color: white;
 }
 
 /* craft Community Page */
