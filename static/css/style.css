@@ -104,6 +104,7 @@ h2, h3 {
 .btn-light {
     font-size: 0.8rem;
     border: none;
+    opacity: 0.8;
 
 } 
 
