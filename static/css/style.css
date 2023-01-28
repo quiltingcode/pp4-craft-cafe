@@ -93,7 +93,7 @@ h2, h3 {
 }
 
 .ws-overview-card h3 {
-    color: black;
+    color: white;
 }
 
 .btn-overview {
@@ -101,9 +101,14 @@ h2, h3 {
     color: white;
 }
 
+.btn-light {
+    font-size: 0.8rem;
+    border: none;
+
+} 
 
 #wool-card {
-    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/alex-block-FRfuOZWpdeI-unsplash_aeujvp.jpg");
+    background-image: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/alex-block-FRfuOZWpdeI-unsplash_aeujvp.jpg");
     background-size: cover;
 }
 
@@ -118,7 +123,7 @@ h2, h3 {
 }
 
 #home-card {
-    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901661/20211201_105546_fhlf0n.jpg");
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674908761/20211201_105546_lx9osl.jpg");
     background-size: cover;
 }
 
