@@ -92,9 +92,43 @@ h2, h3 {
     justify-content: space-evenly;
 }
 
+.ws-overview-card h3 {
+    color: black;
+}
+
 .btn-overview {
     background-color: #1d486a;
     color: white;
+}
+
+
+#wool-card {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/alex-block-FRfuOZWpdeI-unsplash_aeujvp.jpg");
+    background-size: cover;
+}
+
+#quilting-card {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901661/20200825_165053_mmuthc.jpg");
+    background-size: cover;
+}
+
+#clothing-card {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901660/rocknwool-Ls7yE8NpNqk-unsplash_or5uov.jpg");
+    background-size: cover;
+}
+
+#home-card {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901661/20211201_105546_fhlf0n.jpg");
+    background-size: cover;
+}
+
+#needlepoint-card {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901660/karly-santiago-E7zsz8JA8FM-unsplash_z7zwbi.jpg") center;
+    background-size: cover;
+}
+
+#kids-card {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/julietta-watson-1VT2qoBtc-k-unsplash_bsd6qb.jpg")center;
 }
 
 /* craft Community Page */
