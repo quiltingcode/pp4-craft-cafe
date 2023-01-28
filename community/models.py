@@ -9,7 +9,7 @@ WORKSHOP_CATEGORIES = (
     ("Quilting", "Quilting"),
     ("Clothing", "Clothing"),
     ("Home Decor", "Home Decor"),
-    ("Textiles", "Textiles"),
+    ("Needlepoint", "Needlepoint"),
     ("Kids Crafts", "Kids Crafts"),
 )
 
