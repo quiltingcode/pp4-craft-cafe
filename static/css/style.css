@@ -115,11 +115,11 @@ h2, h3 {
 
 #quilting-card {
     background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901661/20200825_165053_mmuthc.jpg");
-    background-size: cover;
+    background-size: contain;
 }
 
 #clothing-card {
-    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901660/rocknwool-Ls7yE8NpNqk-unsplash_or5uov.jpg");
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674996920/dress_tbsrao.jpg");
     background-size: cover;
 }
 
@@ -129,7 +129,7 @@ h2, h3 {
 }
 
 #needlepoint-card {
-    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901660/karly-santiago-E7zsz8JA8FM-unsplash_z7zwbi.jpg") center;
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674997459/needlepoint_ken2n5.jpg") center;
     background-size: cover;
 }
 
