@@ -34,6 +34,7 @@ def booking(request):
     return render(request, 'contact.html', {
         'weekdays': weekdays,
         'validateWeekdays': validateWeekdays,
+        'booking_form': BookingForm()
     })
 
 
