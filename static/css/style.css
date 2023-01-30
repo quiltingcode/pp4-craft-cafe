@@ -139,6 +139,12 @@ h2, h3 {
 
 /* Contact Page */
 
+.user-auth-container {
+    height: 300px;
+    width: 300px;
+    border-color: #1d486a;
+}
+
 #contact-header {
     text-transform: lowercase;
     text-transform: capitalize;
