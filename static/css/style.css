@@ -137,6 +137,17 @@ h2, h3 {
     background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/julietta-watson-1VT2qoBtc-k-unsplash_bsd6qb.jpg")center;
 }
 
+/* Contact Page */
+
+#contact-header {
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+
+.contact-form {
+    max-width: 800px;
+}
+
 /* craft Community Page */
 
 .post-link {

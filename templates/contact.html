@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 
-<div class="div">
-    <h3>
-        Workshop Booking Request Form
-    </h3>
-</div>
-<div class="div">
-    <form method="POST" action="add">
-        {% csrf_token %}
-        {{ booking_form | crispy }}
-        <div>
-            <p>
-                <button type="submit">Submit Booking Request</button>
-            </p>
+<div class="container">
+    <div class="row mt-2 text-center">
+        <div class="col-12">
+            <h2 id="contact-header">Make a Reservation for a Craft Cafe Workshop</h2>
         </div>
-    </form>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <p>
+                Booking as: {{ user.username }}
+            </p>
+            <form method="POST" action="add" class="contact-form">
+                {% csrf_token %}
+                {{ booking_form | crispy }}
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-lg btn-info mt-3">Submit Booking Request</button>
+                    </div>
+                </div>
+            </form>
+        </div>  
+    </div>
 </div>
 
 
