@@ -3,7 +3,21 @@
 {% block content %}
 
 <div class="div">
-    This is the contact page - can you see this?
+    <h3>
+        Workshop Booking Request Form
+    </h3>
 </div>
+<div class="div">
+    <form method="POST" action="add">
+        {% csrf_token %}
+        {{ booking_form | crispy }}
+        <div>
+            <p>
+                <button type="submit">Submit Booking Request</button>
+            </p>
+        </div>
+    </form>
+</div>
+
 
 {%endblock%}
