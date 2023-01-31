@@ -16,9 +16,8 @@ class WorkshopsView(TemplateView):
 
 class ContactPage(View):
 
-    def get(self, request):
-        # weekdays = validWeekday(32)
-        # validateWeekdays = isWeekdayValid(weekdays)
+    def get(self, request, slug):
+    
         if request.method == 'POST':
             workshop = request.POST.get('workshop')
             day = request.POST.get('day')
@@ -35,10 +34,30 @@ class ContactPage(View):
             request,
             'contact.html',
             {
-                'booking_form': BookingForm()
+                'booking_form': BookingForm(),
+                "booked": False
             },
         )
 
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(slug=slug)
+        booking_form = BookingForm(data=request.POST)
+        if booking_form.is_valid():
+            booking_form.instance.email = request.user.email
+            booking_form.instance.name = request.user.username
+            booking_form.save()
+        else:
+            booking_form = BookingForm()
+        
+        return render(
+            request,
+            "profile-page.html",
+            {
+                "booking": booking,
+                "approved": approved,
+                "booked": True
+            },
+        )
 
 # def bookingSubmit(request):
 #     user = request.user
