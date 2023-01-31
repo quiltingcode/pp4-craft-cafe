@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime, timedelta
 from .models import WorkshopBooking
 from django.contrib import messages
@@ -6,6 +6,8 @@ from django.views.generic import TemplateView
 from django.views import generic, View
 from .forms import BookingForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
+from django.http import HttpResponseRedirect
 
 
 class WorkshopsView(TemplateView):
