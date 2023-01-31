@@ -7,8 +7,6 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = WorkshopBooking
         fields = ('workshop', 'day', 'time', 'places',)
-
-        def get_form(self):
-            form = super().get_form()
-            form.fields['day'].widget = DatePickerInput()
-            return form
+        widgets = {
+            'day': DatePickerInput(options={"format": "DD/MM/YYYY"}),
+        }

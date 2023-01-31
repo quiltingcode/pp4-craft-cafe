@@ -3,8 +3,6 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-{{ form.media }}
-
 {% if user.is_authenticated %}
 
 <div class="container">
@@ -18,6 +16,7 @@
             <p>
                 Booking as: {{ user.username }}
             </p>
+            {{ booking_form.media }}
             <form method="POST" action="add" class="contact-form">
                 {% csrf_token %}
                 {{ booking_form | crispy }}
