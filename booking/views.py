@@ -37,7 +37,7 @@ class ContactPage(View):
             {
                 'booking_form': BookingForm()
             },
-    )
+        )
 
 
 # def bookingSubmit(request):

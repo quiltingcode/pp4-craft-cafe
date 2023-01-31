@@ -41,6 +41,7 @@ class WorkshopBooking(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     places = models.CharField(max_length=50, choices=PLACES_TO_BOOK, default="1")
     approved = models.BooleanField(default=False)
+    slug = models.SlugField(max_length=200, unique=True)
 
     def __str__(self):
         return f"{self.user.username} | day: {self.day} | time: {self.time}"
