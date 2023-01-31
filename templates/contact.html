@@ -3,6 +3,12 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+{% if booked %}
+<div class="alert alert-success" role="alert">
+    Your booking is awaiting approval
+</div>
+{% else %}
+
 {% if user.is_authenticated %}
 
 <div class="container">
@@ -43,6 +49,7 @@
     </div>
 </div>
 
+{% endif %}
 {% endif %}
 
 {%endblock%}

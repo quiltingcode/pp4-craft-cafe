@@ -46,6 +46,9 @@ class ContactPage(View):
             booking_form.instance.email = request.user.email
             booking_form.instance.name = request.user.username
             booking_form.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Booking request submitted successfully, awaiting approval.')
         else:
             booking_form = BookingForm()
         
