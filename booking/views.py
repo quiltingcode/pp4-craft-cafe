@@ -33,8 +33,6 @@ class ContactPage(View):
         )
 
     def post(self, request):
-        # queryset = WorkshopBooking.objects.filter(status=1)
-        # booking = get_object_or_404(self)
         booking = None
 
         booking_form = BookingForm(data=request.POST)
@@ -61,3 +59,10 @@ class ContactPage(View):
             },
         )
 
+
+class ProfilePageBookings(generic.ListView):
+    def get(self, request):
+        model = WorkshopBooking
+        queryset = WorkshopBooking.objects.filter(id=self.request.user.id).order_by("-created_on")
+        template_name = "profile-page.html"
+        paginate_by = 10
