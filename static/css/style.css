@@ -167,10 +167,6 @@ h2, h3 {
     color: #445261;
 }
 
-.post-card {
-
-
-}
 
 .card-title {
     text-transform: lowercase;
@@ -238,6 +234,12 @@ h2, h3 {
    
     .jumbotron {
         margin-right: 1rem;
+    }
+
+    .posts-container {
+        background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1675271638/pillow-quilt_oaf3pt.jpg");
+        background-position: scroll;
+        height: 100%;
     }
 
 }
