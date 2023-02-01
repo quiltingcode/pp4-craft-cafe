@@ -8,7 +8,7 @@ urlpatterns = [
 
     path('contact', ContactPage.as_view(), name='contact'),
     path('workshops/', WorkshopsView.as_view(), name='workshops'),
-    # path('booking-submit', views.bookingSubmit, name='bookingSubmit'),
+    path('profile-page', views.ProfilePageBookings.as_view(), name='profile-page'),
     # path('user-panel', views.userPanel, name='userPanel'),
     # path('user-update/<int:id>', views.userUpdate, name='userUpdate'),
     # path('user-update-submit/<int:id>', views.userUpdateSubmit, name='userUpdateSubmit'),
