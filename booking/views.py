@@ -66,3 +66,8 @@ class ProfilePageBookings(generic.ListView):
         queryset = WorkshopBooking.objects.filter(id=self.request.user.id).order_by("-created_on")
         template_name = "profile-page.html"
         paginate_by = 10
+ 
+        return render(
+            request,
+            "profile-page.html"
+        )
