@@ -8,6 +8,7 @@ from .forms import BookingForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 
 class WorkshopsView(TemplateView):
@@ -17,8 +18,6 @@ class WorkshopsView(TemplateView):
 class ContactPage(View):
 
     def get(self, request):
-        queryset = WorkshopBooking.objects.filter(status=1)
-        booking = get_object_or_404(queryset)
         if request.method == 'POST':
             workshop = request.POST.get('workshop')
             day = request.POST.get('day')
@@ -34,14 +33,18 @@ class ContactPage(View):
         )
 
     def post(self, request):
-        queryset = WorkshopBooking.objects.filter(status=1)
-        booking = get_object_or_404(queryset)
+        # queryset = WorkshopBooking.objects.filter(status=1)
+        # booking = get_object_or_404(self)
+        booking = None
 
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
-            booking_form.instance.email = request.user.email
-            booking_form.instance.name = request.user.username
-            booking_form.save()
+            booking = booking_form.save(commit=False)
+            booking.user = User.objects.get(id=request.user.id)
+            booking.email = request.user.email
+            booking.name = request.user.username
+            booking.save()
+
             messages.add_message(
                 request, messages.SUCCESS,
                 'Booking request submitted successfully, awaiting approval.')
@@ -58,94 +61,3 @@ class ContactPage(View):
             },
         )
 
-# def bookingSubmit(request):
-#     user = request.user
-#     times = [
-#         "4 PM", "6 PM", "10 AM", "11:30 AM"
-#     ]
-#     today = datetime.now()
-#     minDate = today.strftime('%Y-%m-%d')
-#     deltatime = today + timedelta(days=21)
-#     strdeltatime = deltatime.strftime('%Y-%m-%d')
-#     maxDate = strdeltatime
-
-#     day = request.session.get('day')
-#     workshop = request.session.get('workshop')
-
-#     hour = checkTime(times, day)
-#     if request.method == 'POST':
-#         time = request.POST.get("time")
-#         date = dayToWeekday(day)
-
-#         if workshop is not None:
-#             if day <= maxDate and day >= minDate:
-#                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
-#                     if WorkshopBooking.objects.filter(day=day).count() < 11:
-#                         if WorkshopBooking.objects.filter(day=day, time=time).count() < 1:
-                        
-#                             booking_form = BookingForm(data=request.POST)
-                            
-#                             messages.success(request, "Booking Saved!")
-#                             return redirect('contact')
-#                         else:
-#                             messages.success(request, "The Selected Time slot is full!")
-#                     else:
-#                         messages.success(request, "The Selected Day Is Full!")
-#                 else:
-#                     messages.success(request, "The Selected Date Is Incorrect")
-#             else:
-#                 messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
-#         else:
-#             messages.success(request, "Please Select A Workshop!")
-
-#     return render(request, 'bookingSubmit.html', {
-#         'times': hour,
-#     })
-
-
-# def isWeekdayValid(x):
-#     validateWeekdays = []
-#     for j in x:
-#         if WorkshopBooking.objects.filter(day=j).count() < 10:
-#             validateWeekdays.append(j)
-#     return validateWeekdays
-
-
-# def dayToWeekday(x):
-#     z = datetime.strptime(x, "%Y-%m-%d")
-#     y = z.strftime('%A')
-#     return y
-
-
-# def validWeekday(days):
-
-#     today = datetime.now()
-#     weekdays = []
-#     for i in range(0, days):
-#         x = today + timedelta(days=i)
-#         y = x.strftime('%A')
-#         if y == 'Monday' or y == 'Saturday' or y == 'Wednesday':
-#             weekdays.append(x.strftime('%Y-%m-%d'))
-#     return weekdays
-
-
-# # Only show the time of the day that has not been selected before:
-# def checkTime(times, day):
-
-#     x = []
-#     for k in times:
-#         if WorkshopBooking.objects.filter(day=day, time=k).count() < 1:
-#             x.append(k)
-#     return x
-
-
-# # Only show the time of the day that has not been selected before:
-# def checkEditTime(times, day, id):
-
-#     x = []
-#     booking = WorkshopBooking.objects.get(pk=id)
-#     time = booking.time
-#     for k in times:
-#         if WorkshopBooking.objects.filter(day=day, time=k).count() < 1 or time == k:
-#             x.append(k)
-#     return x
