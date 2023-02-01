@@ -23,7 +23,7 @@
                 Booking as: {{ user.username }}
             </p>
             {{ booking_form.media }}
-            <form method="POST" action="add" class="contact-form">
+            <form method="POST" class="contact-form">
                 {% csrf_token %}
                 {{ booking_form | crispy }}
                 <div class="row text-center">

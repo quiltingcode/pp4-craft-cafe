@@ -18,6 +18,8 @@ TIME_CHOICES = (
     ("11:30 AM", "11:30 AM"),
 )
 
+STATUS = ((0, "Draft"), (1, "Published"))
+
 PLACES_TO_BOOK = (
     ("1", "1"),
     ("2", "2"),
@@ -41,7 +43,7 @@ class WorkshopBooking(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     places = models.CharField(max_length=50, choices=PLACES_TO_BOOK, default="1")
     approved = models.BooleanField(default=False)
-    slug = models.SlugField(max_length=200, unique=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
         return f"{self.user.username} | day: {self.day} | time: {self.time}"

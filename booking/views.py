@@ -16,31 +16,27 @@ class WorkshopsView(TemplateView):
 
 class ContactPage(View):
 
-    def get(self, request, slug):
-    
+    def get(self, request):
+        queryset = WorkshopBooking.objects.filter(status=1)
+        booking = get_object_or_404(queryset)
         if request.method == 'POST':
             workshop = request.POST.get('workshop')
             day = request.POST.get('day')
-            if workshop is None:
-                messages.success(request, "Please Select A Workshop!")
-                return redirect('booking')
-
             request.session['day'] = day
             request.session['workshop'] = workshop
-
-            return redirect('bookingSubmit')
-
         return render(
             request,
             'contact.html',
             {
-                'booking_form': BookingForm(),
+                "booking_form": BookingForm(),
                 "booked": False
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(slug=slug)
+    def post(self, request):
+        queryset = WorkshopBooking.objects.filter(status=1)
+        booking = get_object_or_404(queryset)
+
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
             booking_form.instance.email = request.user.email
@@ -57,7 +53,7 @@ class ContactPage(View):
             "profile-page.html",
             {
                 "booking": booking,
-                "approved": approved,
+                "approved": False,
                 "booked": True
             },
         )
