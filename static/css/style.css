@@ -156,9 +156,20 @@ h2, h3 {
 
 /* craft Community Page */
 
+.posts-container {
+    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1675271638/pillow-quilt_oaf3pt.jpg") center;
+    height: 90vh;
+    background-size: cover;
+}
+
 .post-link {
     text-decoration: none;
     color: #445261;
+}
+
+.post-card {
+
+
 }
 
 .card-title {

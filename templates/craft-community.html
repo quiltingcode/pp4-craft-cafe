@@ -2,24 +2,21 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid posts-container">
     <div class="row">
         <h1 class="text-center mt-3">The Craft Cafe Community</h1>
         <h3>Show off your Craft Cafe creations here...<span> <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#postModal">
             Add a Post
             </button> </span></h3>
     </div>
-</div>
 
-<div class="container-fluid">
+    <!--Posts-->
     <div class="row">
-
-        <!--Posts-->
         <div class="col-12 mt-3">
             <div class="row">
                 {% for post in post_list %}
                     <div class="col-md-4">
-                        <div class="card mb-4">
+                        <div class="card mb-2 post-card">
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
@@ -88,7 +85,6 @@
             </nav>
             {% endif %}
         </div>
-
     </div>
 </div>
 
