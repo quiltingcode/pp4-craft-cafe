@@ -71,8 +71,16 @@ h2, h3 {
     width: 286px;
 }
 
+.food-card-title {
+    font-size: 2rem;
+}
+
 .table {
     max-width: 280px;
+}
+
+.table td {
+    font-size: 0.9rem;
 }
 
 /* Homepage Workshops Overview */
