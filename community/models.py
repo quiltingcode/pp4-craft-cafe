@@ -47,7 +47,7 @@ class Comment(models.Model):
                              related_name="comments")
     name = models.CharField(max_length=80)
     updated_on = models.DateTimeField(auto_now=True)
-    comment_content = models.TextField()
+    comment_content = models.TextField(verbose_name=_("Comments"))
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
