@@ -97,3 +97,19 @@ class PostLike2(View):
         else:
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse('craft-community', args=[slug]))
+
+
+class ProfilePagePosts(generic.ListView):
+    def get(self, request):
+        model = Post
+        posts = Post.objects.filter(id=self.request.user.id).order_by("-created_on")
+        context = {
+            'posts': posts
+        }
+        template_name = "profile-page.html"
+        paginate_by = 10
+        return render(
+            request,
+            "profile-page.html",
+            context
+        )

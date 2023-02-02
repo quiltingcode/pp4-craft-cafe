@@ -69,17 +69,8 @@ class ProfilePageBookings(generic.ListView):
         }
         template_name = "profile-page.html"
         paginate_by = 10
- 
         return render(
             request,
             "profile-page.html",
             context
         )
-
-    # def get_bookings_list(request):
-    #     bookings = WorkshopBooking.objects.all()
-    #     context = {
-    #         'bookings': bookings
-    #     }
-    #     return render(request, 'profile-page.html', context)
-    
