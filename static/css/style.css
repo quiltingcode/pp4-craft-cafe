@@ -11,7 +11,8 @@ body {
 }
 
 .acc-icon {
-    font-size: 1.5rem;padding-right: 8px;
+    font-size: 1.5rem;
+    padding-right: 8px;
 }
 
 /* Callout Container */
@@ -228,6 +229,10 @@ h2, h3 {
 .post-details-container {
     background-color: #e3fff6;
     background-size: cover;
+}
+
+.return-icon {
+    color: white;
 }
 
 .comment-card {
