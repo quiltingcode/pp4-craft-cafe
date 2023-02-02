@@ -82,7 +82,7 @@ class ProfilePageBookings(generic.ListView):
             if form.is_valid():
                 form.save()
                 return redirect('profile-page')
-        form = EditBookingForm(instance=booking)
+        form = BookingForm(instance=booking)
         context = {
             'form': form
         }
