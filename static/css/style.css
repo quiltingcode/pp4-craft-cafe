@@ -210,6 +210,11 @@ h2, h3 {
     text-transform: capitalize;
 }
 
+.img-fluid {
+    max-width: 100%;
+    max-height: 500px;
+}
+
 .btn-like {
     color: #E84610;
     border: none;
