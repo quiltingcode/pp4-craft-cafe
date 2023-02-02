@@ -160,6 +160,10 @@ h2, h3 {
     background-size: cover;
 }
 
+.review-card {
+    height: 230px;
+}
+
 /* Map */
 
 .map-container {
