@@ -32,13 +32,9 @@
                                     <a href="{% url 'post-detail' post.slug %}" class="post-link">
                                         <h2 class="card-title">{{ post.title }}</h2>
                                     </a>
-                                    <hr />
-                                    <p class="author">Author: {{ post.author }}</p>
-                                    <p class="card-text text-muted h6">
-                                        {{ post.created_on}}
-                                    </p>
+                                    <p class="card-text text-muted">Crafted By: {{ post.author }} on {{ post.created_on}}</p>
                                     <div class="row">
-                                        <div class="col-2">
+                                        <div class="col-6">
                                             <strong>
                                                 {% if user.is_authenticated %}
                                                 <form class="d-inline" action="{% url 'post_like2' post.slug %}" method="POST">
@@ -55,7 +51,7 @@
                                                 <span class="text-secondary">{{ post.number_of_likes }} </span>
                                             </strong>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-6">
                                             {% with comments.count as total_comments %}
                                             <strong class="text-secondary"><i class="far fa-comments"></i>
                                                 {{ total_comments }}</strong>
