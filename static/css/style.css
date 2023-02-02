@@ -87,7 +87,7 @@ h2, h3 {
 
 .workshops-container {
     background-color: #66dcd7;
-    height: 80vh;
+    height: 100%;
 }
 
 .ws-overview-card {
@@ -106,7 +106,7 @@ h2, h3 {
 }
 
 .card-title {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .btn-overview {
@@ -148,6 +148,13 @@ h2, h3 {
 
 #kids-card {
     background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/julietta-watson-1VT2qoBtc-k-unsplash_bsd6qb.jpg")center;
+}
+
+/* Map */
+
+#map {
+    height: 300px;
+    width: 100%;
 }
 
 /* Contact Page */

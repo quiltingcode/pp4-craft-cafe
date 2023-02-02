@@ -6,19 +6,24 @@
 <head>
     <title>The Craft Cafe</title>
 
+    <!-- Google Fonts Scripts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Font Awesome Scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
-    
+    <!-- Bootstrap Scripts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
-
+    <!-- Google Maps Scripts -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- jQuery Scripts for DatePicker -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
+    <!-- CSS Link Scripts -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ form.media }}
@@ -105,6 +110,8 @@
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-facebook-square ms-3"></i></p>
     </footer>
+
+    <!-- Time delay for auto-dismissal script on alert messages -->
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
@@ -112,6 +119,7 @@
             alert.close();
         }, 3000);
     </script>
+
 </body>
 
 </html>

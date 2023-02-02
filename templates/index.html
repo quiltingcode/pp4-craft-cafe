@@ -275,20 +275,40 @@
   <!-- Reviews -->
 
   <!-- Location -->
-  <div class="container location-container" id="location">
-    <section class="location">
-      <div class="row">
-        <div class="col-12 my-5">
-          <h2>Where to Find Us:</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 my-5">
+        <h2>Where to Find Us:</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="map">
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
   <!-- Location -->
+
+  <script>
+    function initMap() {
+      const craftCafe = {
+        lat: 51.52624252958129, 
+        lng: -0.31297166535457566
+      };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: craftCafe
+      });
+      const marker = new google.maps.Marker({
+        position: craftCafe,
+        map: map,
+      });
+    }
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVIraa4wdV2VzL6WPNotQP_uf7GpqlLyg&callback=initMap&v=weekly">
+  </script>
 
 {%endblock%}
