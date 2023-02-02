@@ -74,3 +74,16 @@ class ProfilePageBookings(generic.ListView):
             "profile-page.html",
             context
         )
+
+    def edit_booking(request, booking_id):
+        booking = get_object_or_404(WorkshopBooking(), id=booking_id)
+        if request.method == 'POST':
+            form = EditBookingForm(request.POST, instance=booking)
+            if form.is_valid():
+                form.save()
+                return redirect('profile-page')
+        form = EditBookingForm(instance=booking)
+        context = {
+            'form': form
+        }
+        return render(request, 'profile-page.html', context)
