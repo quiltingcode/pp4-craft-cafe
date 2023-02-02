@@ -78,11 +78,11 @@ h2, h3 {
     font-size: 2rem;
 }
 
-.table {
+.menu-table {
     max-width: 280px;
 }
 
-.table td {
+.menu-table td {
     font-size: 0.9rem;
 }
 
@@ -275,6 +275,21 @@ h2, h3 {
 
 .link-text {
     color: #3dd2cc;
+}
+
+/* Profile Page */
+
+hr.rounded {
+    border-top: 8px solid #29b3ad;
+    border-radius: 5px;
+    width: 95%;
+    margin: auto;
+  }
+
+.profile-table {
+    height: auto;
+    width: 50%;
+    
 }
 
 

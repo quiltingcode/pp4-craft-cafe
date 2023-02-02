@@ -6,24 +6,48 @@
 <!-- Account Details Container -->
 <div class="container">
     <div class="row">
-        <div class="col-12 my-5">
-            <h2>Personal Profile Details</h2>
+        <div class="col-12 my-2">
+            <h2><i class="far fa-user"></i> Personal Details</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <table>
-
+        <div class="col-12 col-md-6">
+            <table class="table profile-table">
+                <thead>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Username: </td>
+                    <td>{{ user.username }}</td>
+                  </tr>
+                  <tr>
+                    <td>Email: </td>
+                    <td>{{ user.email }}</td>
+                  </tr>
+                  <tr>
+                    <td>Telephone: </td>
+                    <td>{{ user.telephone }}</td>
+                  </tr>
             </table>
+        </div>
+        <div class="col-12 col-md-6">
+            <p>
+                <a href="#" class="btn btn-primary">Edit Account</a>
+            </p>
+            <p>
+                <a href="#" class="btn btn-danger">Delete Account</a>
+            </p>
         </div>
     </div>
 </div>
+
+<hr class="rounded">
 
 <!-- Bookings Made Container -->
 <div class="container">
     <div class="row">
         <div class="col-12 my-5">
-            <h2>Booking Request Details</h2>
+            <h2>Bookings</h2>
         </div>
     </div>
     <div class="row">
@@ -38,11 +62,13 @@
     </div>
 </div>
 
+<hr class="rounded">
+
 <!-- Posts and Comments Container -->
 <div class="container">
     <div class="row">
         <div class="col-12 my-5">
-            <h2>Craft Cafe Community Details</h2>
+            <h2>Posts</h2>
         </div>
     </div>
     <div class="row">
