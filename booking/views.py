@@ -63,11 +63,23 @@ class ContactPage(View):
 class ProfilePageBookings(generic.ListView):
     def get(self, request):
         model = WorkshopBooking
-        queryset = WorkshopBooking.objects.filter(id=self.request.user.id).order_by("-created_on")
+        bookings = WorkshopBooking.objects.filter(id=self.request.user.id).order_by("-created_on")
+        context = {
+            'bookings': bookings
+        }
         template_name = "profile-page.html"
         paginate_by = 10
  
         return render(
             request,
-            "profile-page.html"
+            "profile-page.html",
+            context
         )
+
+    # def get_bookings_list(request):
+    #     bookings = WorkshopBooking.objects.all()
+    #     context = {
+    #         'bookings': bookings
+    #     }
+    #     return render(request, 'profile-page.html', context)
+    

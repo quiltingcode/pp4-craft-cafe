@@ -24,10 +24,7 @@
                     <td>Email: </td>
                     <td>{{ user.email }}</td>
                   </tr>
-                  <tr>
-                    <td>Telephone: </td>
-                    <td>{{ user.telephone }}</td>
-                  </tr>
+                </tbody>
             </table>
         </div>
         <div class="col-12 col-md-6">
@@ -52,11 +49,40 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <!-- TEST -->
-            {{ booking }}
-            <!-- ENDTEST -->
-            <table>
-
+            <table class="table">
+                {% for booking in bookings %}
+                <thead>
+                    <tr>
+                      <th scope="col">Craft Workshop</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Time</th>
+                      <th scope="col">No. of Places</th>
+                      <th scope="col">Approval Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>{{ booking.workshop }}</td>
+                        <td>{{ booking.day }}</td>
+                        <td>{{ booking.time }}</td>
+                        <td>{{ booking.places }}</td>
+                        {% if booking.approved %}
+                            <td>Confirmed</td>
+                        {% else %}
+                            <td>Unconfirmed</td>
+                        {% endif %}
+                        <td>
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>You haven't made any bookings. Click <a href="{% url 'contact' %}" role="button">here</a> to book.</td>
+                    </tr>
+                    {% endfor%}
+                </tbody>
             </table>
         </div>
     </div>
