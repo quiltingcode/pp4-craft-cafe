@@ -79,11 +79,12 @@ h2, h3 {
 
 .workshops-container {
     background-color: #66dcd7;
+    height: 80vh;
 }
 
 .ws-overview-card {
     max-width: 350px;
-    height: 150px;
+    height: 200px;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     display: flex;
@@ -94,6 +95,10 @@ h2, h3 {
 
 .ws-overview-card h3 {
     color: white;
+}
+
+.card-title {
+    font-size: 3rem;
 }
 
 .btn-overview {
