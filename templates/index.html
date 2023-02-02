@@ -21,83 +21,81 @@
   <!-- Callout -->
 
   <!-- Cafe Menu -->
-  <div class="container menu-container" id="menu">
-    <section class="menu">
-      <div class="row">
-        <div class="col-12 my-5">
-          <h2>Craft Cafe Menu</h2>
-        </div>
+  <div class="container-fluid menu-container">
+    <div class="row">
+      <div class="col-12 my-5">
+        <h2>Craft Cafe Menu</h2>
       </div>
-      <div class="row">
-        <!-- Food Menu Card -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
-          <img class="card-img-top" src="{% static 'images/menu-food.jpg' %}" alt="plate of colourful salad">
-            <div class="card-body">
-              <h5 class="food-card-title">Food</h5>
-              <div class="row">
-                <div class="col-12">
-                    <table class="table">
-                      <thead>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Crafty Salad</td>
-                          <td>£3.50</td>
-                        </tr>
-                        <tr>
-                          <td>Soup of the Day</td>
-                          <td>£2.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                </div>  
-              </div>
+    </div>
+    <div class="row">
+      <!-- Food Menu Card -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
+        <img class="card-img-top" src="{% static 'images/menu-food.jpg' %}" alt="plate of colourful salad">
+          <div class="card-body">
+            <h5 class="food-card-title">Food</h5>
+            <div class="row">
+              <div class="col-12">
+                  <table class="table">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Crafty Salad</td>
+                        <td>£3.50</td>
+                      </tr>
+                      <tr>
+                        <td>Soup of the Day</td>
+                        <td>£2.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>  
             </div>
-        </div> 
-        <!-- Drinks Menu Card -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
-          <img class="card-img-top" src="{% static 'images/menu-tea2.jpg' %}" alt="Cup of tea">
-            <div class="card-body">
-              <h5 class="food-card-title">Drinks</h5>
-              <table class="table">
-                <thead>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Coffee</td>
-                    <td>£1.90</td>
-                  </tr>
-                  <tr>
-                    <td>Tea</td>
-                    <td>£1.60</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-        </div> 
-        <!-- Desserts Menu Card -->
-        <div class="col-12 col-sm-6 col-md-6 offset-sm-3 offset-lg-0 col-lg-4 food-container card">
-          <img class="card-img-top" src="{% static 'images/menu-cake2.jpg' %}" alt="Plate of desserts">
-            <div class="card-body">
-              <h5 class="food-card-title">Desserts</h5>
-              <table class="table">
-                <thead>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Cake of the Day</td>
-                    <td>£1.30</td>
-                  </tr>
-                  <tr>
-                    <td>Crafty Macaroons</td>
-                    <td>£0.90</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-        </div>   
-      </div>
-    </section>
+          </div>
+      </div> 
+      <!-- Drinks Menu Card -->
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 food-container card">
+        <img class="card-img-top" src="{% static 'images/menu-tea2.jpg' %}" alt="Cup of tea">
+          <div class="card-body">
+            <h5 class="food-card-title">Drinks</h5>
+            <table class="table">
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Coffee</td>
+                  <td>£1.90</td>
+                </tr>
+                <tr>
+                  <td>Tea</td>
+                  <td>£1.60</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div> 
+      <!-- Desserts Menu Card -->
+      <div class="col-12 col-sm-6 col-md-6 offset-sm-3 offset-lg-0 col-lg-4 food-container card">
+        <img class="card-img-top" src="{% static 'images/menu-cake2.jpg' %}" alt="Plate of desserts">
+          <div class="card-body">
+            <h5 class="food-card-title">Desserts</h5>
+            <table class="table">
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cake of the Day</td>
+                  <td>£1.30</td>
+                </tr>
+                <tr>
+                  <td>Crafty Macaroons</td>
+                  <td>£0.90</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>   
+    </div>
   </div>
   <!-- Cafe Menu -->
 
@@ -224,10 +222,10 @@
   <!-- Photo Carousel -->
 
   <!-- Reviews -->
-  <div class="container reviews-container">
+  <div class="container-fluid reviews-container">
     <section class="reviews">
       <div class="row">
-        <div class="col-12 my-5">
+        <div class="col-12 my-4">
           <h2>Cafe Reviews</h2>
         </div>
       </div>
@@ -237,7 +235,7 @@
             Best macaroons around!
           </div>
           <div class="card-body">
-            <blockquote class="blockquote mb-0">
+            <blockquote class="blockquote">
               <p>We popped in once for a cup of tea and plate of macaroons. Now it's become a weekly ritual we just can't resist.</p>
               <footer class="blockquote-footer">Peter Smith</footer>
             </blockquote>
@@ -248,7 +246,7 @@
             The crafts are so fun!
           </div>
           <div class="card-body">
-            <blockquote class="blockquote mb-0">
+            <blockquote class="blockquote">
               <p>I signed up for the kids craft morning with my 7 yr old and we had a blast. The teachers are so
                 creative and every week there are new things to make. My daughter can't wait to go back, and nor can I.
               </p>
@@ -275,9 +273,9 @@
   <!-- Reviews -->
 
   <!-- Map -->
-  <div class="container-fluid">
+  <div class="container-fluid map-container">
     <div class="row">
-      <div class="col-12 my-5">
+      <div class="col-12 my-4">
         <h2>Where to Find Us:</h2>
       </div>
     </div>

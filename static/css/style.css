@@ -59,11 +59,14 @@ h2, h3 {
 /* Menu */
 
 .menu-container {
-    background-color: white;
+    background-color: #e3fff6;
+    background-size: cover;
 }
 
 .food-container {
     border-color: transparent;
+    background-color: #e3fff6;
+    background-size: cover;
 }
 
 .card-img-top {
@@ -150,7 +153,18 @@ h2, h3 {
     background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/julietta-watson-1VT2qoBtc-k-unsplash_bsd6qb.jpg")center;
 }
 
+/* Reviews */
+
+.reviews-container {
+    background-color: #e3fff6;
+    background-size: cover;
+}
+
 /* Map */
+
+.map-container {
+    background-color: #66dcd7;
+}
 
 #map {
     height: 300px;
@@ -205,7 +219,6 @@ h2, h3 {
 
 .post-details-container {
     background-color: #e3fff6;
-    
     background-size: cover;
 }
 
