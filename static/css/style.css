@@ -187,6 +187,9 @@ h2, h3 {
     color: #445261;
 }
 
+.post-card {
+    background-color: #f8ffc7;
+}
 
 .card-title {
     text-transform: lowercase;
@@ -199,6 +202,12 @@ h2, h3 {
 }
 
 /* Post-Details Page */
+
+.post-details-container {
+    background-color: #e3fff6;
+    
+    background-size: cover;
+}
 
 .comment-card {
     border: none;
