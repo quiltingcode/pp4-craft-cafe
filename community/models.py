@@ -21,13 +21,15 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="community_posts"
     )
     featured_image = CloudinaryField('image', default='placeholder')
-    craft_categories = models.CharField(max_length=50, choices=WORKSHOP_CATEGORIES, default="All Things Wool")
+    category = models.CharField(max_length=50, choices=WORKSHOP_CATEGORIES, default="All Things Wool")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='post_like', blank=True)
+    # comments = models.ManyToManyField(
+    #     User, related_name='post_comment', blank=True)
 
     class Meta:
         ordering = ["-created_on"]

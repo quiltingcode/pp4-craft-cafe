@@ -99,8 +99,37 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <table>
-
+            <table class="table">
+                {% for post in posts %}
+                <thead>
+                    <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Date Posted</th>
+                      <th scope="col">No. of Likes</th>
+                      <th scope="col">No. of Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.category }}</td>
+                        <td>{{ post.created_on }}</td>
+                        <td>{{ post.likes }}</td>
+                        <td>{{ post.comments }}</td>
+                        
+                        <td>
+                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>You haven't made any posts. Click <a href="{% url 'craft-community' %}" role="button">here</a> to post your Craft Cafe Creations.</td>
+                    </tr>
+                    {% endfor%}
+                </tbody>
             </table>
         </div>
     </div>
