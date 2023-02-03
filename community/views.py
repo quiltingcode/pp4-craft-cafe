@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from django.views.generic import TemplateView
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
@@ -15,6 +15,36 @@ class PostList(LoginRequiredMixin, generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'craft-community.html'
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super(PostList, self).get_context_data(**kwargs)
+        context['form'] = PostForm()
+        return context
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+
+        post_form = PostForm(data=request.POST)
+
+        if post_form.is_valid():
+            post_form.instance.email = request.user.email
+            post_form.instance.name = request.user.username
+            post.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Post submitted successfully, awaiting approval.')
+        else:
+            post_form = PostForm()
+
+        return render(
+            request,
+            "craft-community.html",
+            {
+                "post": post,
+                "post_form": PostForm()
+            },
+        )
 
 
 class HomeView(TemplateView):
