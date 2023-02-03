@@ -102,11 +102,25 @@ class PostLike2(View):
 class ProfilePagePosts(generic.ListView):
     def get(self, request):
         model = Post
-        # posts = Post.objects.filter(
-        #     id=self.request.user.id).order_by("-created_on")
-        posts = Post.objects.filter(user=request.user)
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        user_posts = post.filter(user=request.user)
         context = {
-            'posts': posts
+            'user_posts': user_posts
+        }
+        template_name = "profile-page.html"
+        paginate_by = 10
+        return render(
+            request,
+            "profile-page.html",
+            context
+        )
+
+    def get(self, request):
+        model = Comment
+        comments = Comment.objects.filter(user=request.user)
+        context = {
+            'comments': comments
         }
         template_name = "profile-page.html"
         paginate_by = 10
