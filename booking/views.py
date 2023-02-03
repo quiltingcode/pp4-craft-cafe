@@ -63,7 +63,7 @@ class ContactPage(View):
 class ProfilePageBookings(generic.ListView):
     def get(self, request):
         model = WorkshopBooking
-        bookings = WorkshopBooking.objects.filter(id=self.request.user.id).order_by("-created_on")
+        bookings = WorkshopBooking.objects.filter(user=request.user).order_by("-created_on")
         context = {
             'bookings': bookings
         }

@@ -102,8 +102,9 @@ class PostLike2(View):
 class ProfilePagePosts(generic.ListView):
     def get(self, request):
         model = Post
-        posts = Post.objects.filter(
-            id=self.request.user.id).order_by("-created_on")
+        # posts = Post.objects.filter(
+        #     id=self.request.user.id).order_by("-created_on")
+        posts = Post.objects.filter(user=request.user)
         context = {
             'posts': posts
         }
