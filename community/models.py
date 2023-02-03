@@ -26,6 +26,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='post_like', blank=True)
     # comments = models.ManyToManyField(
