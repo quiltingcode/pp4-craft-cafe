@@ -94,7 +94,7 @@
 
 <hr class="rounded">
 
-<!-- Posts and Comments Container -->
+<!-- Posts Container -->
 <div class="container">
     <div class="row">
         <div class="col-12 my-5">
@@ -122,11 +122,14 @@
                         <td>{{ post.created_on }}</td>
                         <td>{{ post.likes }}</td>
                         <td>{{ post.comments }}</td>
-                        
                         <td>
-                            <a href="#" class="btn btn-primary">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
-                        </td>
+                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
+                              Edit
+                          </button>
+                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
+                              Delete
+                          </button>
+                      </td>
                     </tr>
                     {% empty %}
                     <tr>
@@ -137,6 +140,58 @@
             </table>
         </div>
     </div>
+</div>
+
+<hr class="rounded">
+
+<!-- Comments Container -->
+<div class="container">
+  <div class="row">
+      <div class="col-12 my-5">
+          <h2><i class="fa-regular fa-pen-to-square"></i> Comments</h2>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+          <table class="table">
+              {% for comment in comments %}
+              <thead>
+                  <tr>
+                    <th scope="col">Post</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Date Posted</th>
+                    <th scope="col">Approval Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  
+                  <tr>
+                      <td>{{ comment.post }}</td>
+                      <td>{{ comment.comment_content }}</td>
+                      <td>{{ comment.created_on }}</td>
+                      {% if booking.approved %}
+                            <td>Confirmed</td>
+                        {% else %}
+                            <td>Unconfirmed</td>
+                        {% endif %}
+                        <td>
+                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
+                              Edit
+                          </button>
+                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
+                              Delete
+                          </button>
+                      </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                      <td>You haven't made any posts. Click <a href="{% url 'craft-community' %}" role="button">here</a> to post your Craft Cafe Creations.</td>
+                  </tr>
+                  {% endfor%}
+              </tbody>
+          </table>
+      </div>
+  </div>
 </div>
 
 <!-- Edit Booking Modal -->
