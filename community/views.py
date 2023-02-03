@@ -29,6 +29,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
             post_form.instance.email = request.user.email
             post_form.instance.name = request.user.username
             post = post_form.save(commit=False)
+            post.author = self.request.user
             post.save()
             messages.add_message(
                 request, messages.SUCCESS,
