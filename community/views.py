@@ -21,15 +21,14 @@ class PostList(LoginRequiredMixin, generic.ListView):
         context['form'] = PostForm()
         return context
 
-    def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+    def post(self, request):
 
         post_form = PostForm(data=request.POST)
 
         if post_form.is_valid():
             post_form.instance.email = request.user.email
             post_form.instance.name = request.user.username
+            post = post_form.save(commit=False)
             post.save()
             messages.add_message(
                 request, messages.SUCCESS,
@@ -41,7 +40,6 @@ class PostList(LoginRequiredMixin, generic.ListView):
             request,
             "craft-community.html",
             {
-                "post": post,
                 "post_form": PostForm()
             },
         )
