@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime, timedelta
 from .models import WorkshopBooking
 from django.contrib import messages
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
 from django.views import generic, View
 from .forms import BookingForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -60,7 +60,7 @@ class ContactPage(View):
         )
 
 
-class ProfilePageBookings(generic.ListView):
+class ProfilePageBookings(ListView):
     def get(self, request):
         model = WorkshopBooking
         bookings = WorkshopBooking.objects.filter(user=request.user).order_by("-created_on")
@@ -75,15 +75,22 @@ class ProfilePageBookings(generic.ListView):
             context
         )
 
-    def edit_booking(request, booking_id):
-        booking = get_object_or_404(WorkshopBooking(), id=booking_id)
+
+class EditBooking(View):
+
+    def get(self, request):
         if request.method == 'POST':
-            form = EditBookingForm(request.POST, instance=booking)
-            if form.is_valid():
-                form.save()
-                return redirect('profile-page')
-        form = BookingForm(instance=booking)
-        context = {
-            'form': form
-        }
-        return render(request, 'profile-page.html', context)
+            workshop = request.POST.get('workshop')
+            day = request.POST.get('day')
+            request.session['day'] = day
+            request.session['workshop'] = workshop
+        return render(
+            request,
+            'edit-booking.html',
+            {
+                "booking_form": BookingForm(),
+                "booked": False
+            },
+        )
+
+

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+{% if user.is_authenticated %}
+
+<div class="container">
+    <div class="row mt-2 text-center">
+        <div class="col-12">
+            <h2 id="contact-header">Amend your Workshop Booking</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <p>
+                Booking as: {{ user.username }}
+            </p>
+            {{ booking_form.media }}
+            <form method="POST" class="contact-form">
+                {% csrf_token %}
+                {{ booking_form | crispy }}
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-lg btn-info mt-3">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
+
+{% else %}
+
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>
+                You must be logged in to make a booking. 
+            </h3>
+            <a href="{% url 'account_login' %}">Log in Here</a>
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+
+{%endblock%}
