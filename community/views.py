@@ -131,14 +131,11 @@ class PostLike2(View):
 class ProfilePagePosts(ListView):
     def get(self, request):
         model = Post
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        user_posts = post.filter(user=request.user)
+        user_posts = Post.objects.filter(user=request.user)
         context = {
             'user_posts': user_posts
         }
         template_name = "profile-page.html"
-        paginate_by = 10
         return render(
             request,
             "profile-page.html",
