@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -16,7 +18,7 @@ WORKSHOP_CATEGORIES = (
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, null=False, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="community_posts"
     )
@@ -43,6 +45,14 @@ class Post(models.Model):
  
     def number_of_comments(self):
         return self.comments.count()
+
+    def get_absolute_url(self):
+        return reverse("post-detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):

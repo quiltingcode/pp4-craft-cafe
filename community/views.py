@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 from .forms import CommentForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -128,7 +128,7 @@ class PostLike2(View):
         return HttpResponseRedirect(reverse('craft-community', args=[slug]))
 
 
-class ProfilePagePosts(generic.ListView):
+class ProfilePagePosts(ListView):
     def get(self, request):
         model = Post
         queryset = Post.objects.filter(status=1)
