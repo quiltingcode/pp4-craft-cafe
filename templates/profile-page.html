@@ -74,7 +74,7 @@
                       {% endif %}
                       <td>
                         <a class="btn btn-overview mt-4 mb-3" href="{% url 'edit-booking' booking.id %}">Edit</a>
-                        <a class="btn btn-overview mt-4 mb-3" href="#">Delete</a>
+                        <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-booking' booking.id %}">Delete</a>
                       </td>
                   </tr>
                   {% empty %}
@@ -82,6 +82,8 @@
                       <td>You haven't made any bookings. Click <a href="{% url 'contact' %}" role="button">here</a> to book.</td>
                   </tr>
    
+                  
+
                   {% endfor%}
                 </tbody>
             </table>
@@ -119,10 +121,10 @@
                     <td>{{ post.likes }}</td>
                     <td>{{ post.comments }}</td>
                     <td>
-                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
+                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editPostModal">
                           Edit
                       </button>
-                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
+                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deletePostModal">
                           Delete
                       </button>
                     </td>
@@ -191,24 +193,6 @@
 </div>
 
 
-  <!-- Delete Booking Modal -->
-<div class="modal fade" id="deleteBookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Edit Post Modal -->
 <div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

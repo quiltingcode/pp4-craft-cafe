@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime, timedelta
 from .models import WorkshopBooking
 from django.contrib import messages
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views import generic, View
 from .forms import BookingForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 
 
 class WorkshopsView(TemplateView):
@@ -81,4 +82,9 @@ class EditBooking(UpdateView):
     template_name = 'edit-booking.html'
     fields = ['workshop', 'day', 'time', 'places',]
     success_url = '/contact/profile-page'
-   
+
+
+class DeleteBooking(DeleteView):
+    model = WorkshopBooking
+    template_name = 'delete-booking.html'
+    success_url = reverse_lazy('profile-page')
