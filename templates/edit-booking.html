@@ -20,7 +20,7 @@
             {{ booking_form.media }}
             <form method="POST" class="contact-form">
                 {% csrf_token %}
-                {{ booking_form | crispy }}
+                {{ form | crispy }}
                 <div class="row text-center">
                     <div class="col-12">
                         <button type="submit" class="btn btn-lg btn-info mt-3">Save Changes</button>

@@ -47,3 +47,6 @@ class WorkshopBooking(models.Model):
 
     def __str__(self):
         return f"{self.user.username} | day: {self.day} | time: {self.time}"
+
+    def get_absolute_url(self):
+        return reverse("profile-page", kwargs={"pk": self.pk})
