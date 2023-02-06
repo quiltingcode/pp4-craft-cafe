@@ -19,6 +19,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
         context['form'] = PostForm()
+        context['photos'] = Post.objects.all()
         return context
 
     def post(self, request):
@@ -30,6 +31,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
             post_form.instance.name = request.user.username
             post = post_form.save(commit=False)
             post.author = self.request.user
+            post.status = 1
             post.save()
             messages.add_message(
                 request, messages.SUCCESS,
