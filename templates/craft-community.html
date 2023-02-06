@@ -7,6 +7,7 @@
 
 {% if user.is_authenticated %}
 
+<!--Add a Post Button-->
 <div class="container-fluid posts-container">
     <div class="row">
         <h1 class="text-center mt-3">The Craft Cafe Community</h1>
@@ -117,9 +118,9 @@
     <div class="row text-center">
         <div class="col-12">
             <h3>
-                You must be logged in to make a booking. 
+                You must be logged in to view community posts. 
             </h3>
-            <a href="{% url 'account_login' %}">Log in Here</a>
+            <a href="{% url 'account_login' %}">Join the Craft Cafe Community Here</a>
         </div>
     </div>
 </div>
