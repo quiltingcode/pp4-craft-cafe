@@ -31,85 +31,103 @@
 
 <body>
 
-    <!-- Navigation -->
+    <div class="flex-wrapper">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1673950696/logo2-no_background_bkkq5y.png" width="70" height="70" alt="logotype">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'home' %}#menu">Food</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'workshops' %}">Crafts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'craft-community' %}">Craft Cafe Community</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile-page' %}"><i class="far fa-user acc-icon"></i></a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
+        <!-- Navigation -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1673950696/logo2-no_background_bkkq5y.png" width="70" height="70" alt="logotype">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'home' %}#menu">Food</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'workshops' %}">Crafts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{% url 'craft-community' %}">Craft Cafe Community</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile-page' %}"><i class="far fa-user acc-icon"></i></a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Messages Container -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                            {{ message | safe }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Messages Container -->
+        <!-- Individual Page Content -->
+        <main class="flex-shrink-0 main-bg">
+            {% block content %}
+        
+            {% endblock content %}
+        </main>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                        {{ message | safe }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                        </button>
-                    </div>
-                {% endfor %}
+        <!-- Footer -->
+
+        <div class="container-fluid bg-light">
+            <div class="row">
+                <div class="col-12">
+                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                        <p class="col-md-4 mb-0 text-muted">&copy; 2023 KH Designs</p>
+                
+                        <a class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none" href="{% url 'home' %}">
+                            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1673950696/logo2-no_background_bkkq5y.png" width="70" height="70" alt="logotype">
+                        </a>
+                    
+                        <ul class="nav col-md-4 justify-content-end">
+                            <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                            <li class="ms-3"><a class="text-muted" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </footer>
+                </div>
             </div>
         </div>
+   
     </div>
 
-    <!-- Individual Page Content -->
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
-     
-        {% endblock content %}
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center">The Craft Cafe by KH Designs 2023</p>
-        <p class="m-0 text-center">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-facebook-square ms-3"></i></p>
-    </footer>
 
     <!-- Time delay for auto-dismissal script on alert messages -->
     <script>
