@@ -24,7 +24,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
 
     def post(self, request):
 
-        post_form = PostForm(data=request.POST)
+        post_form = PostForm(request.POST, request.FILES)
 
         if post_form.is_valid():
             post_form.instance.email = request.user.email

@@ -12,4 +12,3 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'category', 'featured_image', 'content',)
-        file_data = ('featured_image')
