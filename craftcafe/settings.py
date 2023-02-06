@@ -174,14 +174,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# Cloudinary Configuration
-
-cloudinary.config(
-    cloud_name="dkolsfjkx",
-    api_key="524339223841874",
-    api_secret="GpAZLjT9tv9GAoIN_QxLRZesxns"
-)
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

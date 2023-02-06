@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 <div class="container-fluid posts-container">
@@ -26,7 +27,7 @@
                             <div class="card-body">
                                 <div class="image-container text-center">
                                     {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top" src="../media/cafe-sign-post.png">
+                                    <img class="card-img-top" src="{% static 'images/cafe-sign-post.png' %}">
                                     {% else %}
                                     <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                     {% endif %}
@@ -97,7 +98,7 @@
         </div>
         <div class="modal-body">
             <p>Posting as: {{ user.username }}</p>
-            <form method="post" style="margin-top: 1.3em;">
+            <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
                 {{ form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-login mt-2">Submit</button>
