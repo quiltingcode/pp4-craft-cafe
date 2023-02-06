@@ -7,7 +7,7 @@
 <!-- Account Details Container -->
 <div class="container">
     <div class="row">
-        <div class="col-12 my-2">
+        <div class="col-12 my-3">
             <h2><i class="far fa-user"></i> Personal Details</h2>
         </div>
     </div>
@@ -43,7 +43,7 @@
 <!-- Bookings Made Container -->
 <div class="container">
     <div class="row">
-        <div class="col-12 my-5">
+        <div class="col-12 my-3">
             <h2><i class="fas fa-table"></i> Bookings</h2>
         </div>
     </div>
@@ -95,7 +95,7 @@
 <!-- Posts Container -->
 <div class="container">
     <div class="row">
-        <div class="col-12 my-5">
+        <div class="col-12 my-3">
             <h2><i class="fa-regular fa-pen-to-square"></i> Posts</h2>
         </div>
     </div>
@@ -144,7 +144,7 @@
 <!-- Comments Container -->
 <div class="container">
   <div class="row">
-      <div class="col-12 my-5">
+      <div class="col-12 my-3">
           <h2><i class="fa-regular fa-pen-to-square"></i> Comments</h2>
       </div>
   </div>
@@ -182,7 +182,7 @@
                   </tr>
                   {% empty %}
                   <tr>
-                      <td>You haven't made any posts. Click <a href="{% url 'craft-community' %}" role="button">here</a> to post your Craft Cafe Creations.</td>
+                      <td>You haven't commented on any posts. Click <a href="{% url 'craft-community' %}" role="button">here</a> to comment on some Craft Cafe creations.</td>
                   </tr>
                   {% endfor%}
               </tbody>

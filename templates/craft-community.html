@@ -5,6 +5,8 @@
 {% load crispy_forms_tags %}
 {% load cloudinary %}
 
+{% if user.is_authenticated %}
+
 <div class="container-fluid posts-container">
     <div class="row">
         <h1 class="text-center mt-3">The Craft Cafe Community</h1>
@@ -108,6 +110,19 @@
       </div>
     </div>
   </div>
+
+{% else %}
+
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>
+                You must be logged in to make a booking. 
+            </h3>
+            <a href="{% url 'account_login' %}">Log in Here</a>
+        </div>
+    </div>
+</div>
 
 
 {%endblock%}
