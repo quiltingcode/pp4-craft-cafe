@@ -12,10 +12,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 
 
-class WorkshopsView(TemplateView):
-    template_name = 'workshops.html'
-
-
 class ContactPage(View):
 
     def get(self, request):
