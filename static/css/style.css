@@ -208,6 +208,10 @@ h2, h3 {
 
 /* Contact Page */
 
+.contact-container {
+    background-color: #e3fff6;
+}
+
 .img-thumbnail {
     margin: auto;
     max-width: 250px;
@@ -232,9 +236,10 @@ h2, h3 {
 /* craft Community Page */
 
 .posts-container {
-    background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1675271638/pillow-quilt_oaf3pt.jpg") center;
+    /* background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1675271638/pillow-quilt_oaf3pt.jpg") center; */
     height: 90vh;
     background-size: cover;
+    background-color: #e3fff6;
 }
 
 .post-link {
