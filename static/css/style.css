@@ -201,6 +201,8 @@ h2, h3 {
 
 .img-thumbnail {
     margin: auto;
+    max-width: 250px;
+    max-height: 250px;
 }
 
 .user-auth-container {
