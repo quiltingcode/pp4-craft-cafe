@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row mt-2 mb-4 text-center">
+      <div class="col-12">
+        <h1 id="contact-header">Delete your Booking</h1>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-8 offset-2">
+        <h3>
+          Delete {{ user.username }}:
+        </h3>
+
+        <form method="POST">
+          {% csrf_token %}
+          <p>Are you sure? You won't be able to make workshop bookings, or post your crafty creations anymore...</p>
+          <p>and that's no fun...</p>
+          <div class="row">
+            <div class="col-12">
+              <a class="btn btn-overview mt-4 mb-3" href="{% url 'profile-page' %}"><i class="fas fa-reply return-icon"></i> Back to my Profile</a>
+            </div>
+            </div>
+          <div class="row text-center">
+            <div class="col-12">
+              <button type="submit" class="btn btn-lg btn-info mt-3">Delete my Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
+
+
+{%endblock%}

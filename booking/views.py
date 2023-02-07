@@ -88,3 +88,9 @@ class DeleteBooking(DeleteView):
     model = WorkshopBooking
     template_name = 'delete-booking.html'
     success_url = reverse_lazy('profile-page')
+
+
+class DeleteAccount(DeleteView):
+    model = User
+    template_name = 'delete-account.html'
+    success_url = reverse_lazy('profile-page')
