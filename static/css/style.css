@@ -4,6 +4,13 @@ body {
     background-color: white;
 }
 
+hr.solid {
+    border-top: 12px solid #1d486a;
+    width: 100%;
+    margin: auto;
+    opacity: 1;
+  }
+
 /* Navigation Bar */
 
 .navbar-nav {
@@ -184,6 +191,8 @@ h2, h3 {
 
 .review-card {
     height: 230px;
+    background-color: rgb(255 255 255 / 15%);
+    border: none;
 }
 
 /* Map */
