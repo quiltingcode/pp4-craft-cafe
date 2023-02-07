@@ -3,19 +3,15 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-{% if booked %}
-<div class="alert alert-success" role="alert">
-    Your booking is awaiting approval
-</div>
-{% else %}
 
 <!--Workshop Descriptions-->
-<div class="container-fluid">
-    <div class="row text-center"></div>
+<div class="container-fluid my-4">
+    <div class="row text-center">
         <div class="col-12">
-            <h2>The Craft Cafe Workshops</h2>
+            <h1>The Craft Cafe Workshops</h1>
         </div>
     </div>
+
     <div class="row">
         <div class="col-10 offset-1">
             <h3>Mondays</h3>
@@ -23,15 +19,95 @@
     </div>
     <div class="row">
         <div class="col-3 offset-1">
-            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/alex-block-FRfuOZWpdeI-unsplash_aeujvp.jpg" class="img-thumbnail" alt="Balls of Wool">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/alex-block-FRfuOZWpdeI-unsplash_aeujvp.jpg"
+                class="img-thumbnail" alt="Balls of Wool">
         </div>
         <div class="col-5 offset-1">
             <h4>All Things Wool</h4>
             <p>This workshop is all about wool</p>
         </div>
-
     </div>
 
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h3>Tuesdays</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 offset-1">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674996920/dress_tbsrao.jpg"
+                class="img-thumbnail" alt="Balls of Wool">
+        </div>
+        <div class="col-5 offset-1">
+            <h4>Clothing</h4>
+            <p>Upcycle, recycle and make your own unique garments.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h3>Wednesdays</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 offset-1">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901661/20200825_165053_mmuthc.jpg"
+                class="img-thumbnail" alt="Balls of Wool">
+        </div>
+        <div class="col-5 offset-1">
+            <h4>Patchwork</h4>
+            <p>All things quilting, patchwork circles and the finer techniques of applique and free-motion quilting.</p>
+            <p>Learn how to quilt by hand and also using our in-house sewing machines.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h3>Thursdays</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 offset-1">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674908761/20211201_105546_lx9osl.jpg"
+                class="img-thumbnail" alt="Balls of Wool">
+        </div>
+        <div class="col-5 offset-1">
+            <h4>Home Crafts</h4>
+            <p>Unique crafts to decorate your home</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h3>Fridays</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 offset-1">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674997459/needlepoint_ken2n5.jpg"
+                class="img-thumbnail" alt="Balls of Wool">
+        </div>
+        <div class="col-5 offset-1">
+            <h4>Needlepoint</h4>
+            <p>Get those hands warmed up with embroidery tricks and needlepoint crafts.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h3>Saturdays</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 offset-1">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/julietta-watson-1VT2qoBtc-k-unsplash_bsd6qb.jpg"
+                class="img-thumbnail" alt="Balls of Wool">
+        </div>
+        <div class="col-5 offset-1">
+            <h4>Kids Crafts</h4>
+            <p>Bring along the kids, for some creative craft time. Parents welcome to join in too, or just sit and watch with a coffee.</p>
+        </div>
+    </div>
 </div>
 
 {% if user.is_authenticated %}
@@ -54,7 +130,7 @@
                 {{ booking_form | crispy }}
                 <div class="row text-center">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-lg btn-info mt-3">Submit Booking Request</button>
+                        <button type="submit" class="btn btn-lg btn-info my-3">Submit Booking Request</button>
                     </div>
                 </div>
             </form>
@@ -75,7 +151,6 @@
     </div>
 </div>
 
-{% endif %}
 {% endif %}
 
 {%endblock%}
