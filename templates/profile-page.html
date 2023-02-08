@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-12">
             <table class="table profile-table">
                 <thead>
                 </thead>
@@ -24,16 +24,11 @@
                   <tr>
                     <td>Email: </td>
                     <td>{{ user.email }}</td>
+                    <td><a class="btn btn-overview" href="{% url 'delete-account' user.id %}">Delete Account</a></td>
                   </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-6">
-            <p>
-                <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-account' user.id %}">Delete Account</a>
-            </p>
-        </div>
-
     </div>
 </div>
 
