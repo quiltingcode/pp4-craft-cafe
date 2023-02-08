@@ -102,7 +102,6 @@
     <div class="row">
         <div class="col-12">
             <table class="table">
-                {% for post in posts %}
                 <thead>
                     <tr>
                       <th scope="col">Title</th>
@@ -114,6 +113,7 @@
                 </thead>
                 <tbody>
                   <tr>
+                    {% for post in posts %}
                     <td>{{ post.title }}</td>
                     <td>{{ post.category }}</td>
                     <td>{{ post.created_on }}</td>
@@ -151,7 +151,7 @@
   <div class="row">
       <div class="col-12">
           <table class="table">
-              {% for comment in comments %}
+              
               <thead>
                   <tr>
                     <th scope="col">Post</th>
@@ -163,22 +163,23 @@
               <tbody>
                   
                   <tr>
-                      <td>{{ comment.post }}</td>
-                      <td>{{ comment.comment_content }}</td>
-                      <td>{{ comment.created_on }}</td>
-                      {% if booking.approved %}
-                            <td>Confirmed</td>
-                        {% else %}
-                            <td>Unconfirmed</td>
-                        {% endif %}
-                        <td>
-                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
-                              Edit
-                          </button>
-                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
-                              Delete
-                          </button>
-                      </td>
+                    {% for comment in comments %}
+                    <td>{{ comment.post }}</td>
+                    <td>{{ comment.comment_content }}</td>
+                    <td>{{ comment.created_on }}</td>
+                    {% if booking.approved %}
+                          <td>Confirmed</td>
+                      {% else %}
+                          <td>Unconfirmed</td>
+                      {% endif %}
+                      <td>
+                        <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
+                            Edit
+                        </button>
+                        <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
+                            Delete
+                        </button>
+                    </td>
                   </tr>
                   {% empty %}
                   <tr>
