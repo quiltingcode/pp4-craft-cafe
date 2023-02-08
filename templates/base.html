@@ -71,6 +71,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'profile-page' %}"><i class="far fa-user acc-icon"></i></a>
                         </li>
+                            {% if user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'cafe-dashboard' %}">Admin</a>
+                            </li>
+                            {% endif %}
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
