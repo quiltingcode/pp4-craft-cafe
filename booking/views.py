@@ -59,19 +59,20 @@ class ContactPage(View):
 
 
 class ProfilePageView(ListView):
-    def get(self, request):
-        model = WorkshopBooking
-        bookings = WorkshopBooking.objects.filter(user=request.user).order_by("-day")
-        context = {
-            'bookings': bookings
-        }
-        template_name = "profile-page.html"
-        paginate_by = 10
-        return render(
-            request,
-            "profile-page.html",
-            context
-        )
+    model = WorkshopBooking
+    template_name = "profile-page.html"
+
+    def get_queryset(self):
+        logged_user = (self.request.user)
+        return logged_user
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfilePageView, self).get_context_data()
+        context['bookings_list'] = WorkshopBooking.objects.filter(logged_user).order_by("-day")
+        context['posts_list'] = Post.objects.filter(logged_user).order_by("-created_on")
+        context['comment_list'] = Comment.objects.filter(logged_user).order_by("-created_on")
+
+        return context
 
 
 class EditBooking(UpdateView):
@@ -91,3 +92,16 @@ class DeleteAccount(DeleteView):
     model = User
     template_name = 'delete-account.html'
     success_url = reverse_lazy('home')
+
+
+class StaffView(ListView):
+    model = WorkshopBooking
+    template_name = "cafe-dashboard.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfilePageView, self).get_context_data()
+        context['bookings_list'] = WorkshopBooking.objects.all().order_by("-day")
+        context['posts_list'] = Post.objects.all().order_by("-created_on")
+        context['comment_list'] = Comment.objects.all().order_by("-created_on")
+
+        return context
