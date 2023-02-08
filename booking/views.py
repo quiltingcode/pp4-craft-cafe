@@ -10,6 +10,7 @@ from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
+from community.models import Post, Comment
 
 
 class ContactPage(View):
@@ -57,7 +58,7 @@ class ContactPage(View):
         )
 
 
-class ProfilePageBookings(ListView):
+class ProfilePageView(ListView):
     def get(self, request):
         model = WorkshopBooking
         bookings = WorkshopBooking.objects.filter(user=request.user).order_by("-day")
