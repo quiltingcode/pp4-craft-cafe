@@ -49,7 +49,7 @@
     <div class="row">
         <div class="col-12">
             <table class="table">
-                {% for booking in bookings %}
+                
                 <thead>
                     <tr>
                       <th scope="col">Craft Workshop</th>
@@ -61,6 +61,7 @@
                 </thead>
                 <tbody>
                   <tr>
+                    {% for booking in bookings %}
                       <td>{{ booking.workshop }}</td>
                       <td>{{ booking.day }}</td>
                       <td>{{ booking.time }}</td>
@@ -71,8 +72,8 @@
                           <td>Unconfirmed</td>
                       {% endif %}
                       <td>
-                        <a class="btn btn-overview mt-4 mb-3" href="{% url 'edit-booking' booking.id %}">Edit</a>
-                        <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-booking' booking.id %}">Delete</a>
+                        <a class="btn btn-overview" href="{% url 'edit-booking' booking.id %}">Edit</a>
+                        <a class="btn btn-overview" href="{% url 'delete-booking' booking.id %}">Delete</a>
                       </td>
                   </tr>
                   {% empty %}
