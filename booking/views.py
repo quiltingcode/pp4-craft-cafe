@@ -62,15 +62,11 @@ class ProfilePageView(ListView):
     model = WorkshopBooking
     template_name = "profile-page.html"
 
-    def get_queryset(self):
-        logged_user = (self.request.user)
-        return logged_user
-
-    def get_context_data(self, **kwargs):
+    def get_context_data(self):
         context = super(ProfilePageView, self).get_context_data()
-        context['bookings_list'] = WorkshopBooking.objects.filter(logged_user).order_by("-day")
-        context['posts_list'] = Post.objects.filter(logged_user).order_by("-created_on")
-        context['comment_list'] = Comment.objects.filter(logged_user).order_by("-created_on")
+        context['bookings'] = WorkshopBooking.objects.filter(user=self.request.user).order_by("-day")
+        context['posts'] = Post.objects.filter(author=self.request.user).order_by("-created_on")
+        context['comments'] = Comment.objects.filter(name=self.request.user).order_by("-created_on")
 
         return context
 
@@ -98,10 +94,10 @@ class StaffView(ListView):
     model = WorkshopBooking
     template_name = "cafe-dashboard.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(ProfilePageView, self).get_context_data()
-        context['bookings_list'] = WorkshopBooking.objects.all().order_by("-day")
-        context['posts_list'] = Post.objects.all().order_by("-created_on")
-        context['comment_list'] = Comment.objects.all().order_by("-created_on")
+    def get_context_data(self):
+        context = super(StaffView, self).get_context_data()
+        context['bookings'] = WorkshopBooking.objects.all().order_by("-day")
+        context['posts'] = Post.objects.all().order_by("-created_on")
+        context['comments'] = Comment.objects.all().order_by("-created_on")
 
         return context
