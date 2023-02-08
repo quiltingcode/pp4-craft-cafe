@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 my-3">
-            <h2><i class="far fa-user"></i> Personal Details</h2>
+            <h2><i class="far fa-user"></i> Craft Cafe Overview </h2>
         </div>
     </div>
     <div class="row">
@@ -49,7 +49,6 @@
     <div class="row">
         <div class="col-12">
             <table class="table">
-                {% for booking in bookings %}
                 <thead>
                     <tr>
                       <th scope="col">Craft Workshop</th>
@@ -61,23 +60,25 @@
                 </thead>
                 <tbody>
                   <tr>
-                      <td>{{ booking.workshop }}</td>
-                      <td>{{ booking.day }}</td>
-                      <td>{{ booking.time }}</td>
-                      <td>{{ booking.places }}</td>
-                      {% if booking.approved %}
-                          <td>Confirmed</td>
-                      {% else %}
-                          <td>Unconfirmed</td>
-                      {% endif %}
-                      <td>
-                        <a class="btn btn-overview mt-4 mb-3" href="{% url 'edit-booking' booking.id %}">Edit</a>
-                        <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-booking' booking.id %}">Delete</a>
-                      </td>
+                    {% for booking in bookings %}
+                    <td>{{ booking.workshop }}</td>
+                    <td>{{ booking.day }}</td>
+                    <td>{{ booking.time }}</td>
+                    <td>{{ booking.places }}</td>
+                    {% if booking.approved %}
+                        <td>Confirmed</td>
+                    {% else %}
+                        <td>Unconfirmed</td>
+                    {% endif %}
+                    <td>
+                      <a class="btn btn-overview mt-4 mb-3" href="{% url 'edit-booking' booking.id %}">Edit</a>
+                      <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-booking' booking.id %}">Delete</a>
+                      <a class="btn btn-overview mt-4 mb-3" href="#">Approve</a>
+                    </td>
                   </tr>
                   {% empty %}
                   <tr>
-                      <td>You haven't made any bookings. Click <a href="{% url 'contact' %}" role="button">here</a> to book.</td>
+                      <td>No bookings have been made yet.</td>
                   </tr>
    
                   
@@ -101,7 +102,6 @@
     <div class="row">
         <div class="col-12">
             <table class="table">
-                {% for post in posts %}
                 <thead>
                     <tr>
                       <th scope="col">Title</th>
@@ -113,23 +113,21 @@
                 </thead>
                 <tbody>
                   <tr>
+                    {% for post in posts %}
                     <td>{{ post.title }}</td>
                     <td>{{ post.category }}</td>
                     <td>{{ post.created_on }}</td>
                     <td>{{ post.likes }}</td>
                     <td>{{ post.comments }}</td>
                     <td>
-                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editPostModal">
-                          Edit
-                      </button>
-                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deletePostModal">
-                          Delete
-                      </button>
+                      <a class="btn btn-overview mt-4 mb-3" href="#">Edit</a>
+                      <a class="btn btn-overview mt-4 mb-3" href="#">Delete</a>
+                      <a class="btn btn-overview mt-4 mb-3" href="#">Approve</a>
                     </td>
                   </tr>
                   {% empty %}
                   <tr>
-                    <td>You haven't made any posts. Click <a href="{% url 'craft-community' %}" role="button">here</a> to post your Craft Cafe Creations.</td>
+                    <td>Nobody has posted to the site yet</td>
                   </tr>
                   {% endfor%}
                 </tbody>
@@ -150,7 +148,6 @@
   <div class="row">
       <div class="col-12">
           <table class="table">
-              {% for comment in comments %}
               <thead>
                   <tr>
                     <th scope="col">Post</th>
@@ -162,26 +159,24 @@
               <tbody>
                   
                   <tr>
-                      <td>{{ comment.post }}</td>
-                      <td>{{ comment.comment_content }}</td>
-                      <td>{{ comment.created_on }}</td>
-                      {% if booking.approved %}
-                            <td>Confirmed</td>
-                        {% else %}
-                            <td>Unconfirmed</td>
-                        {% endif %}
-                        <td>
-                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
-                              Edit
-                          </button>
-                          <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
-                              Delete
-                          </button>
-                      </td>
+                    {% for comment in comments %}
+                    <td>{{ comment.post }}</td>
+                    <td>{{ comment.comment_content }}</td>
+                    <td>{{ comment.created_on }}</td>
+                    {% if booking.approved %}
+                          <td>Confirmed</td>
+                      {% else %}
+                          <td>Unconfirmed</td>
+                      {% endif %}
+                      <td>
+                        <a class="btn btn-overview mt-4 mb-3" href="#">Edit</a>
+                        <a class="btn btn-overview mt-4 mb-3" href="#">Delete</a>
+                        <a class="btn btn-overview mt-4 mb-3" href="#">Approve</a>
+                    </td>
                   </tr>
                   {% empty %}
                   <tr>
-                      <td>You haven't commented on any posts. Click <a href="{% url 'craft-community' %}" role="button">here</a> to comment on some Craft Cafe creations.</td>
+                      <td>No comments have been made yet.</td>
                   </tr>
                   {% endfor%}
               </tbody>
@@ -190,44 +185,5 @@
   </div>
 </div>
 
-
-
-  <!-- Edit Post Modal -->
-<div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Delete Post Modal -->
-<div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 {%endblock%}
