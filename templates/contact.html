@@ -5,10 +5,10 @@
 
 
 <!--Workshop Descriptions-->
-<div class="container-fluid my-4 contact-container">
+<div class="container-fluid contact-container">
     <div class="row text-center">
         <div class="col-12">
-            <h1>The Craft Cafe Workshops</h1>
+            <h1 class="my-4">The Craft Cafe Workshops</h1>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
         <div class="col-5 offset-1">
             <h4>All Things Wool</h4>
             <p>This workshop is all about wool</p>
-            <a class="btn btn-overview mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
+            <a class="btn btn-dark mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
         </div>
     </div>
 
@@ -42,7 +42,7 @@
         <div class="col-5 offset-1">
             <h4>Clothing</h4>
             <p>Upcycle, recycle and make your own unique garments.</p>
-            <a class="btn btn-overview mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
+            <a class="btn btn-dark mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
         </div>
     </div>
 
@@ -60,7 +60,7 @@
             <h4>Patchwork</h4>
             <p>All things quilting, patchwork circles and the finer techniques of applique and free-motion quilting.</p>
             <p>Learn how to quilt by hand and also using our in-house sewing machines.</p>
-            <a class="btn btn-overview mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
+            <a class="btn btn-dark mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
         </div>
     </div>
 
@@ -77,7 +77,7 @@
         <div class="col-5 offset-1">
             <h4>Home Crafts</h4>
             <p>Unique crafts to decorate your home</p>
-            <a class="btn btn-overview mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
+            <a class="btn btn-dark mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
         <div class="col-5 offset-1">
             <h4>Needlepoint</h4>
             <p>Get those hands warmed up with embroidery tricks and needlepoint crafts.</p>
-            <a class="btn btn-overview mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
+            <a class="btn btn-dark mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
         </div>
     </div>
 
@@ -112,12 +112,13 @@
             <h4>Kids Crafts</h4>
             <p>Bring along the kids, for some creative craft time. Parents welcome to join in too, or just sit and watch
                 with a coffee.</p>
-            <a class="btn btn-overview mt-4 mb-3" href="{% url 'contact' %}#booking-form">Book your places here</a>
+            <a class="btn btn-dark mt-4 mb-5" href="{% url 'contact' %}#booking-form">Book your places here</a>
         </div>
     </div>
 </div>
 
-<hr>
+
+<hr class="solid">
 
 {% if user.is_authenticated %}
 
