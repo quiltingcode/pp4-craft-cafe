@@ -141,7 +141,7 @@ h2, h3 {
     font-size: 1.5rem;
 }
 
-.btn-overview {
+.btn-dark {
     background-color: #1d486a;
     color: white;
 }
@@ -339,6 +339,9 @@ hr.rounded {
 
 /* Edit post Page */
 
+.edit-container {
+    background-color: #66dcd7;
+}
 
 .form-group {
     margin: 20px auto;

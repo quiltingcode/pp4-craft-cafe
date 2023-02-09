@@ -24,7 +24,7 @@
                   <tr>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
-                    <td><a class="btn btn-overview" href="{% url 'delete-account' user.id %}">Delete Account</a></td>
+                    <td><a class="btn btn-dark" href="{% url 'delete-account' user.id %}">Delete Account</a></td>
                   </tr>
                 </tbody>
             </table>
@@ -67,8 +67,8 @@
                           <td>Unconfirmed</td>
                       {% endif %}
                       <td>
-                        <a class="btn btn-overview" href="{% url 'edit-booking' booking.id %}">Edit</a>
-                        <a class="btn btn-overview" href="{% url 'delete-booking' booking.id %}">Delete</a>
+                        <a class="btn btn-dark" href="{% url 'edit-booking' booking.id %}">Edit</a>
+                        <a class="btn btn-dark" href="{% url 'delete-booking' booking.id %}">Delete</a>
                       </td>
                   </tr>
                   {% empty %}
@@ -119,8 +119,8 @@
                           <td>Awaiting approval</td>
                       {% endif %}
                     <td>
-                        <a class="btn btn-overview" href="{% url 'edit-post' post.id %}">Edit</a>
-                        <a class="btn btn-overview" href="{% url 'delete-post' post.id %}">Delete</a>
+                        <a class="btn btn-dark" href="{% url 'edit-post' post.id %}">Edit</a>
+                        <a class="btn btn-dark" href="{% url 'delete-post' post.id %}">Delete</a>
                     </td>
                   </tr>
                   {% empty %}
@@ -168,10 +168,10 @@
                           <td>Awaiting approval</td>
                       {% endif %}
                       <td>
-                        <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editBookingModal">
                             Edit
                         </button>
-                        <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
                             Delete
                         </button>
                     </td>
