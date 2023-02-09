@@ -12,28 +12,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-12">
             <table class="table profile-table">
                 <thead>
-                </thead>
-                <tbody>
                   <tr>
-                    <td>Username: </td>
-                    <td>{{ user.username }}</td>
+                    <th scope="col">Total Users</th>
+                    <th scope="col">Total Bookings</th>
+                    <th scope="col">Total Posts</th>
+                    <th scope="col">Total Comments</th>
                   </tr>
+                </thead>
+                <tbody class="table-group-divider">
                   <tr>
-                    <td>Email: </td>
-                    <td>{{ user.email }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ booking. }}</td>
                   </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-6">
-            <p>
-                <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-account' user.id %}">Delete Account</a>
-            </p>
-        </div>
-
     </div>
 </div>
 
@@ -51,16 +47,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                      <th scope="col">Craft Workshop</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Time</th>
-                      <th scope="col">No. of Places</th>
-                      <th scope="col">Approval Status</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Workshop</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">No. of Places</th>
+                        <th scope="col">Approval Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                   <tr>
                     {% for booking in bookings %}
+                    <td>{{ booking.user }}</td>
                     <td>{{ booking.workshop }}</td>
                     <td>{{ booking.day }}</td>
                     <td>{{ booking.time }}</td>
@@ -71,9 +69,9 @@
                         <td>Unconfirmed</td>
                     {% endif %}
                     <td>
-                      <a class="btn btn-overview mt-4 mb-3" href="{% url 'edit-booking' booking.id %}">Edit</a>
-                      <a class="btn btn-overview mt-4 mb-3" href="{% url 'delete-booking' booking.id %}">Delete</a>
-                      <a class="btn btn-overview mt-4 mb-3" href="#">Approve</a>
+                      <a class="btn btn-dark" href="{% url 'edit-booking' booking.id %}">Edit</a>
+                      <a class="btn btn-dark" href="{% url 'delete-booking' booking.id %}">Delete</a>
+                      <a class="btn btn-dark" href="#">Approve</a>
                     </td>
                   </tr>
                   {% empty %}
@@ -104,25 +102,33 @@
             <table class="table">
                 <thead>
                     <tr>
-                      <th scope="col">Title</th>
-                      <th scope="col">Category</th>
-                      <th scope="col">Date Posted</th>
-                      <th scope="col">No. of Likes</th>
-                      <th scope="col">No. of Comments</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Date Posted</th>
+                        <th scope="col">No. of Likes</th>
+                        <th scope="col">No. of Comments</th>
+                        <th scope="col">Approval Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                   <tr>
                     {% for post in posts %}
+                    <td>{{ post.author }}</td>
                     <td>{{ post.title }}</td>
                     <td>{{ post.category }}</td>
                     <td>{{ post.created_on }}</td>
-                    <td>{{ post.likes }}</td>
-                    <td>{{ post.comments }}</td>
+                    <td>{{ post.number_of_likes }}</td>
+                    <td>{{ post.number_of_comments }}</td>
+                    {% if post.approved %}
+                          <td>Approved</td>
+                      {% else %}
+                          <td>Awaiting approval</td>
+                      {% endif %}
                     <td>
-                      <a class="btn btn-overview mt-4 mb-3" href="#">Edit</a>
-                      <a class="btn btn-overview mt-4 mb-3" href="#">Delete</a>
-                      <a class="btn btn-overview mt-4 mb-3" href="#">Approve</a>
+                      <a class="btn btn-dark" href="#">Edit</a>
+                      <a class="btn btn-dark" href="#">Delete</a>
+                      <a class="btn btn-dark" href="#">Approve</a>
                     </td>
                   </tr>
                   {% empty %}
@@ -150,16 +156,18 @@
           <table class="table">
               <thead>
                   <tr>
+                    <th scope="col">User</th>
                     <th scope="col">Post</th>
                     <th scope="col">Comment</th>
                     <th scope="col">Date Posted</th>
                     <th scope="col">Approval Status</th>
                   </tr>
               </thead>
-              <tbody>
+              <tbody class="table-group-divider"> 
                   
                   <tr>
                     {% for comment in comments %}
+                    <td>{{ comment.name }}</td>
                     <td>{{ comment.post }}</td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.created_on }}</td>
@@ -169,9 +177,9 @@
                           <td>Unconfirmed</td>
                       {% endif %}
                       <td>
-                        <a class="btn btn-overview mt-4 mb-3" href="#">Edit</a>
-                        <a class="btn btn-overview mt-4 mb-3" href="#">Delete</a>
-                        <a class="btn btn-overview mt-4 mb-3" href="#">Approve</a>
+                        <a class="btn btn-dark" href="#">Edit</a>
+                        <a class="btn btn-dark" href="#">Delete</a>
+                        <a class="btn btn-dark" href="#">Approve</a>
                     </td>
                   </tr>
                   {% empty %}
