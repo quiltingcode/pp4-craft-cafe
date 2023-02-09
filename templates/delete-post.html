@@ -10,17 +10,17 @@
       </div>
     </div>
     <div class="row text-center">
-      <div class="col-8 offset-2">
-        <h3 class="mb-4">
-          Delete post titled: {{ post.title }}
-        </h3>
-
-        <form method="POST">
-          {% csrf_token %}
-          <p>Are you sure? We are so happy that you wanted to share your Craft Cafe creations with the world...</p>
-          <div class="row text-center">
-            <div class="col-12">
-              <button type="submit" class="btn btn-lg btn-info mt-3">Delete Post</button>
+        <div class="col-8 offset-2">
+            <h3 class="mb-4">
+            Delete post titled: {{ post.title }}
+            </h3>
+            <form method="POST">
+                {% csrf_token %}
+                <p>Are you sure? We are so happy that you wanted to share your Craft Cafe creations with the world...</p>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button href="{% url 'profile-page' %}" class="btn btn-lg btn-info mt-3">Go Back</button>
+                        <button type="submit" class="btn btn-lg btn-info mt-3">Delete Post</button>
                     </div>
                 </div>
             </form>
