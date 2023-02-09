@@ -337,16 +337,36 @@ hr.rounded {
     width: 90%;
 }
 
-/* Edit post Page */
+/* Edit Pages */
 
 .edit-container {
     background-color: #66dcd7;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.edit-container h1 {
+    margin-top: 50px;
 }
 
 .form-group {
     margin: 20px auto;
     max-width: 600px;
 }
+
+/* Delete Pages */
+
+.delete-container {
+    background-color: #e3fff6;
+    height: 100vh;
+    margin-top: 0;
+}
+
+.delete-container h1 {
+    margin-top: 50px;
+}
+
+
 
 
 /* Media Queries */
