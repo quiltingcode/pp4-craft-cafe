@@ -11,7 +11,7 @@
 <div class="container-fluid posts-container">
     <div class="row">
         <h1 class="text-center mt-3">The Craft Cafe Community</h1>
-        <h3>Show off your Craft Cafe creations here...
+        <h3 class="my-3">Show off your Craft Cafe creations here...
             <span> 
                 <button type="button" class="btn btn-dark"
                     data-bs-toggle="modal" data-bs-target="#postModal">
@@ -58,10 +58,8 @@
                                             </strong>
                                         </div>
                                         <div class="col-6">
-                                            {% with comments.count as total_comments %}
                                             <strong class="text-secondary"><i class="far fa-comments"></i>
-                                                {{ total_comments }}</strong>
-                                            {% endwith %}
+                                                {{ post.number_of_comments }}</strong>
                                         </div>
                                     </div>
                                 </div>
