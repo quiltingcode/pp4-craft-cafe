@@ -337,6 +337,14 @@ hr.rounded {
     width: 90%;
 }
 
+/* Edit post Page */
+
+
+.form-group {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
 
 /* Media Queries */
 

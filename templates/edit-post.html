@@ -11,13 +11,11 @@
     </div>
     <div class="row">
         <div class="col-8 offset-2">
-            <p>
-                Edit post titled: {{ post.title }}
-            </p>
-            <form method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
+            <h4 class="text-center"><strong>Edit post titled: {{ post.title }}</strong></h4>
+            <form method="post" enctype="multipart/form-data" class="post-form" style="margin-top: 1.3em;">
                 {{ form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-login mt-2">Save Changes</button>
+                <button type="submit" class="btn btn-login my-2">Save Changes</button>
             </form>
         </div>  
     </div>
