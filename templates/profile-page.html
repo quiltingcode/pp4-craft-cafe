@@ -57,7 +57,7 @@
                 <tbody>
                   <tr>
                     {% for booking in bookings %}
-                      <td>{{ booking.workshop }}</td>
+                      <td><strong>{{ booking.workshop }}</strong></td>
                       <td>{{ booking.day }}</td>
                       <td>{{ booking.time }}</td>
                       <td>{{ booking.places }}</td>
@@ -75,8 +75,6 @@
                   <tr>
                       <td>You haven't made any bookings. Click <a href="{% url 'contact' %}" role="button">here</a> to book.</td>
                   </tr>
-   
-                  
 
                   {% endfor%}
                 </tbody>
@@ -102,25 +100,27 @@
                       <th scope="col">Title</th>
                       <th scope="col">Category</th>
                       <th scope="col">Date Posted</th>
-                      <th scope="col">No. of Likes</th>
-                      <th scope="col">No. of Comments</th>
+                      <th scope="col">Likes</th>
+                      <th scope="col">Comments</th>
+                      <th scope="col">Approval Status</th>
                     </tr>
                 </thead>
                 <tbody>
                   <tr>
                     {% for post in posts %}
-                    <td>{{ post.title }}</td>
+                    <td><strong><a href="{% url 'post-detail' post.slug %}" class="post-link">{{ post.title }}</a></strong></td>
                     <td>{{ post.category }}</td>
                     <td>{{ post.created_on }}</td>
                     <td>{{ post.number_of_likes }}</td>
                     <td>{{ post.number_of_comments }}</td>
+                    {% if post.approved %}
+                          <td>Approved</td>
+                      {% else %}
+                          <td>Awaiting approval</td>
+                      {% endif %}
                     <td>
-                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editPostModal">
-                          Edit
-                      </button>
-                      <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#deletePostModal">
-                          Delete
-                      </button>
+                        <a class="btn btn-overview" href="{% url 'edit-post' post.id %}">Edit</a>
+                        <a class="btn btn-overview" href="{% url 'delete-post' post.id %}">Delete</a>
                     </td>
                   </tr>
                   {% empty %}
@@ -159,13 +159,13 @@
                   
                   <tr>
                     {% for comment in comments %}
-                    <td>{{ comment.post }}</td>
+                    <td><strong><a href="{% url 'post-detail' comment.post.slug %}" class="post-link">{{ comment.post }}</a></strong></td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.created_on }}</td>
                     {% if booking.approved %}
-                          <td>Confirmed</td>
+                          <td>Approved</td>
                       {% else %}
-                          <td>Unconfirmed</td>
+                          <td>Awaiting approval</td>
                       {% endif %}
                       <td>
                         <button type="button" class="btn btn-overview" data-bs-toggle="modal" data-bs-target="#editBookingModal">
