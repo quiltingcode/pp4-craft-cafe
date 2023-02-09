@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, UpdateView, DeleteView
 from .forms import CommentForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.urls import reverse_lazy
 
 
 class PostList(LoginRequiredMixin, generic.ListView):
@@ -130,4 +131,14 @@ class PostLike2(View):
         return HttpResponseRedirect(reverse('craft-community', args=[slug]))
 
 
+class EditPost(UpdateView):
+    model = Post
+    template_name = 'edit-post.html'
+    fields = ['title', 'category', 'featured_image', 'content']
+    success_url = '/contact/profile-page'
 
+
+class DeletePost(DeleteView):
+    model = Post
+    template_name = 'delete-post.html'
+    success_url = reverse_lazy('profile-page')
