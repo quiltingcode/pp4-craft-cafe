@@ -31,8 +31,7 @@ class Post(models.Model):
     approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='post_like', blank=True)
-    # comments = models.ManyToManyField(
-    #     User, related_name='post_comment', blank=True)
+
 
     class Meta:
         ordering = ["-created_on"]
@@ -42,9 +41,12 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
- 
+
     def number_of_comments(self):
         return self.comments.count()
+
+    def number_of_posts(self):
+        return self.title.count()
 
     def get_absolute_url(self):
         return reverse("post-detail", kwargs={"slug": self.slug})

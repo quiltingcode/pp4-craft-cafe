@@ -50,3 +50,6 @@ class WorkshopBooking(models.Model):
 
     def get_absolute_url(self):
         return reverse("profile-page", kwargs={"pk": self.pk})
+
+    def number_of_bookings(self):
+        return self.booking.approved.count()

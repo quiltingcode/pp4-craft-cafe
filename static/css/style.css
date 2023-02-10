@@ -364,6 +364,18 @@ hr.rounded {
     margin-top: 50px;
 }
 
+/* Cafe Admin Dashboard */
+
+.btn-approve {
+    border: transparent;
+    background-color: white;
+}
+
+.btn-approve img {
+    height: 20px;
+    width: 20px;
+}
+
 
 
 
