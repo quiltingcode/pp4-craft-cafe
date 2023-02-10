@@ -75,7 +75,7 @@
                         <td>
                             <form class="d-inline" action="{% url 'approve-booking' booking.id %}" method="POST">
                                 {% csrf_token %}
-                                {% if booking.approved %}
+                                {% if approved %}
                                 <button type="submit" name="approve-booking" value="{{booking.id}}" class="btn-approve"><img src="{% static 'images/done-icon.png' %}"></button>
                                 {% else %}
                                 <button type="submit" name="approve-booking" value="{{booking.id}}" class="btn-approve"><img src="{% static 'images/red-x-icon.png' %}"></button>

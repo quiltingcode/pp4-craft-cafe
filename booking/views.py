@@ -108,12 +108,12 @@ class AdminApproval(View):
     def post(self, request, id):
         booking = get_object_or_404(WorkshopBooking, id=id)
 
-        if booking.approved.filter(id=request.user.id).exists():
-            booking.approved.remove(request.user)
+        if booking.approved:
+            approved = False
             messages.add_message(
                 request, messages.SUCCESS, 'Booking Unapproved')
         else:
-            booking.approved.add(request.user)
+            approved = True
             messages.add_message(
                 request, messages.SUCCESS, 'Booking approved')
         return redirect('cafe-dashboard')
