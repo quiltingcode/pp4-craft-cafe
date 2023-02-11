@@ -140,6 +140,10 @@ h2, h3 {
     color: white;
 }
 
+.btn-dark:hover {
+    background-color: #286392;
+}
+
 .btn-transparent {
     border: none;
     font-family: 'Luckiest Guy', cursive;
