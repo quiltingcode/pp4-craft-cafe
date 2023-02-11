@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid edit-container">
+    <div class="row mt-2 mb-3 text-center">
+        <div class="col-12">
+            <h1 class="mt-3">Edit your Comment</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h4 class="text-center"><strong>Edit comment posted on: {{ comment.post.title }}</strong></h4>
+            <form method="post" class="comment-form" style="margin-top: 1.3em;">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-dark my-2">Save Changes</button>
+            </form>
+        </div>  
+    </div>
+</div>
+
+{%endblock%}

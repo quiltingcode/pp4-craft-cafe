@@ -148,7 +148,7 @@ class EditComment(UpdateView):
     model = Comment
     template_name = 'edit-comment.html'
     fields = ['comment_content']
-    success_url = 'profile-page'
+    success_url = '/contact/profile-page'
 
 
 class DeleteComment(DeleteView):

@@ -168,12 +168,8 @@
                           <td>Awaiting approval</td>
                       {% endif %}
                       <td>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editBookingModal">
-                            Edit
-                        </button>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
-                            Delete
-                        </button>
+                        <a class="btn btn-dark" href="{% url 'edit-comment' comment.id %}">Edit</a>
+                        <a class="btn btn-dark" href="#">Delete</a>
                     </td>
                   </tr>
                   {% empty %}
