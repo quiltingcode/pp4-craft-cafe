@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amatic+SC:wght@700&family=Courgette&family=Lobster&family=Luckiest+Guy&family=Noto+Sans+JP&family=Rowdies:wght@300&family=Zeyada&family=Rowdies:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amatic+SC:wght@700&family=Dancing+Script&family=Courgette&family=Lobster&family=Luckiest+Guy&family=Noto+Sans+JP&family=Rowdies:wght@300&family=Zeyada&family=Rowdies:wght@300&display=swap');
 
 body {
     background-color: white;
@@ -105,15 +105,16 @@ h2, h3 {
 
 .food-card-title {
     font-size: 2rem;
+    font-family: 'Rowdies', cursive;
+    color: #1d486a;
 }
 
 .menu-table {
     max-width: 280px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
 }
 
-.menu-table td {
-    font-size: 0.9rem;
-}
 
 /* Homepage Workshops Overview */
 
