@@ -142,3 +142,16 @@ class DeletePost(DeleteView):
     model = Post
     template_name = 'delete-post.html'
     success_url = reverse_lazy('profile-page')
+
+
+class EditComment(UpdateView):
+    model = Comment
+    template_name = 'edit-comment.html'
+    fields = ['comment_content']
+    success_url = 'profile-page'
+
+
+class DeleteComment(DeleteView):
+    model = Comment
+    template_name = 'delete-comment.html'
+    success_url = reverse_lazy('profile-page')

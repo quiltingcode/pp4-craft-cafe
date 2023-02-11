@@ -20,7 +20,7 @@
                     <th scope="col">Email Address</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                   <tr>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
@@ -54,7 +54,7 @@
                       <th scope="col">Approval Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                   <tr>
                     {% for booking in bookings %}
                       <td><strong>{{ booking.workshop }}</strong></td>
@@ -64,7 +64,7 @@
                       {% if booking.approved %}
                           <td>Confirmed</td>
                       {% else %}
-                          <td>Unconfirmed</td>
+                          <td>Awaiting approval</td>
                       {% endif %}
                       <td>
                         <a class="btn btn-dark" href="{% url 'edit-booking' booking.id %}">Edit</a>
@@ -105,7 +105,7 @@
                       <th scope="col">Approval Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                   <tr>
                     {% for post in posts %}
                     <td><strong><a href="{% url 'post-detail' post.slug %}" class="post-link">{{ post.title }}</a></strong></td>
@@ -155,7 +155,7 @@
                     <th scope="col">Approval Status</th>
                   </tr>
               </thead>
-              <tbody>
+              <tbody class="table-group-divider">
                   
                   <tr>
                     {% for comment in comments %}
