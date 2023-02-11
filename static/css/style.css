@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Rowdies:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amatic+SC:wght@700&family=Courgette&family=Lobster&family=Luckiest+Guy&family=Noto+Sans+JP&family=Rowdies:wght@300&family=Zeyada&family=Rowdies:wght@300&display=swap');
 
 body {
     background-color: white;
@@ -135,10 +135,7 @@ h2, h3 {
 
 .ws-overview-card h3 {
     color: white;
-}
-
-.card-title {
-    font-size: 1.5rem;
+    
 }
 
 .btn-dark {
@@ -146,12 +143,19 @@ h2, h3 {
     color: white;
 }
 
-.btn-light {
-    font-size: 0.8rem;
+.btn-transparent {
     border: none;
-    opacity: 0.8;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    color: white;
+}
 
-} 
+.btn-transparent:hover {
+    border: none;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    color: #66dcd7;
+}
 
 #wool-card {
     background-image: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1674901659/alex-block-FRfuOZWpdeI-unsplash_aeujvp.jpg");
