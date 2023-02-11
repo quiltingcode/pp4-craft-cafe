@@ -103,17 +103,19 @@ class StaffView(ListView):
         return context
 
 
-class AdminApproval(View):
+class AdminApproval(UpdateView):
 
     def post(self, request, id):
         booking = get_object_or_404(WorkshopBooking, id=id)
 
         if booking.approved:
-            approved = False
+            booking.approved = False
+            booking.save()
             messages.add_message(
                 request, messages.SUCCESS, 'Booking Unapproved')
         else:
-            approved = True
+            booking.approved = True
+            booking.save()
             messages.add_message(
                 request, messages.SUCCESS, 'Booking approved')
         return redirect('cafe-dashboard')
