@@ -169,7 +169,7 @@
                       {% endif %}
                       <td>
                         <a class="btn btn-dark" href="{% url 'edit-comment' comment.id %}">Edit</a>
-                        <a class="btn btn-dark" href="#">Delete</a>
+                        <a class="btn btn-dark" href="{% url 'delete-comment' comment.id %}">Delete</a>
                     </td>
                   </tr>
                   {% empty %}
