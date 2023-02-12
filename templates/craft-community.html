@@ -10,29 +10,31 @@
 <!--Add a Post Button-->
 <div class="container-fluid posts-container">
     <div class="row">
-        <h1 class="text-center mt-3">The Craft Cafe Community</h1>
-        <h3 class="my-3">Show off your Craft Cafe creations here...
-            <span> 
-                <button type="button" class="btn btn-dark"
-                    data-bs-toggle="modal" data-bs-target="#postModal">
-                    Add a Post
-                </button> 
-            </span>
-        </h3>
-    </div>
-
-    <div class="row">
         <div class="col-12">
-            <select>
-                <option disabled="false">-- Select Category --</option>
-                <option value="All things Wool">All things Wool</option>
-                <option value="Quilting">Quilting</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Home Decor">Home Decor</option>
-                <option value="Needlepoint">Needlepoint</option>
-                <option value="Kids Crafts">Kids Crafts</option>
-
-            </select>
+            <h1 class="text-center mt-3">The Craft Cafe Community</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <h3 class="my-3">Show off your Craft Cafe creations here...
+                <span> 
+                    <button type="button" class="btn btn-dark"
+                        data-bs-toggle="modal" data-bs-target="#postModal">
+                        Add a Post
+                    </button> 
+                </span>
+            </h3>
+        </div>
+        <!--Post Category Filter-->
+        <div class="col-2 mt-3">
+            <form method="GET">
+                <select id="category-filter" class="selectpicker form-control" name="category-filter" onchange="this.form.submit();">
+                    <option value="All">Select Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category }}" {% if selected == category.category %} selected=selected {% endif %}>{{ category.category }}</option>
+                    {% endfor %}
+                </select>
+            </form>
         </div>
     </div>
 
@@ -40,7 +42,8 @@
     <div class="row">
         <div class="col-12 mt-3">
             <div class="row">
-                {% for post in post_list %}
+                {% if filtered_posts %}  
+                {% for post in filtered_posts %}
                     <div class="col-md-4">
                         <div class="card mb-2 post-card">
                             <div class="card-body">
@@ -87,6 +90,7 @@
                 <div class="row">
                 {% endif %}
                 {% endfor %}
+                {% endif %}
             </div>
             {% if is_paginated %}
             <nav aria-label="Page navigation">
@@ -96,7 +100,6 @@
                     {% endif %}
                     {% if page_obj.has_next %}
                     <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        
                     {% endif %}
                 </ul>
             </nav>

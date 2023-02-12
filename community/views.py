@@ -23,10 +23,16 @@ class PostList(LoginRequiredMixin, generic.ListView):
         context['photos'] = Post.objects.all()
         return context
 
+    def get(self, request, *args, **kwargs):
+        filtered_posts = Post.objects.all()
+        chosen_filter = self.request.GET.get('category-filter')
+        if chosen_filter and chosen_filter != "All":
+            filtered_posts = filtered_posts.filter(category=chosen_filter)
+            print(filtered_posts)
+        return render(request, "craft-community.html", {"filtered_posts": filtered_posts, 'selected': chosen_filter, 'categories': Post.objects.all().order_by('category')})
+
     def post(self, request):
-
         post_form = PostForm(request.POST, request.FILES)
-
         if post_form.is_valid():
             post_form.instance.email = request.user.email
             post_form.instance.name = request.user.username
