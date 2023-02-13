@@ -134,7 +134,6 @@ h2, h3 {
     justify-content: space-evenly;
 }
 
-
 .btn-dark {
     background-color: #1d486a;
     color: white;
@@ -219,8 +218,8 @@ h2, h3 {
 
 .img-thumbnail {
     margin: auto;
-    max-width: 250px;
-    max-height: 250px;
+    width: auto;
+    height: auto;
 }
 
 .user-auth-container {
