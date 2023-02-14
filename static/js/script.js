@@ -1,3 +1,8 @@
+
+/* Contact Form Validation */
+
+
+
 /* DatePicker Validation */
 
 $( function() {
