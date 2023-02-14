@@ -2,6 +2,8 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
+
 
 
 <!--Workshop Descriptions-->
@@ -182,7 +184,6 @@
             <p>
                 Booking as: {{ user.username }}
             </p>
-            {{ booking_form.media }}
             <form method="POST" class="contact-form">
                 {% csrf_token %}
                 {{ booking_form | crispy }}
@@ -210,5 +211,8 @@
 </div>
 
 {% endif %}
+
+<!--Link to Javascript-->
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 
 {%endblock%}

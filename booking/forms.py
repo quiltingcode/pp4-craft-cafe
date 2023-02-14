@@ -7,6 +7,6 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = WorkshopBooking
         fields = ('workshop', 'day', 'time', 'places',)
-        widgets = {
-            'day': DatePickerInput(options={"format": "DD/MM/YYYY"}),
-        }
+        # widgets = {
+        #     'day': DatePickerInput(options={"format": "DD/MM/YYYY"}),
+        # }

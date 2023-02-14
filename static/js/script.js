@@ -1,7 +1,5 @@
-function categoryFilter() {
-    var input, filter;
-    input = document.getElementById('category-filter');
-    filter = input.value
-}
+/* DatePicker Validation */
 
-$('select').selectpicker();
+$( function() {
+    $( "#id_day" ).datepicker({ minDate: "+0D", maxDate: "+3M" });
+    } );
