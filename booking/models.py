@@ -12,10 +12,10 @@ WORKSHOP_CHOICES = (
 )
 
 TIME_CHOICES = (
-    ("4 PM", "4 PM"),
-    ("6 PM", "6 PM"),
-    ("10AM", "10AM"),
-    ("11:30 AM", "11:30 AM"),
+    ("4 - 6pm", "4 - 6pm"),
+    ("6 - 8pm", "6 - 8 pm"),
+    ("10 - 11:30am", "10 - 11:30am"),
+    ("11:30am - 1pm", "11:30am - 1pm"),
 )
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -38,7 +38,7 @@ class WorkshopBooking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     workshop = models.CharField(max_length=50, choices=WORKSHOP_CHOICES, blank=False)
     day = models.DateField(default=datetime.now)
-    time = models.CharField(max_length=10, choices=TIME_CHOICES, default="4 PM")
+    time = models.CharField(max_length=20, choices=TIME_CHOICES, default="4 - 6pm")
     created_on = models.DateTimeField(default=datetime.now, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     places = models.CharField(max_length=50, choices=PLACES_TO_BOOK, default="1")

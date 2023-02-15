@@ -18,6 +18,7 @@ $(document).ready(function() {
         if ($(this).val() == 'All things Wool'){
             console.log(this.value)
             enableMondays()
+            removeMorning()
         } else if ($(this).val() == 'Quilting'){
             console.log(this.value)
             enableTuesdays()
@@ -39,7 +40,6 @@ $(document).ready(function() {
 
     })
 
-  
     /* Validation to show available days of the week based on the workshop selected */
 
    function enableMondays() {
@@ -144,7 +144,17 @@ $(document).ready(function() {
         }
     }
 
+    /* If Monday - Friday workshop selected, only show afternoon time slots */
 
+    function removeMorning() {
+        $("#id_time option[value='10 - 11:30am']").remove();
+        $("#id_time option[value='11:30am - 1pm']").remove();
+    }
+
+    function removeAfternoon() {
+        $("#id_time option[value='4 - 6pm']").remove();
+        $("#id_time option[value='6 - 8 pm']").remove();
+    }
 
   
 
