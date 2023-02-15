@@ -33,6 +33,8 @@ $(document).ready(function() {
         } else if ($(this).val() == 'Kids Crafts'){
             console.log(this.value)
             enableSaturdays()
+        } else {
+            disableAllDays()
         }
 
     })
@@ -50,17 +52,7 @@ $(document).ready(function() {
     };
 
     function mondays(in_date) {
-        if (in_date.getDay() == 0) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 2) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 3) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 4) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 5) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 6) {
+        if (in_date.getDay() != 1) {
             return [false, "notav", 'Not Available'];
         } else {
             return [true, "av", "available"];
@@ -77,17 +69,7 @@ $(document).ready(function() {
     };
 
     function tuesdays(in_date) {
-        if (in_date.getDay() == 0) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 1) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 3) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 4) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 5) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 6) {
+        if (in_date.getDay() != 2) {
             return [false, "notav", 'Not Available'];
         } else {
             return [true, "av", "available"];
@@ -104,17 +86,7 @@ $(document).ready(function() {
     };
 
     function wednesdays(in_date) {
-        if (in_date.getDay() == 0) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 1) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 2) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 4) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 5) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 6) {
+        if (in_date.getDay() != 3) {
             return [false, "notav", 'Not Available'];
         } else {
             return [true, "av", "available"];
@@ -131,17 +103,7 @@ $(document).ready(function() {
     };
 
     function thursdays(in_date) {
-        if (in_date.getDay() == 0) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 1) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 2) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 3) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 5) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 6) {
+        if (in_date.getDay() != 4) {
             return [false, "notav", 'Not Available'];
         } else {
             return [true, "av", "available"];
@@ -158,17 +120,7 @@ $(document).ready(function() {
     };
 
     function fridays(in_date) {
-        if (in_date.getDay() == 0) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 1) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 2) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 3) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 4) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 6) {
+        if (in_date.getDay() != 5) {
             return [false, "notav", 'Not Available'];
         } else {
             return [true, "av", "available"];
@@ -185,17 +137,7 @@ $(document).ready(function() {
     };
 
     function saturdays(in_date) {
-        if (in_date.getDay() == 0) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 1) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 2) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 3) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 4) {
-            return [false, "notav", 'Not Available'];
-        } else if (in_date.getDay() == 5) {
+        if (in_date.getDay() != 6) {
             return [false, "notav", 'Not Available'];
         } else {
             return [true, "av", "available"];
