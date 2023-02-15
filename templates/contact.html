@@ -167,10 +167,7 @@
     </div>
 </div>
 
-
 <hr class="solid">
-
-{% if user.is_authenticated %}
 
 <!--Workshop Booking Form-->
 <div class="container" id="booking-form">
@@ -179,6 +176,7 @@
             <h2 id="contact-header">Make a Reservation for a Craft Cafe Workshop</h2>
         </div>
     </div>
+    {% if user.is_authenticated %}
     <div class="row">
         <div class="col-8 offset-2">
             <p>
@@ -189,7 +187,7 @@
                 {{ booking_form | crispy }}
                 <div class="row text-center">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-lg btn-info my-3">Submit Booking Request</button>
+                        <button type="submit" id="booking-form-btn" class="btn btn-lg btn-info my-3">Submit Booking Request</button>
                     </div>
                 </div>
             </form>

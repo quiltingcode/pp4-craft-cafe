@@ -6,7 +6,7 @@ WORKSHOP_CHOICES = (
     ("All things Wool", "All things Wool"),
     ("Quilting", "Quilting"),
     ("Clothing", "Clothing"),
-    ("Home Decor", "Home Decor"),
+    ("Home Crafts", "Home Crafts"),
     ("Needlepoint", "Needlepoint"),
     ("Kids Crafts", "Kids Crafts"),
 )
@@ -36,7 +36,7 @@ PLACES_TO_BOOK = (
 
 class WorkshopBooking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    workshop = models.CharField(max_length=50, choices=WORKSHOP_CHOICES, default="All Things Wool")
+    workshop = models.CharField(max_length=50, choices=WORKSHOP_CHOICES, blank=False)
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIME_CHOICES, default="4 PM")
     created_on = models.DateTimeField(default=datetime.now, blank=True)
