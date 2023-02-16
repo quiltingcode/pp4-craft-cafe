@@ -12,5 +12,5 @@ urlpatterns = [
     path('delete-post/<int:pk>', DeletePost.as_view(), name='delete-post'),
     path('edit-comment/<int:pk>', views.EditComment.as_view(), name='edit-comment'),
     path('delete-comment/<int:pk>', views.DeleteComment.as_view(), name='delete-comment'),
-    path('approve-post/<slug:slug>', views.AdminPostApproval.as_view(), name='approve-post'),
+    path('approve-post/<slug:slug>/approve', views.AdminPostApproval.as_view(), name='approve-post'),
 ]

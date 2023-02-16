@@ -180,4 +180,4 @@ class AdminPostApproval(UpdateView):
             post.save()
             messages.add_message(
                 request, messages.SUCCESS, 'Post approved')
-        return HttpResponseRedirect(reverse('cafe-dashboard', args=[slug]))
+        return redirect('cafe-dashboard')
