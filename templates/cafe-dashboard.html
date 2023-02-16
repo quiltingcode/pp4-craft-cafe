@@ -189,11 +189,18 @@
                     <td>{{ comment.post }}</td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.created_on }}</td>
-                    {% if booking.approved %}
-                          <td>Confirmed</td>
-                      {% else %}
-                          <td>Unconfirmed</td>
-                      {% endif %}
+                    <td>
+                        {% if user.is_superuser %}
+                        <form class="d-inline" action="{% url 'approve-comment' comment.id %}" method="POST">
+                            {% csrf_token %}
+                            {% if comment.approved %}
+                            <button type="submit" name="approve-comment" value="{{comment.id}}" class="btn-approve"><img src="{% static 'images/done-icon.png' %}"></button>
+                            {% else %}
+                            <button type="submit" name="approve-comment" value="{{comment.id}}" class="btn-approve"><img src="{% static 'images/red-x-icon.png' %}"></button>
+                            {% endif %}
+                        </form>
+                        {% endif %}
+                    </td>
                       <td>
                         <a class="btn btn-dark" href="{% url 'edit-comment' comment.id %}">Edit</a>
                         <a class="btn btn-dark" href="{% url 'delete-comment' comment.id %}">Delete</a>

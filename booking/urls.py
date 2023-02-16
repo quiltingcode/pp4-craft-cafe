@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 from django.views.generic import TemplateView
-from booking.views import ProfilePageView, ContactPage, EditBooking, DeleteBooking, DeleteAccount, StaffView, AdminBookingApproval
+from booking.views import ProfilePageView, ContactPage, EditBooking, DeleteBooking, DeleteAccount, StaffView, AdminApproval
 
 urlpatterns = [
 
@@ -11,6 +11,6 @@ urlpatterns = [
     path('profile-page/<int:pk>/delete', DeleteBooking.as_view(), name='delete-booking'),
     path('profile-page/<int:pk>/delete/account', DeleteAccount.as_view(), name='delete-account'),
     path('cafe-dashboard', StaffView.as_view(), name='cafe-dashboard'),
-    path('approve/<int:id>/booking', views.AdminBookingApproval.as_view(), name='approve-booking'),
+    path('approve/<int:id>/booking', views.AdminApproval.as_view(), name='approve-booking'),
 
 ]

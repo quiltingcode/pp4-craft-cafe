@@ -111,9 +111,9 @@ class StaffView(ListView):
         return context
 
 
-class AdminBookingApproval(UpdateView):
+class AdminApproval(UpdateView):
 
-    def bookingapproval(self, request, id):
+    def post(self, request, id):
         booking = get_object_or_404(WorkshopBooking, id=id)
 
         if booking.approved:

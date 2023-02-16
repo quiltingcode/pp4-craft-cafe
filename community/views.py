@@ -181,3 +181,21 @@ class AdminPostApproval(UpdateView):
             messages.add_message(
                 request, messages.SUCCESS, 'Post approved')
         return redirect('cafe-dashboard')
+
+
+class AdminCommentApproval(UpdateView):
+
+    def get(self, request, id):
+        comment = get_object_or_404(Comment, id=id)
+
+        if comment.approved:
+            comment.approved = False
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS, 'Comment Unapproved')
+        else:
+            comment.approved = True
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS, 'Comment approved')
+        return redirect('cafe-dashboard')
