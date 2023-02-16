@@ -164,10 +164,8 @@ class DeleteComment(DeleteView):
 
 
 class AdminPostApproval(UpdateView):
-    model = Post
-    fields = ['approved']
 
-    def postapproval(self, request, slug):
+    def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
         if post.approved:
@@ -185,7 +183,7 @@ class AdminPostApproval(UpdateView):
 
 class AdminCommentApproval(UpdateView):
 
-    def get(self, request, id):
+    def post(self, request, id):
         comment = get_object_or_404(Comment, id=id)
 
         if comment.approved:
