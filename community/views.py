@@ -161,3 +161,23 @@ class DeleteComment(DeleteView):
     model = Comment
     template_name = 'delete-comment.html'
     success_url = reverse_lazy('profile-page')
+
+
+class AdminPostApproval(UpdateView):
+    model = Post
+    fields = ['approved']
+
+    def postapproval(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.approved:
+            post.approved = False
+            post.save()
+            messages.add_message(
+                request, messages.SUCCESS, 'Post Unapproved')
+        else:
+            post.approved = True
+            post.save()
+            messages.add_message(
+                request, messages.SUCCESS, 'Post approved')
+        return HttpResponseRedirect(reverse('cafe-dashboard', args=[slug]))

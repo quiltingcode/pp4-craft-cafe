@@ -77,6 +77,14 @@ class EditBooking(UpdateView):
     fields = ['workshop', 'day', 'time', 'places',]
     success_url = '/contact/profile-page'
 
+    # def unapprove(self):
+    #     booking = get_object_or_404(WorkshopBooking, id=id)
+    #     if booking.approved:
+    #         booking.approved = False
+    #         booking.save()
+    #         messages.add_message(
+    #             request, messages.SUCCESS, 'Booking awaiting Re-Approval')
+
 
 class DeleteBooking(DeleteView):
     model = WorkshopBooking
@@ -103,9 +111,9 @@ class StaffView(ListView):
         return context
 
 
-class AdminApproval(UpdateView):
+class AdminBookingApproval(UpdateView):
 
-    def post(self, request, id):
+    def bookingapproval(self, request, id):
         booking = get_object_or_404(WorkshopBooking, id=id)
 
         if booking.approved:

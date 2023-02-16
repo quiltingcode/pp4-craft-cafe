@@ -1,8 +1,6 @@
-
 $(document).ready(function() {
 
     /* Time delay for auto-dismissal script on alert messages */ 
-
 
     setTimeout(function() {
         let messages = document.getElementById('msg');
@@ -207,7 +205,14 @@ $(document).ready(function() {
         $("#id_time option[value='11:30am - 1pm']").add();
     }
 
-  
+    $('#id_day').change(function(){ 
+        /* Reset calendar each time field is opened */
+        $('#id_day').datepicker._clearDate(inst.input);
+    });
+
+    const availableDates = [];
+    const availableTimes = [];
+    const MAX_PLACES = 10;
 
 
 

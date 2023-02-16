@@ -132,16 +132,22 @@
                     <td>{{ post.created_on }}</td>
                     <td>{{ post.number_of_likes }}</td>
                     <td>{{ post.number_of_comments }}</td>
-                    {% if post.approved %}
-                          <td>Approved</td>
-                      {% else %}
-                          <td>Awaiting approval</td>
-                      {% endif %}
                     <td>
-                      <a class="btn btn-dark" href="#">Edit</a>
-                      <a class="btn btn-dark" href="#">Delete</a>
-                      <a class="btn btn-dark" href="#">Approve</a>
+                        {% if user.is_superuser %}
+                        <form class="d-inline" action="{% url 'approve-post' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if post.approved %}
+                            <button type="submit" name="approve-post" value="{{post.slug}}" class="btn-approve"><img src="{% static 'images/done-icon.png' %}"></button>
+                            {% else %}
+                            <button type="submit" name="approve-post" value="{{post.slug}}" class="btn-approve"><img src="{% static 'images/red-x-icon.png' %}"></button>
+                            {% endif %}
+                        </form>
+                        {% endif %}
                     </td>
+                    <td>
+                        <a class="btn btn-dark" href="{% url 'edit-post' post.id %}">Edit</a>
+                        <a class="btn btn-dark" href="{% url 'delete-post' post.id %}">Delete</a>
+                        </td>
                   </tr>
                   {% empty %}
                   <tr>
