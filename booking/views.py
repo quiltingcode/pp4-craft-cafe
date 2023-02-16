@@ -32,21 +32,28 @@ class ContactPage(View):
 
     def post(self, request):
         booking = None
-
+        time = request.POST.get("time")
+        day = request.session.get('day')
+        places = request.POST.get("places")
         booking_form = BookingForm(data=request.POST)
-        if booking_form.is_valid():
-            booking = booking_form.save(commit=False)
-            booking.user = User.objects.get(id=request.user.id)
-            booking.email = request.user.email
-            booking.name = request.user.username
-            booking.save()
-
+        if WorkshopBooking.objects.filter(day=day).count() < 1 and WorkshopBooking.objects.filter(time=time).count() < 1 and WorkshopBooking.objects.filter(places=places).count() < 10:
+            if booking_form.is_valid():
+                booking = booking_form.save(commit=False)
+                booking.user = User.objects.get(id=request.user.id)
+                booking.email = request.user.email
+                booking.name = request.user.username
+                booking.save()
+  
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    'Booking request submitted successfully, awaiting approval.')
+            else:
+                booking_form = BookingForm()
+        else:
             messages.add_message(
                 request, messages.SUCCESS,
-                'Booking request submitted successfully, awaiting approval.')
-        else:
-            booking_form = BookingForm()
-        
+                'The selected date is full. please try a different session.')  
+
         return render(
             request,
             "profile-page.html",
@@ -77,7 +84,7 @@ class EditBooking(UpdateView):
     fields = ['workshop', 'day', 'time', 'places',]
     success_url = '/contact/profile-page'
 
-    # def unapprove(self):
+    # def post(self, request, id):
     #     booking = get_object_or_404(WorkshopBooking, id=id)
     #     if booking.approved:
     #         booking.approved = False

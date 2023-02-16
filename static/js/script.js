@@ -20,32 +20,44 @@ $(document).ready(function() {
 
     $('#id_workshop').change(function(){ 
         /* Reset fieds each time workshop field is changed */
-        $('#id_day').html(dayDropdownValues);
+        $('#id_day').datepicker('widget').delegate('.ui-datepicker-close', 'mouseup', function() {
+            var inputToBeCleared = $('day').filter(function() { 
+              return $(this).data('pickerVisible') == true;
+            });    
+            $(inputToBeCleared).val('');
+        });
         $('#id_time').html(timeDropdownValues);
         $('#id_places').html(placesDropdownValues);
         /* Subsequent dropdown changes based on workshop dropdown selection */
         if ($(this).val() == 'All things Wool'){
             console.log(this.value)
+            resetAllDays()
             enableMondays()
-            removeMorning()
-        } else if ($(this).val() == 'Quilting'){
-            console.log(this.value)
-            enableTuesdays()
             removeMorning()
         } else if ($(this).val() == 'Clothing'){
             console.log(this.value)
+            resetAllDays
+            enableTuesdays()
+            removeMorning()
+        } else if ($(this).val() == 'Quilting'){
+            console.log(this.value)
+            resetAllDays
             enableWednesdays()
             removeMorning()
         } else if ($(this).val() == 'Home Crafts'){
             console.log(this.value)
+            resetAllDays
             enableThursdays()
             removeMorning()
+            $("#datepicker").datepicker("destroy");
         } else if ($(this).val() == 'Needlepoint'){
             console.log(this.value)
+            resetAllDays
             enableFridays()
             removeMorning()
         } else if ($(this).val() == 'Kids Crafts'){
             console.log(this.value)
+            resetAllDays
             enableSaturdays()
             removeAfternoon()
         } else {
@@ -63,6 +75,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: mondays
         });
+        console.log($("#id_day"));
     };
 
     function mondays(in_date) {
@@ -74,6 +87,7 @@ $(document).ready(function() {
     }
 
     function enableTuesdays() {
+        console.log("enableTuesday");
         $("#id_day").datepicker({
             dateFormat: 'dd-mm-yy',
             minDate: +0,
@@ -192,8 +206,6 @@ $(document).ready(function() {
     function removeMorning() {
         $("#id_time option[value='10 - 11:30am']").remove();
         $("#id_time option[value='11:30am - 1pm']").remove();
-        $("#id_time option[value='4 - 6pm']").add();
-        $("#id_time option[value='6 - 8pm']").add();
     }
 
     /* If Saturday workshop selected, only show morning time slots */
@@ -201,20 +213,16 @@ $(document).ready(function() {
     function removeAfternoon() {
         $("#id_time option[value='4 - 6pm']").remove();
         $("#id_time option[value='6 - 8pm']").remove();
-        $("#id_time option[value='10 - 11:30am']").add();
-        $("#id_time option[value='11:30am - 1pm']").add();
     }
 
-    $('#id_day').change(function(){ 
-        /* Reset calendar each time field is opened */
-        $('#id_day').datepicker._clearDate(inst.input);
-    });
-
-    const availableDates = [];
-    const availableTimes = [];
-    const MAX_PLACES = 10;
-
-
+    function resetAllDays() {
+        $('#id_day').datepicker('widget').delegate('.ui-datepicker-close', 'mouseup', function() {
+            var inputToBeCleared = $('day').filter(function() { 
+              return $(this).data('pickerVisible') == true;
+            });    
+            $(inputToBeCleared).val('');
+        });
+    }
 
 
 })
