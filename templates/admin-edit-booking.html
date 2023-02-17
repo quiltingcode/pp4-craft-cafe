@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="container-fluid edit-container">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1 class="mt-3">Amend your Workshop Booking</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h4 class="text-center"><strong>Booking as: {{ user.username }}</strong></h4>
+            {{ booking_form.media }}
+            <form method="POST" class="contact-form">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-lg btn-dark my-3">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
+
+
+{%endblock%}
