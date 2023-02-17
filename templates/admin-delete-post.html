@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.is_superuser %}
+<div class="container-fluid delete-container">
+    <div class="row text-center">
+      <div class="col-12">
+        <h1 id="contact-header">Delete a Post</h1>
+      </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-8 offset-2">
+            <h3 class="mb-4">
+            Delete post titled: {{ post.title }} posted by {{ post.author }}
+            </h3>
+            <form method="POST">
+                {% csrf_token %}
+                <p>Are you sure?</p>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-lg btn-info mt-3">Delete Post</button>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <a href="{% url 'cafe-dashboard' %}" class="btn btn-lg btn-info mt-3">Go Back</a>
+            </div>
+        </div>  
+    </div>
+</div>
+
+{% else %}
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>
+                You must be an administrator to delete a post. 
+            </h3>
+            <a href="{% url 'account_login' %}">Log in Here</a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+
+{%endblock%}
