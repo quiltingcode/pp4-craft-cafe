@@ -148,6 +148,7 @@ class AdminApproval(UpdateView):
 
 class AdminEditBooking(UpdateView):
     model = WorkshopBooking
-    template_name = 'edit-booking.html'
-    fields = ['workshop', 'day', 'time', 'places',]
-    success_url = 'cafe-dashboard'
+    template_name = 'admin-edit-booking.html'
+    fields = ['workshop', 'day', 'time', 'places', 'approved']
+    success_url = reverse_lazy('cafe-dashboard')
+ 

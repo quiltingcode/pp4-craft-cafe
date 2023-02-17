@@ -7,12 +7,12 @@
 <div class="container-fluid edit-container">
     <div class="row text-center">
         <div class="col-12">
-            <h1 class="mt-3">Amend your Workshop Booking</h1>
+            <h1 class="mt-3">Amend a Workshop Booking</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-8 offset-2">
-            <h4 class="text-center"><strong>Booking as: {{ user.username }}</strong></h4>
+            <h4 class="text-center"><strong>Amend the Workshop Booking of: {{ user.username }}</strong></h4>
             {{ booking_form.media }}
             <form method="POST" class="contact-form">
                 {% csrf_token %}
