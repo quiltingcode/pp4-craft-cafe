@@ -191,3 +191,10 @@ class AdminCommentApproval(UpdateView):
             messages.add_message(
                 request, messages.SUCCESS, 'Comment approved')
         return redirect('cafe-dashboard')
+
+
+class AdminEditPost(UpdateView):
+    model = Post
+    template_name = 'admin-edit-post.html'
+    fields = ['title', 'category', 'featured_image', 'content', 'approved']
+    success_url = reverse_lazy('cafe-dashboard')
