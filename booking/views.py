@@ -37,18 +37,13 @@ class ContactPage(View):
         places = request.POST.get("places")
         booking_form = BookingForm(data=request.POST)
         num_bookings = WorkshopBooking.objects.filter(day=day, time=time).count()
-        print(num_bookings)
-        if num_bookings + int(places) <= 10:
-            print(booking_form)
-        # if WorkshopBooking.objects.filter(day=day).count() < 1 and WorkshopBooking.objects.filter(time=time).count() < 1 and WorkshopBooking.objects.filter(places=places).count() < 10:
+        if num_bookings + int(places) <= 10:       
             if booking_form.is_valid():
-                print('i am here')
                 booking = booking_form.save(commit=False)
                 booking.user = User.objects.get(id=request.user.id)
                 booking.email = request.user.email
                 booking.name = request.user.username
                 booking.save()
-                print('i am there')
                 messages.add_message(
                     request, messages.SUCCESS,
                     'Booking request submitted successfully, awaiting approval.')
@@ -81,13 +76,31 @@ class EditBooking(UpdateView):
     fields = ['workshop', 'day', 'time', 'places',]
     success_url = '/contact/profile-page'
 
-    # def post(self, request, id):
-    #     booking = get_object_or_404(WorkshopBooking, id=id)
-    #     if booking.approved:
-    #         booking.approved = False
-    #         booking.save()
+    # def post(self, request):
+    #     time = request.POST.get("time")
+    #     day = request.session.get('day')
+    #     places = request.POST.get("places")
+    #     booking_form = BookingForm(data=request.POST)
+    #     num_bookings = WorkshopBooking.objects.filter(day=day, time=time).count()
+    #     if num_bookings + int(places) <= 10:    
+    #         if booking_form.is_valid():
+    #             booking = booking_form.save(commit=False)
+    #             booking.user = User.objects.get(id=request.user.id)
+    #             booking.email = request.user.email
+    #             booking.name = request.user.username
+    #             booking.approved = False
+    #             booking.save()
+    #             messages.add_message(
+    #                 request, messages.SUCCESS,
+    #                 'Booking updated successfully, awaiting re-approval.')
+    #         else:
+    #             booking_form = BookingForm()
+    #     else:
     #         messages.add_message(
-    #             request, messages.SUCCESS, 'Booking awaiting Re-Approval')
+    #             request, messages.SUCCESS,
+    #             'The selected date is full. please try a different session.')  
+
+    #     return redirect('profile-page')
 
 
 class DeleteBooking(DeleteView):
@@ -131,3 +144,10 @@ class AdminApproval(UpdateView):
             messages.add_message(
                 request, messages.SUCCESS, 'Booking approved')
         return redirect('cafe-dashboard')
+
+
+class AdminEditBooking(UpdateView):
+    model = WorkshopBooking
+    template_name = 'edit-booking.html'
+    fields = ['workshop', 'day', 'time', 'places',]
+    success_url = 'cafe-dashboard'

@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 from django.views.generic import TemplateView
-from booking.views import ProfilePageView, ContactPage, EditBooking, DeleteBooking, DeleteAccount, StaffView, AdminApproval
+from booking.views import ProfilePageView, ContactPage, EditBooking, DeleteBooking, DeleteAccount, StaffView, AdminApproval, AdminEditBooking
 
 urlpatterns = [
 

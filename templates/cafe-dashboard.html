@@ -25,16 +25,18 @@
                 </thead>
                 <tbody class="table-group-divider">
                   <tr>
-                    {% for user in users %}
-                    <td></td>
-                    {% endfor %}
-                    {% for booking in bookings %}
-                    <td>{{ booking }}</td>
-                    {% endfor %}
-                    {% for post in posts %}
-                    <td></td>
-                    <td></td>
-                    {% endfor %}
+                    {% with users.count as total_users %}
+                    <td>{{ total_users }}</td>
+                    {% endwith %}
+                    {% with bookings.count as total_bookings %}
+                    <td>{{ total_bookings }}</td>
+                    {% endwith %} 
+                    {% with posts.count as total_posts %}
+                    <td>{{ total_posts }}</td>
+                    {% endwith %}
+                    {% with comments.count as total_comments %}
+                    <td>{{ total_comments }}</td>
+                    {% endwith %}
                   </tr>
                 </tbody>
             </table>
