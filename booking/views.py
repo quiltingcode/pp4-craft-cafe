@@ -60,14 +60,6 @@ class ContactPage(View):
                 'The selected date is full. please try a different session.')  
 
         return redirect('profile-page')
-        #     request,
-        #     "profile-page.html",
-        #     {
-        #         "booking": booking,
-        #         "approved": False,
-        #         "booked": True
-        #     },
-        # )
 
 
 class ProfilePageView(ListView):

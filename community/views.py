@@ -128,7 +128,7 @@ class PostLike2(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        return HttpResponseRedirect(reverse('craft-community', args=[slug]))
+        return redirect('craft-community')
 
 
 class EditPost(UpdateView):
