@@ -155,5 +155,5 @@ class AdminEditBooking(UpdateView):
 
 class AdminDeleteBooking(DeleteView):
     model = WorkshopBooking
-    template_name = 'delete-booking.html'
+    template_name = 'admin-delete-booking.html'
     success_url = reverse_lazy('cafe-dashboard')
