@@ -9,9 +9,9 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 
 
-class PostList(LoginRequiredMixin, generic.ListView):
-    login_url = '/accounts/login/'
-    redirect_field_name = '/craft-community'
+class PostList(generic.ListView):
+    # login_url = '/accounts/login/'
+    # redirect_field_name = '/craft-community'
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'craft-community.html'
@@ -46,13 +46,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
         else:
             post_form = PostForm()
 
-        return render(
-            request,
-            "craft-community.html",
-            {
-                "post_form": PostForm()
-            },
-        )
+        return redirect('craft-community')
 
 
 class HomeView(TemplateView):
