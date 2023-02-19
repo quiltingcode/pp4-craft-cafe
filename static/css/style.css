@@ -393,11 +393,19 @@ hr.rounded {
     .jumbotron {
         margin-right: 1rem;
     }
+}
 
-    /* .posts-container {
-        background: url("https://res.cloudinary.com/dkolsfjkx/image/upload/v1675271638/pillow-quilt_oaf3pt.jpg");
-        background-position: scroll;
-        height: 100%;
-    } */
+/* for mobile screen size from 576px wide and down */
+@media screen and (max-width: 576px) {
+   
+    .justify {
+        display:flex;
+        justify-content: center;
+    }
+
+    .align {
+        text-align: center;
+        margin-left: -125px;
+    }
 
 }
