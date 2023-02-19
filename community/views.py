@@ -198,3 +198,9 @@ class AdminEditPost(UpdateView):
     template_name = 'admin-edit-post.html'
     fields = ['title', 'category', 'featured_image', 'content', 'approved']
     success_url = reverse_lazy('cafe-dashboard')
+
+
+class AdminDeletePost(DeleteView):
+    model = Post
+    template_name = 'admin-delete-post.html'
+    success_url = reverse_lazy('cafe-dashboard')
