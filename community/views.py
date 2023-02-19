@@ -19,7 +19,7 @@ class PostList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
-        context['form'] = PostForm()
+        # context['form'] = PostForm()
         context['photos'] = Post.objects.all()
         return context
 
@@ -29,7 +29,7 @@ class PostList(generic.ListView):
         if chosen_filter and chosen_filter != "All":
             filtered_posts = filtered_posts.filter(category=chosen_filter)
             print(filtered_posts)
-        return render(request, "craft-community.html", {"filtered_posts": filtered_posts, 'selected': chosen_filter, 'categories': Post.objects.all().order_by('category')})
+        return render(request, "craft-community.html", {"filtered_posts": filtered_posts, 'selected': chosen_filter, 'categories': Post.objects.all().order_by('category'), "form": PostForm()})
 
     def post(self, request):
         post_form = PostForm(request.POST, request.FILES)
@@ -203,4 +203,11 @@ class AdminEditPost(UpdateView):
 class AdminDeletePost(DeleteView):
     model = Post
     template_name = 'admin-delete-post.html'
+    success_url = reverse_lazy('cafe-dashboard')
+
+
+class AdminEditComment(UpdateView):
+    model = Comment
+    template_name = 'admin-edit-comment.html'
+    fields = ['comment_content']
     success_url = reverse_lazy('cafe-dashboard')

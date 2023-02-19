@@ -7,9 +7,14 @@
 
 <!-- Account Details Container -->
 <div class="container">
+    <div class="row text-center my-3">
+        <div class="col-12">
+            <h1>The Craft Café Admin Dashboard</h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12 my-3">
-            <h2><i class="far fa-user"></i> Craft Cafe Statistics </h2>
+            <h2><i class="far fa-user"></i> Craft Café Statistics </h2>
         </div>
     </div>
     <div class="row">
@@ -204,7 +209,7 @@
                         {% endif %}
                     </td>
                       <td>
-                        <a class="btn btn-dark" href="{% url 'edit-comment' comment.id %}">Edit</a>
+                        <a class="btn btn-dark" href="{% url 'admin-edit-comment' comment.id %}">Edit</a>
                         <a class="btn btn-dark" href="{% url 'delete-comment' comment.id %}">Delete</a>
                     </td>
                   </tr>

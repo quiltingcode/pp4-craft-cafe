@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from community.views import EditPost, DeletePost, AdminPostApproval, AdminCommentApproval, AdminEditPost, AdminDeletePost
+from community.views import EditPost, DeletePost, AdminPostApproval, AdminCommentApproval, AdminEditPost, AdminDeletePost, AdminEditComment
 
 urlpatterns = [
     path("", views.PostList.as_view(), name="home"),
@@ -13,6 +13,7 @@ urlpatterns = [
     path('delete-post/<int:pk>', DeletePost.as_view(), name='delete-post'),
     path('admin-delete-post/<int:pk>', AdminDeletePost.as_view(), name='admin-delete-post'),
     path('edit-comment/<int:pk>', views.EditComment.as_view(), name='edit-comment'),
+    path('admin-edit-comment/<int:pk>', views.AdminEditComment.as_view(), name='admin-edit-comment'),
     path('delete-comment/<int:pk>', views.DeleteComment.as_view(), name='delete-comment'),
     path('approve-post/<slug:slug>/approve', views.AdminPostApproval.as_view(), name='approve-post'),
     path('approve/<int:id>/comment', views.AdminCommentApproval.as_view(), name='approve-comment'),
