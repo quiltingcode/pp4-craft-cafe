@@ -15,10 +15,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <h3 class="my-3">Show off your Craft Cafe creations here...
                 <span> 
-                    <button type="button" class="btn btn-dark"
+                    <button type="button" class="btn btn-dark mt-2"
                         data-bs-toggle="modal" data-bs-target="#postModal">
                         Add a Post
                     </button> 
@@ -26,7 +26,7 @@
             </h3>
         </div>
         <!--Post Category Filter-->
-        <div class="col-2 mt-3">
+        <div class="col-6 col-sm-4 col-md-2 mt-3">
             <form method="GET">
                 <select id="category-filter" class="selectpicker form-control" name="category-filter" onchange="this.form.submit();">
                     <option value="All">Select Category</option>
@@ -44,7 +44,7 @@
                 <div class="row">
                     {% if filtered_posts %}  
                     {% for post in filtered_posts %}
-                        <div class="col-md-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="card mb-2" style="width: 18rem;">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/cafe-sign-post.png' %}">
