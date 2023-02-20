@@ -1,108 +1,176 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **The Craft Cafe**
+The Craft Cafe is a 
 
-Welcome Kelly Hutchison,
+This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[View live website here](https://craft-cafe.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsive design]()
 
-## Gitpod Reminders
+# Table of Content
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [**Project**](<#project>)
+    * [Objective](<#objective>)
+    * [Site Users Goal](<#site-users-goal>)
+    * [Site Owners Goal](<#site-owners-goal>)
+    * [Project Management](<#project-management>)
 
-`python3 -m http.server`
+* [**User Experience (UX)**](<#user-experience-ux>)
+    * [Wireframes](<#wireframes>)
+    * [User Stories](<#user-stories>)
+    * [Site Structure](<#site-structure>)
+    * [Design Choices](<#design-choices>)
 
-A blue button should appear to click: _Make Public_,
+* [**Existing Features**](<#existing-features>)
+    * [Navigation](<#navigation>)
+    * [About](<#about>)
+    * [All](<#all>)
+    * [Albums](<#albums>)
+    * [Concerts](<#concerts>)
+    * [Review Detail View](<#review-detail-view>)
+    * [Update / Delete Comment](<#update-and-delete-comment>)
+    * [Member Reviews](<#member-reviews>)
+    * [Create Review](<#create-review>)
+    * [Update Review](<#update-review>)
+    * [Profile Page](<#profile-page>)
+    * [Admin Area](<#admin-area>)
+    * [Sign Up](<#sign-up>)
+    * [Sign In](<#sign-in>)
+    * [Sign Out](<#sign-out>)
+    * [Footer](<#footer>)
+    * [Flash Messages](<#flash-messages-and-confirmation-pages-to-the-user>)
 
-Another blue button should appear to click: _Open Browser_.
+* [**Features Left To Implement**](<#features-left-to-implement>)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* [**Technologies Used**](<#technologies-used>)
+    * [Languages](<#languages>)
+    * [Frameworks & Software](<#frameworks--software>)
+    * [Libraries](<#libraries>)
 
-A blue button should appear to click: _Make Public_,
+* [**Testing**](<#testing>)
+    * [Testing User Stories](<#testing-user-stories>)
+    * [Code Validation](<#code-validation>)
+    * [Additional Testing](<#additional-testing>)
+    * [Known Bugs](<#known-bugs>)
+* [Deployment](<#deployment>)
+* [Credits](<#credits>)
+* [Acknowledgements](<#acknowledgements>)
 
-Another blue button should appear to click: _Open Browser_.
+# **Project**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Objective
+I absolutely love music, both listening to it at home but going to live concerts as well. Therefore I have decided to do a review site that is as authentic and useful as possible. I also want to demonstrate my knowledge within the area of HTML, CSS, JavaScript, Python and the Django Framework.
 
-To log into the Heroku toolbelt CLI:
+## Site Users Goal
+The user of 'Record | Alliance' loves music, to interact with others and to contribute with their knowledge to like minded.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Site Owners Goal
+The goal of the site owner is to deliver a site where the users in an intuitive way can read about the latest albums and concerts and contribute with their own reviews.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Project Management
 
-------
+### Trello & Github Board
+I've been using the application [Trello](https://trello.com/) and the project board in GitHub to keep my project together. It has been working really well and has helped me structure up my work a lot. Trello was used on a more general plan and GitHub was used to plan and organize my user stories.
 
-## Release History
+<details><summary><b>Trello & Github Board</b></summary>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Trello Image](readme/assets/images/trello.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![User Stories](readme/assets/images/user_stories.png)
+</details><br/>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+[Back to top](<#table-of-content>)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Database Schema
+I have used a modelling tool called [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) to create the database schema. In short it shows the relationships between the different models in the database connected to the application. Graph Models exports a *.dot file which easily can be converted to a more 'easy to read' design with the help of the application [dreampuf](https://dreampuf.github.io/GraphvizOnline/).
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Models used (besides standard user model) in this project are:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+* **Category** - Handles categories. I made a specific model to be able to add more dynamics (create / remove categories going forward in the admin backend instead of 'hard code' it in the code).
+* **Genre** - Handles genres. I made a specific model to be able to add more dynamics (create / remove genres going forward in the admin backend instead of 'hard code' it in the code).
+* **Post** - Handles all the reviews
+* **Comment** - Handles all the comments
+* **UserProfile** - Handles the user profile information (first name, last name, presentation and featured image for the specific user/reviewer). There is a one-to-one relation to the user model to connect it to the standard user model.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<details><summary><b>Database Schema</b></summary>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Database Schema](readme/assets/images/database_schema.png)
+</details><br/>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+# **User Experience (UX)**
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Wireframes
+The wireframes for the site were created in the software [Balsamiq](https://balsamiq.com). The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's worth mentioning that there are visual differences compared to the wireframes, the reason being design choices that was made during the creation process.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<details><summary><b>Wireframes</b></summary>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Wireframes](readme/assets/images/balsamiq.png)
+</details><br/>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## User Stories
+Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the [Testing](<#testing>) section.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Site User
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site User | I can view a list of the music reviews so that I can select one to read | &check; |
+| As a Site User | I can view a list of the concert reviews so that I can select one to read | &check; |
+| As a Site User | I can click on a specific review so that I can read it in detail | &check; |
+| As a Site User | I can like and unlike a review so that it is possible for me to interact with the review | &check; |
+| As a Site User | I can view the number of likes on each review so that I can see how popular a specific review is | &check; |
+| As a Site User | I can contact Review Alliance in an easy way so that I can interact with them if I have a need for it | &check; |
+| As a Site User | I can navigate easy on the site through paginated list of posts so that I feel comfortable using the site | &check; |
+| As a Site User | I can view comments on a specific review so that I can read the conversations between different users on the site | &check; |
+| As a Site User | I can sign up an account so that I can like and comment on reviews, create a profile page, create own reviews and edit / remove my reviews | &check; |
+| As a Site User | I can create a profile page so that other reviewers can read about who I am | &check; |
+| As a Site User | I can comment on a review so that I can be involved in the conversation | &check; |
+| As a Site User | I can edit my comment so that I can change the content if needed | &check; |
+| As a Site User | I can remove my review so that I have full control of my reviews | &check; |
+| As a Site User | I can choose to see my own reviews so that I can find them easily | &check; |
+| As a Site User | I can create a new review so that I can contribute to with new content to Review Alliance | &check; |
+| As a Site User | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
+| As a Site User | I can create draft reviews so that I can finish writing the content later | &check; |
+| As a Site User | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &check; |
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Site Admin
 
-------
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
+| As a Site Admin | I can create, read, update and delete reviews so that I can manage my review content | &check; |
+| As a Site Admin | I can approve reviews so that I can secure high quality of the content | &check; |
+| As a Site Admin | I can approve and disapprove comments so that I can secure a safe environment for the Site Users | &check; |
+| As a Site Admin | I can create draft reviews so that I can finish writing the content later | &check; |
+| As a Site Admin | I can access an admin area so that I can get a general understanding of logged in users, number of likes and number of posts | &check; |
+| As a Site Admin | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &check; |
 
-## FAQ about the uptime script
+[Back to top](<#table-of-content>)
 
-**Why have you added this script?**
+## Site Structure
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administrator an *admin area* is available. The site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
 
-**How will this affect me?**
+Read more about the different choices in the [Features](<#features>) section.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+[Back to top](<#table-of-content>)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Design Choices
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+* ### Color Scheme
 
-**So….?**
+The color scheme chosen for the 'Review | Alliance' site was based on the Bootstrap dark background. The colors are Black (used on some text elements), Raisin Black (top navigation and footer), Rocket Metallic (used on some of the text elements), Cultured (used very rarely in this project) and White (used i.e. as background and card background). All colors are very clean and they create a professional look together and offers a good readability and contrast as well. I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Color Palette image](readme/assets/images/coolors_palette.png)
 
-**Can I opt out?**
+* ### Typography
+The fonts used for the site are 'Roboto' and 'Tinos'. Fallback font for both of them is sans-serif.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* 'Roboto' is used on all headlines including the brand logo. It's a very clean font that works really well for headlines and logos. It's easy to read and matches the minimalistic style that I wanted the site to 'breath'.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+* 'Tinos' was chosen for the review excerpt and the review full text. It has a nice serif design and works really well for longer paragraphs of text.
 
-**Anything more?**
+![Google Fonts Impact](readme/assets/images/google_fonts_roboto.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Google Fonts Tinos](readme/assets/images/google_fonts_tinos.png)
 
----
-
-Happy coding!
+[Back to top](<#table-of-content>)
