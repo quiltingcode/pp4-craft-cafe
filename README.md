@@ -1,11 +1,12 @@
-# **The Craft Cafe**
-The Craft Cafe is a 
+# **The Craft Café**
+
+The Craft Café is a regular café where people can go to enjoy a cup of coffee and a piece of cake. However, it's unique selling point is that in the afternoons, Monday to Friday, and on Saturday mornings, it also runs Craft workshops where people can learn crafty skills and make beautiful craft items to take away. Through the Craft Cafe website, users can check the craft workshop schedule, and reserve their places in advance. 
 
 This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
 [View live website here](https://craft-cafe.herokuapp.com/)
 
-![Responsive design]()
+![Responsive design](static/images/readme/devicemockup.PNG)
 
 # Table of Content
 

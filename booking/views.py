@@ -33,28 +33,41 @@ class ContactPage(View):
     def post(self, request):
         booking = None
         time = request.POST.get("time")
-        day = request.session.get('day')
+        day = request.POST.get('day')
         places = request.POST.get("places")
         booking_form = BookingForm(data=request.POST)
-        num_bookings = WorkshopBooking.objects.filter(day=day, time=time).count()
-        if num_bookings + int(places) <= 10:       
+        day = day.split('-')
+        day.reverse()
+        day = '-'.join(day)
+        bookings_made = WorkshopBooking.objects.filter(day=day, time=time)
+        places_reserved = 0
+        for b in bookings_made:
+            places_reserved += int(b.places)
+        print(day)
+        print(time)
+        print(bookings_made)
+        print(int(places))
+        if places_reserved + int(places) <= 10:
             if booking_form.is_valid():
                 booking = booking_form.save(commit=False)
                 booking.user = User.objects.get(id=request.user.id)
                 booking.email = request.user.email
                 booking.name = request.user.username
+                booking.places = places
                 booking.save()
                 messages.add_message(
                     request, messages.SUCCESS,
                     'Booking request submitted successfully, awaiting approval.')
+
+                return redirect('profile-page')
             else:
                 booking_form = BookingForm()
         else:
             messages.add_message(
                 request, messages.SUCCESS,
-                'The selected date is full. please try a different session.')  
+                'The selected date is full. please try a different session.')
 
-        return redirect('profile-page')
+        return redirect('contact')
 
 
 class ProfilePageView(ListView):
