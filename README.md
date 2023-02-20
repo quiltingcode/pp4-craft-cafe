@@ -80,20 +80,14 @@ Later on, during the build, I also used the Project Board to log and track bugs 
 [Back to top](<#table-of-content>)
 
 ### Database Schema
-I have used a modelling tool called [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) to create the database schema. In short it shows the relationships between the different models in the database connected to the application. Graph Models exports a *.dot file which easily can be converted to a more 'easy to read' design with the help of the application [dreampuf](https://dreampuf.github.io/GraphvizOnline/).
 
-Models used (besides standard user model) in this project are:
+Models used (besides standard AllAuth user model) in this project are:
 
-* **Category** - Handles categories. I made a specific model to be able to add more dynamics (create / remove categories going forward in the admin backend instead of 'hard code' it in the code).
-* **Genre** - Handles genres. I made a specific model to be able to add more dynamics (create / remove genres going forward in the admin backend instead of 'hard code' it in the code).
-* **Post** - Handles all the reviews
+* **Post** - Handles all the posts
 * **Comment** - Handles all the comments
-* **UserProfile** - Handles the user profile information (first name, last name, presentation and featured image for the specific user/reviewer). There is a one-to-one relation to the user model to connect it to the standard user model.
+* **WorkshopBooking** - Handles the workshop bookings 
 
-<details><summary><b>Database Schema</b></summary>
-
-![Database Schema](readme/assets/images/database_schema.png)
-</details><br/>
+![Database Schema](static/images/readme/erd-diagram.pdf)
 
 # **User Experience (UX)**
 
