@@ -36,17 +36,22 @@ class ContactPage(View):
         day = request.POST.get('day')
         places = request.POST.get("places")
         booking_form = BookingForm(data=request.POST)
+
+        # split the string by a common separator, reverse the order, and put it back together again
         day = day.split('-')
         day.reverse()
         day = '-'.join(day)
+
+        # Check all bookings made on that day at that time, then add up the total places
+        # reserved already in these existing bookings.
         bookings_made = WorkshopBooking.objects.filter(day=day, time=time)
         places_reserved = 0
         for b in bookings_made:
             places_reserved += int(b.places)
-        print(day)
-        print(time)
-        print(bookings_made)
-        print(int(places))
+
+        # If the total number of places reserved on this date and time is greater than 
+        # or equal to 10, the user will not be able to make the booking and is redirected
+        # back to the booking form to try again.
         if places_reserved + int(places) <= 10:
             if booking_form.is_valid():
                 booking = booking_form.save(commit=False)
