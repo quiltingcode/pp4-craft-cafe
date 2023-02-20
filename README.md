@@ -60,25 +60,22 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
 # **Project**
 
 ## Objective
-I absolutely love music, both listening to it at home but going to live concerts as well. Therefore I have decided to do a review site that is as authentic and useful as possible. I also want to demonstrate my knowledge within the area of HTML, CSS, JavaScript, Python and the Django Framework.
+I absolutely love crafting, both with my children, and as a personal hobby. I make patchwork quilts to relax and disconnect from work. It would be dream of mine to set up a craft café, where people could go to socialise through craft activities, and gain valuable crafting expertise at the same time. Based on the project 4 scope requirements, I was given the opportunity to build a site for this dream café.
 
 ## Site Users Goal
-The user of 'Record | Alliance' loves music, to interact with others and to contribute with their knowledge to like minded.
+This café gives other like-minded craft enthusiasts the opportunity to meet each other and interact through a common shared hobby.
 
 ## Site Owners Goal
-The goal of the site owner is to deliver a site where the users in an intuitive way can read about the latest albums and concerts and contribute with their own reviews.
+The goal of the site owner is to deliver a site where the users who share a passion for craft and creating can meet eachother through the craft workshops, and also share their creations with eachother by posting photos and comments.
 
 ## Project Management
 
-### Trello & Github Board
-I've been using the application [Trello](https://trello.com/) and the project board in GitHub to keep my project together. It has been working really well and has helped me structure up my work a lot. Trello was used on a more general plan and GitHub was used to plan and organize my user stories.
+### Github Project Board
+I've been using the project board in GitHub to keep my project together. In the initial design phase, it was really helpful to plan the project as a whole, and create the user stories based on my wireframe designs. I created an Epic for each main html page with bullet points for the main desired features. Then, I created a linked User Story for each feature and gave it a level of prioritization using the MoSCoW method and a number of User Story points to indicate the level of difficulty for that feature. 
 
-<details><summary><b>Trello & Github Board</b></summary>
+Later on, during the build, I also used the Project Board to log and track bugs found in my code which could not be fixed immmediately. 
 
-![Trello Image](readme/assets/images/trello.png)
-
-![User Stories](readme/assets/images/user_stories.png)
-</details><br/>
+![GitHub Project Board](static/images/readme/project-board.PNG)
 
 [Back to top](<#table-of-content>)
 

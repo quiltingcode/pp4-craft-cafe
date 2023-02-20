@@ -35,13 +35,17 @@ PLACES_TO_BOOK = (
 
 
 class WorkshopBooking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    workshop = models.CharField(max_length=50, choices=WORKSHOP_CHOICES, blank=False)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
+    workshop = models.CharField(
+        max_length=50, choices=WORKSHOP_CHOICES, blank=False)
     day = models.DateField(default=datetime.now)
-    time = models.CharField(max_length=20, choices=TIME_CHOICES, default="4 - 6pm")
+    time = models.CharField(
+        max_length=20, choices=TIME_CHOICES, default="4 - 6pm")
     created_on = models.DateTimeField(default=datetime.now, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    places = models.CharField(max_length=50, choices=PLACES_TO_BOOK, default="1")
+    places = models.CharField(
+        max_length=50, choices=PLACES_TO_BOOK, default="1")
     approved = models.BooleanField(default=False)
     status = models.IntegerField(choices=STATUS, default=0)
 
