@@ -92,37 +92,50 @@ Models used (besides standard AllAuth user model) in this project are:
 # **User Experience (UX)**
 
 ## Wireframes
-The wireframes for the site were created in the software [Balsamiq](https://balsamiq.com). The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's worth mentioning that there are visual differences compared to the wireframes, the reason being design choices that was made during the creation process.
+The wireframes for the site were created in the software [Balsamiq](https://balsamiq.com). The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. I used it mainly to design the grid system layout and button features for each page. Any differences are down to design choices that were made during the build process.
 
 <details><summary><b>Wireframes</b></summary>
 
-![Wireframes](readme/assets/images/balsamiq.png)
+![Wireframes](static/images/readme/)
 </details><br/>
 
 ## User Stories
-Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the [Testing](<#testing>) section.
+Here I have listed the main user stories for three types of user. A normal user not logged in, a logged in user and a logged in superuser with administration access to the site. These user stories were then tested and confirmed in the [Testing](<#testing>) section.
 
-### Site User
+### Logged Out Site User
 |  | | |
 |:-------:|:--------|:--------|
-| As a Site User | I can view a list of the music reviews so that I can select one to read | &check; |
-| As a Site User | I can view a list of the concert reviews so that I can select one to read | &check; |
-| As a Site User | I can click on a specific review so that I can read it in detail | &check; |
-| As a Site User | I can like and unlike a review so that it is possible for me to interact with the review | &check; |
-| As a Site User | I can view the number of likes on each review so that I can see how popular a specific review is | &check; |
-| As a Site User | I can contact Review Alliance in an easy way so that I can interact with them if I have a need for it | &check; |
-| As a Site User | I can navigate easy on the site through paginated list of posts so that I feel comfortable using the site | &check; |
-| As a Site User | I can view comments on a specific review so that I can read the conversations between different users on the site | &check; |
-| As a Site User | I can sign up an account so that I can like and comment on reviews, create a profile page, create own reviews and edit / remove my reviews | &check; |
-| As a Site User | I can create a profile page so that other reviewers can read about who I am | &check; |
-| As a Site User | I can comment on a review so that I can be involved in the conversation | &check; |
-| As a Site User | I can edit my comment so that I can change the content if needed | &check; |
-| As a Site User | I can remove my review so that I have full control of my reviews | &check; |
-| As a Site User | I can choose to see my own reviews so that I can find them easily | &check; |
-| As a Site User | I can create a new review so that I can contribute to with new content to Review Alliance | &check; |
-| As a Site User | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
-| As a Site User | I can create draft reviews so that I can finish writing the content later | &check; |
-| As a Site User | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &check; |
+| As a Site User | I can log in so that I can interact fully with the site | &check; |
+| As a New User | I can sign up so that I can interact fully with the site | &check; |
+| As a Site User | I can log out from the site so that no-one else can interact with the site using my details | &check; |
+| As a Site User | I can view the café menu | &check; |
+| As a Site User | I can view the craft workshop schedule | &check; |
+
+
+### Logged In Site User
+|  | | |
+|:-------:|:--------|:--------|
+| As a Site User | I can log in so that I can interact fully with the site | &check; |
+| As a Site User | I can log out from the site so that no-one else can interact with the site using my details | &check; |
+| As a Site User | I can view community craft posts | &check;
+| As a Site User | I can view the number of likes on each post so that I can see how popular a specific post is | &check; |
+| As a Site User | I can view the number of comments on each post so that I can see how popular a specific post is | &check; |
+| As a Site User | I can create a new post so that I can contribute to the craft cafe community | &check; | 
+| As a Site User | I can edit any of my posts so that I can amend any errors or add missing information | &check; | 
+| As a Site User | I can delete any of my posts so that I can remove unwanted posts from the craft cafe community | &check; | 
+| As a Site User | I can create a new comment on an existing post so that I can comment on other user's posts | &check; | 
+| As a Site User | I can like an existing post so that I can show my appreciation for other user's posts | &check; |
+| As a Site User | I can remove a like from an existing post so that I can remove my appreciation for other user's posts | &check; |
+| As a Site User | I can view comments on a specific post so that I can see other user's opinions of the posts | &check; |
+| As a Site User | I can add comments on a specific post so that I can give my opinion on other user's posts | &check; |
+| As a Site User | I can edit my comments on a specific post so that I can change my opinion on other user's posts | &check; |
+| As a Site User | I can delete my comments on a specific post so that I can remove my opinion on other user's posts | &check; |
+| As a Site User | I can view a list of all posts I have made on the site | &check; |
+| As a Site User | I can view a list of all comments I have made on the site | &check; |
+| As a Site User | I can create a workshop booking so that I can reserve a place on a workshop | &check; |
+| As a Site User | I can edit a workshop booking so that I can change an existing reservation on a workshop | &check; |
+| As a Site User | I can delete a workshop booking so that I can cancel an existing reservation on a workshop | &check; |
+| As a Site User | I can view a list of all workshop bookings I have made on the site | &check; |
 
 ### Site Admin
 
