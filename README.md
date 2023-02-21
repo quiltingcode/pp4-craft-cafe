@@ -288,21 +288,37 @@ The menu is split into three sections. Food, Drinks, and Desserts. On a desktop 
 
 ### **Workshops Overview**
 
-Scrolling down past the menu on the homepage, the user will find an overview of all the craft workshops held in the Craft Cafe. Each card has a background image displaying an example of the craft category and a clickable title which takes the user into the 'contact.html' page where there is a more detailed summary of each workshop and the option to book places. Underneath the individual workshop cards is also a large button which takes them to the same place. 
+Scrolling down past the menu on the homepage, the user will find an overview of all the craft workshops held in the Craft Café. Each card has a background image displaying an example of the craft category and a clickable title which takes the user into the 'contact.html' page where there is a more detailed summary of each workshop and the option to book places. Underneath the individual workshop cards is also a large button which takes them to the same place. 
 
 On desktop and tablet devices, the cards are displayed on two rows of three, but for mobile devices this changes into three rows of two. 
 
 When you hover over the cards, the font changes colour to indicate that the titles are clickable links.
 
-<details><summary><b>Menu</b></summary>
+<details><summary><b>Workshop Overview Cards</b></summary>
 
 ![Workshops Overview Desktop](static/images/readme/workshop-overview-desktop.png)
+
+![Workshops Overview Tablet](static/images/readme/workshop-overview-tablet.png)
 
 ![Workshops Overview - Mobile](static/images/readme/workshop-overview-mobile.png)
 
 </details><br/>
 
 ### **Reviews**
+
+Scrolling down past the Workshop Overview Cards, you can read some glowing reviews from Craft Café customers. There is a mixture of reviews to cover all aspects of the products and services it provides. One review relates to the Food, one review relates to the craft workshops and the final review relates to a bespoke craft party that was held at the café.
+
+In desktop view, the three reviews can be seen side by side in one row. In tablet and mobile view, only the first two reviews are shown, in tablet view side by side and in mobile view one above the other. 
+
+<details><summary><b>Reviews</b></summary>
+
+![Reviews Desktop](static/images/readme/reviews-desktop.png)
+
+![Reviews Tablet](static/images/readme/reviews-tablet.png)
+
+![Reviews - Mobile](static/images/readme/reviews-mobile.png)
+
+</details><br/>
 
 ### **Map**
 ### **Craft Workshops**
