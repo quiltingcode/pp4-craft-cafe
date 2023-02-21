@@ -10,8 +10,6 @@ from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
-    # login_url = '/accounts/login/'
-    # redirect_field_name = '/craft-community'
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'craft-community.html'
@@ -19,7 +17,6 @@ class PostList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
-        # context['form'] = PostForm()
         context['photos'] = Post.objects.all()
         return context
 

@@ -38,80 +38,79 @@
         </div>
     </div>
 
-        <!--Posts-->
-        <div class="row">
-            <div class="col-12 mt-3">
-                <div class="row">
-                    {% if filtered_posts %}  
-                    {% for post in filtered_posts %}
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="card mb-2" style="width: 18rem;">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/cafe-sign-post.png' %}">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                {% endif %}
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <!-- {% if "placeholder" in post.featured_image.url %}
-                                        <img class="card-img-top" src="{% static 'images/cafe-sign-post.png' %}">
-                                        {% else %}
-                                        <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                        {% endif %} -->
-                                        <a href="{% url 'post-detail' post.slug %}" class="post-link">
-                                            <h2 class="card-title">{{ post.title }}</h2>
-                                        </a>
-                                        <p class="card-text text-muted">Crafted By: {{ post.author }} on {{ post.created_on}}</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <strong>
-                                                    {% if user.is_authenticated %}
-                                                    <form class="d-inline" action="{% url 'post_like2' post.slug %}" method="POST">
-                                                        {% csrf_token %}
-                                                        {% if liked %}
-                                                        <button type="submit" name="like-heart_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                                                        {% else %}
-                                                        <button type="submit" name="like-heart_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                                                        {% endif %}
-                                                    </form>
-                                                    {% else %}
-                                                    <span class="text-secondary"><i class="far fa-heart"></i></span>
-                                                    {% endif %}
-                                                    <span class="text-secondary">{{ post.number_of_likes }} </span>
-                                                </strong>
-                                            </div>
-                                            <div class="col-6">
-                                                <strong class="text-secondary"><i class="far fa-comments"></i>
-                                                    {{ post.number_of_comments }}</strong>
-                                            </div>
-                                        </div>
+    <!--Posts-->
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="row">
+                {% if filtered_posts %}
+                {% for post in filtered_posts %}
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card mb-2" style="width: 18rem;">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="{% static 'images/cafe-sign-post.png' %}">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="text-center">
+                                <a href="{% url 'post-detail' post.slug %}" class="post-link">
+                                    <h2 class="card-title">{{ post.title }}</h2>
+                                </a>
+                                <p class="card-text text-muted">Crafted By: {{ post.author }} on
+                                    {{ post.created_on}}</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>
+                                            {% if user.is_authenticated %}
+                                            <form class="d-inline" action="{% url 'post_like2' post.slug %}"
+                                                method="POST">
+                                                {% csrf_token %}
+                                                {% if liked %}
+                                                <button type="submit" name="like-heart_id" value="{{post.slug}}"
+                                                    class="btn-like"><i class="fas fa-heart"></i></button>
+                                                {% else %}
+                                                <button type="submit" name="like-heart_id" value="{{post.slug}}"
+                                                    class="btn-like"><i class="far fa-heart"></i></button>
+                                                {% endif %}
+                                            </form>
+                                            {% else %}
+                                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                            {% endif %}
+                                            <span class="text-secondary">{{ post.number_of_likes }} </span>
+                                        </strong>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                                            {{ post.number_of_comments }}</strong>
                                     </div>
                                 </div>
                             </div>
                         </div>
-    
-                    {% if forloop.counter|divisibleby:3 %}
                     </div>
-                    <div class="row">
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
                 </div>
-                {% if is_paginated %}
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                        {% endif %}
-                        {% if page_obj.has_next %}
-                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
+
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
                 {% endif %}
             </div>
         </div>
     </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 <!-- Add Post Modal -->
 <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
