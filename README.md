@@ -432,11 +432,50 @@ Below the post is the Comments Section.  This is displayed with existing comment
 
 </details><br/>
 
-Once the comment has been posted successfully, an alert is shown at the top of the screen that the comment has been posted successfully, and instead of the comments form, the user can now see a message which tells them that their comment is awaiting approval. They can also check on the approval status of their comments on the profile page. 
+Once the comment has been posted successfully, an alert is shown at the top of the screen that the comment has been submitted, and instead of the comments form, the user can now see a message which tells them that their comment is awaiting approval. They can also check on the approval status of their comments on the profile page. 
 
 ![Comments - mobile](static/images/readme/alert-message-comment-success.png)
 
+Once the comment has been approved by Admin, it will automatically appear in the Comments section. 
+
 ### **Profile Page**
+
+Every user has their own personalised profile page where they can track all their interaction on the Craft Cafe website. Once a user is logged in, a new icon will appear next to the Logout option in the navigation bar which represents the link to their profile.
+
+![Profile Page Link](static/images/readme/profile-page-link.png)
+
+The first item on the profile page is the user's personal account details. The user can see their username and email address and they have the option here to Delete their account if they wish.
+
+![Profile Page Account Details](static/images/readme/profile-page-account.png)
+
+If the user clicks the 'Delete Account' button, they are taken to an additional page to confirm whether they really wish to delete their registered account and all posts and comments which go with it? If the user changes their mind, they can click the 'Go Back' button to return to their profile without deleting anything. However, if they wish to continue, they can click on the 'Delete My Account' button, and the user account will be removed from the database and the user will be redirected back to the homepage as a logged off user with no registered account. 
+
+![Profile Page Delete Account](static/images/readme/delete-account.png)
+
+Below the account details, the user is then presented with three lists. All the bookings they have made, all the posts they have submitted and all the comments they have written. If they haven't made any contributions to the Craft Cafe Community, the list remains empty and they are prompted to begin making contributions, with a link to do so redirecting them to the appropriate page. 
+
+![Profile Page Lists](static/images/readme/profile-page-lists.png)
+
+In the bookings list, the user is shown all bookings made by that user including the Workshop Category, the Workshop date and time, and the number of places reserved. The user is also shown the approval Status of this booking depending on whether it has been approved yet by Admin. 
+
+In the posts list, the user is shown all posts submitted to the Craft Cafe Community by that user. The user is shown the Title, Category, Date Posted, number of likes, number of comments and the approval status. 
+
+In the comments list, the user is shown all comments written on Craft Cafe posts by that user. The user is shown the Post the comment was made on, the comment, the date the comment was made and the approval status. 
+
+In the posts list and the comments list, the user can click on the post title to drill down into the post-details.
+
+All bookings, posts and comments have an 'Edit' button and a 'Delete' button next to them. 
+
+<details><summary><b>Edit Bookings, Posts and Comments</b></summary>
+
+![Edit Booking](static/images/readme/edit-booking.png)
+
+![Edit Post](static/images/readme/edit-post.png)
+
+![Edit Comment](static/images/readme/edit-comment.png)
+
+</details><br/>
+
 ### **Admin Dashboard**
 ### **Sign Up**
 ### **Sign In**

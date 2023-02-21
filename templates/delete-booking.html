@@ -4,31 +4,28 @@
 
 
 <div class="container-fluid delete-container">
-  <div class="row text-center">
-    <div class="col-12">
-      <h1 id="contact-header">Delete your Booking</h1>
+    <div class="row text-center">
+      <div class="col-12">
+        <h1 id="contact-header">Delete your Booking</h1>
+      </div>
     </div>
-  </div>
-  <div class="row text-center">
-    <div class="col-8 offset-2">
-      <h3 class="mb-4">
-        Delete {{ booking.workshop }} booked for {{ booking.day }}:
-      </h3>
-
-      <form method="POST">
-        {% csrf_token %}
-        <p>Are you sure? It's gonna be really fun...</p>
-        <div class="row text-center">
-          <div class="col-12">
-            <button type="submit" class="btn btn-lg btn-info mt-3">Delete Booking</button>
-          </div>
-        </div>
-      </form>
-      <div>
-        <a href="{% url 'profile-page' %}" class="btn btn-lg btn-info mt-3">Go Back</a>
+    <div class="row text-center">
+        <div class="col-8 offset-2">
+            <h3 class="mb-4">{{ booking.workshop }}</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <p>Are you sure? It's gonna be really fun...</p>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-lg btn-info mt-3">Delete Booking</button>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <a href="{% url 'profile-page' %}" class="btn btn-lg btn-info mt-3">Go Back</a>
+            </div>
+        </div>  
     </div>
-    </div>
-  </div>
 </div>
 
 
