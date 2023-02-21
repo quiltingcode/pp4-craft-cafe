@@ -198,6 +198,7 @@ The main fonts used for the site are 'Rowdies' with a fallback font of cursive a
 
 * 'Luckiest Guy' was used for the Craft Workshop Categories on the Homepage, as I wanted something bold, but at the same time fun to represent the creative side of the café.
 
+<details><summary><b>Fonts</b></summary>
 ![Google Fonts Rowdies](static/images/readme/rowdies-font.png)
 
 ![Google Fonts Noto Sans JP](static/images/readme/noto-sans-font.png)
@@ -205,5 +206,61 @@ The main fonts used for the site are 'Rowdies' with a fallback font of cursive a
 ![Google Fonts Dancing Script](static/images/readme/dancing-script-font.png)
 
 ![Google Fonts Luckiest Guy](static/images/readme/luckiest-gut-font.png)
+</details><br/>
 
 [Back to top](<#table-of-content>)
+
+# **Features**
+The main features of the site are listed below.
+
+## **Existing Features**
+
+### **Navigation**
+The navigation bar is very clean and straight forward. Depending if you are logged in or not different menus are visible for the site user. An extra menu item is visible if you are logged in as an administrator.
+
+For tablet and mobile devices, the navigation bar menu turns into a hamburger dropdown list.
+
+*Links that are visible to logged out users*
+
+* Craft Cafe Logo - On the far left hand side of the navigation bar is the Craft Cafe brand logo. This is visible throughout the site to all user types and contains a link back to the homepage.
+* Home - The first menu item listed 'Home' takes the user to the main 'index.html' page with all the general site information listed.
+* Food - This link takes the user down the homepage to the 'Menu' section where lists of food and pricing can be found.
+* Craft Workshops - This lists the afternoon craft workshop schedule, and a description and pricing for each activity.
+* Sign Up - Directs non-community users to create an account.
+* Login - Gives the user the opportunity to log in or sign up if not ready a registered user.
+
+<details><summary><b>Navigation - User Not Logged In</b></summary>
+
+![Navigation Large Device - User Not Logged In](static/images/readme/navbar-loggedout.png)
+
+![Navigation Small Device - User Not Logged In](static/images/readme/navbar-loggedout-mobile.png)
+</details><br/>
+
+*Links that are visible to logged in users*
+
+Additional links which are available to logged in users are as follows:
+
+* Contact Us - Lets the user make a booking request for a craft workshop.
+* Craft Cafe Community - Shows all craft cafe community posts.
+* Log Out - Logs out the user.
+* Profile Page - Shows logged in users personal profile page.
+
+<details><summary><b>Navigation - User Logged In</b></summary>
+
+![Navigation Large Device - User Logged In](static/images/readme/navbar-loggedin.png)
+
+![Navigation Small Device - User Logged In](static/images/readme/navbar-loggedin-mobile.png)
+</details><br/>
+
+*Link that is visible if user is administrator*
+
+If the user is a superuser, they have one additional menu item available.
+
+* Admin Dashboard - A frontend overview of information regarding the website.
+
+<details><summary><b>Navigation - Admin Logged In</b></summary>
+
+![Navigation Large - Admin Logged In](static/images/readme/navbar-loggedin-superuser.png)
+
+![Navigation Small - Admin Logged In](static/images/readme/navbar-loggedin-superuser-mobile.png)
+</details><br/>
