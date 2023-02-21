@@ -6,7 +6,7 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
 
 [View live website here](https://craft-cafe.herokuapp.com/)
 
-![Responsive design](static/images/readme/devicemockup.PNG)
+![Responsive design](static/images/readme/devicemockup.png)
 
 # Table of Content
 
@@ -75,7 +75,7 @@ I've been using the project board in GitHub to keep my project together. In the 
 
 Later on, during the build, I also used the Project Board to log and track bugs found in my code which could not be fixed immmediately. 
 
-![GitHub Project Board](static/images/readme/project-board.PNG)
+![GitHub Project Board](static/images/readme/project-board.png)
 
 [Back to top](<#table-of-content>)
 
@@ -87,7 +87,7 @@ Models used (besides standard AllAuth user model) in this project are:
 * **Comment** - Handles all the comments
 * **WorkshopBooking** - Handles the workshop bookings 
 
-![Database Schema](static/images/readme/erd-diagram.pdf)
+![Database Schema](static/images/readme/erd-diagram.png)
 
 # **User Experience (UX)**
 
@@ -117,7 +117,8 @@ Here I have listed the main user stories for three types of user. A normal user 
 |:-------:|:--------|:--------|
 | As a Site User | I can log in so that I can interact fully with the site | &check; |
 | As a Site User | I can log out from the site so that no-one else can interact with the site using my details | &check; |
-| As a Site User | I can view community craft posts | &check;
+| As a Site User | I can view community craft posts so that I can see photos of all the craft user's creations | &check;
+| As a Site User | I can filter the community craft posts so that I can see posts which relate to my favourite craft category | &check;
 | As a Site User | I can view the number of likes on each post so that I can see how popular a specific post is | &check; |
 | As a Site User | I can view the number of comments on each post so that I can see how popular a specific post is | &check; |
 | As a Site User | I can create a new post so that I can contribute to the craft cafe community | &check; | 
@@ -130,24 +131,43 @@ Here I have listed the main user stories for three types of user. A normal user 
 | As a Site User | I can add comments on a specific post so that I can give my opinion on other user's posts | &check; |
 | As a Site User | I can edit my comments on a specific post so that I can change my opinion on other user's posts | &check; |
 | As a Site User | I can delete my comments on a specific post so that I can remove my opinion on other user's posts | &check; |
-| As a Site User | I can view a list of all posts I have made on the site | &check; |
+| As a Site User | I can view a list of all posts I have made on the site so that I can see all the posts I have contributed to the craft cafe community| &check; |
 | As a Site User | I can view a list of all comments I have made on the site | &check; |
 | As a Site User | I can create a workshop booking so that I can reserve a place on a workshop | &check; |
-| As a Site User | I can edit a workshop booking so that I can change an existing reservation on a workshop | &check; |
-| As a Site User | I can delete a workshop booking so that I can cancel an existing reservation on a workshop | &check; |
-| As a Site User | I can view a list of all workshop bookings I have made on the site | &check; |
+| As a Site User | I can edit my workshop bookings so that I can change an existing reservation on a workshop | &check; |
+| As a Site User | I can delete my workshop bookings so that I can cancel an existing reservation on a workshop | &check; |
+| As a Site User | I can view a list of all workshop bookings I have made on the site so that I can see all the workshop activities I have booked in the past and future | &check; |
+| As a Site User | I can delete my user account so that I can no longer be part of the craft community if I don't want to | &check; |
 
 ### Site Admin
 
 |  | | |
 |:-------:|:--------|:--------|
-| As a Site Admin | I can log out from the site so that I can feel safe that nobody can access my information | &check; |
-| As a Site Admin | I can create, read, update and delete reviews so that I can manage my review content | &check; |
-| As a Site Admin | I can approve reviews so that I can secure high quality of the content | &check; |
-| As a Site Admin | I can approve and disapprove comments so that I can secure a safe environment for the Site Users | &check; |
-| As a Site Admin | I can create draft reviews so that I can finish writing the content later | &check; |
-| As a Site Admin | I can access an admin area so that I can get a general understanding of logged in users, number of likes and number of posts | &check; |
-| As a Site Admin | I can get visual feedback when interacting with the content so that I can be sure how I have interacted with the page | &check; |
+| As a Super User | I can log in so that I can interact fully with the site | &check; |
+| As a Super User | I can log out from the site so that no-one else can interact with the site using my details | &check; |
+| As a Super User | I can view community craft posts | &check;
+| As a Super User | I can view the number of likes on each post so that I can see how popular a specific post is | &check; |
+| As a Super User | I can view the number of comments on each post so that I can see how popular a specific post is | &check; |
+| As a Super User | I can create a new post so that I can contribute to the craft cafe community | &check; | 
+| As a Super User | I can edit any posts so that I can amend any errors or add missing information | &check; | 
+| As a Super User | I can delete any posts so that I can remove unwanted posts from the craft cafe community | &check; |
+| As a Super User | I can approve posts so that they are published on the craft cafe community | &check; |
+| As a Super User | I can create a new comment on an existing post so that I can comment on other user's posts | &check; | 
+| As a Super User | I can like an existing post so that I can show my appreciation for other user's posts | &check; |
+| As a Super User | I can remove a like from an existing post so that I can remove my appreciation for other user's posts | &check; |
+| As a Super User | I can view comments on a specific post so that I can see other user's opinions of the posts | &check; |
+| As a Super User | I can add comments on a specific post so that I can give my opinion on other user's posts | &check; |
+| As a Super User | I can edit any comments made by other users so that I can amend any comments that are not deemed appropriate | &check; |
+| As a Super User | I can delete any comments made by other users so that I can remove any inappropriate comments | &check; |
+| As a Super User | I can approve comments so that they are published on the craft cafe community | &check; |
+| As a Super User | I can view a list of all posts made on the site so that I can see all the posts users have contributed to the craft cafe community| &check; |
+| As a Super User | I can view a list of all comments made on the site so that I can see all the comments users have contributed to the craft cafe community | &check; |
+| As a Super User | I can create a workshop booking so that I can reserve a place on a workshop for myself or on behalf on another user| &check; |
+| As a Super User | I can edit any workshop booking so that I can change an existing reservation | &check; |
+| As a Super User | I can delete any workshop booking so that I can cancel an existing reservation | &check; |
+| As a Super User | I can approve workshop bookings so that users know their booking has been confirmed | &check; |
+| As a Super User | I can view a list of all workshop bookings all users have made on the site so that I can see all the workshop activities in the past and future | &check; |
+| As a Super User | I can delete any user account so that I can remove unwanted users from the craft cafe community | &check; |
 
 [Back to top](<#table-of-content>)
 
