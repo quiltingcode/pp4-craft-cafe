@@ -173,7 +173,7 @@ Here I have listed the main user stories for three types of user. A normal user 
 
 ## Site Structure
 
-The Review | Alliance site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages is available for the user. When the user is logged out the pages: *about*, *all*, *albums*, *concerts* are avaliable. When the user is logged in *about*, *all*, *albums*, *concerts*, *create review*, *view my reviews* and *show profile page* are available. If you are logged in as an administrator an *admin area* is available. The site has an minimalistic, clean and intuitive design that makes the site easy to navigate for the user.
+The Craft Café site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages are available for the user. When the user is logged out the pages: *Home*, *Food*, and *Craft Workshops* are avaliable from the Navigation Bar menu. When the user is logged in *Contact Us*, *Craft Cafe Community*, and *Profile Page* are available. If you are logged in as an administrator an *admin* dashboard page is also available. The site is intuitive and prompts the user to sign in if they try to access areas which require a user profile.
 
 Read more about the different choices in the [Features](<#features>) section.
 
@@ -183,19 +183,27 @@ Read more about the different choices in the [Features](<#features>) section.
 
 * ### Color Scheme
 
-The color scheme chosen for the 'Review | Alliance' site was based on the Bootstrap dark background. The colors are Black (used on some text elements), Raisin Black (top navigation and footer), Rocket Metallic (used on some of the text elements), Cultured (used very rarely in this project) and White (used i.e. as background and card background). All colors are very clean and they create a professional look together and offers a good readability and contrast as well. I used the online service [Coolors](https://coolors.co/) to choose the color scheme.
+The color scheme chosen for the Craft Café site was based on the tones of the homepage hero background image. I was browsing for café images that were light and bright, as a lot of them are based on brown coffee tones, which I was not keen on for the dual craft aspect of the site. The background image I found has brightly coloured macaroons presented on a piece of decorated table cloth.  I used the online service [Canva](https://www.canva.com/colors/color-wheel/) to build a color palette for the site based on the tones in this photo.
 
-![Color Palette image](readme/assets/images/coolors_palette.png)
+![Color Palette image](static/images/readme/color-palette.png)
 
 * ### Typography
-The fonts used for the site are 'Roboto' and 'Tinos'. Fallback font for both of them is sans-serif.
+The main fonts used for the site are 'Rowdies' with a fallback font of cursive and 'Noto Sans JP' with a fallback font of sans-serif.
 
-* 'Roboto' is used on all headlines including the brand logo. It's a very clean font that works really well for headlines and logos. It's easy to read and matches the minimalistic style that I wanted the site to 'breath'.
+* 'Rowdies' is used on the H1 and H2 headers . It's a very clean font that works really well in upper case. 
 
-* 'Tinos' was chosen for the review excerpt and the review full text. It has a nice serif design and works really well for longer paragraphs of text.
+* 'Noto Sans JP' was chosen for the main body and text sections of the site. It's tidy and easy to read.
 
-![Google Fonts Impact](readme/assets/images/google_fonts_roboto.png)
+* 'Dancing Script' was used for the café menu as I preferred a more Italic font for this section.
 
-![Google Fonts Tinos](readme/assets/images/google_fonts_tinos.png)
+* 'Luckiest Guy' was used for the Craft Workshop Categories on the Homepage, as I wanted something bold, but at the same time fun to represent the creative side of the café.
+
+![Google Fonts Rowdies](static/images/readme/rowdies-font.png)
+
+![Google Fonts Noto Sans JP](static/images/readme/noto-sans-font.png)
+
+![Google Fonts Dancing Script](static/images/readme/dancing-script-font.png)
+
+![Google Fonts Luckiest Guy](static/images/readme/luckiest-gut-font.png)
 
 [Back to top](<#table-of-content>)
