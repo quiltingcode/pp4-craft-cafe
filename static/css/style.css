@@ -409,4 +409,8 @@ hr.rounded {
         margin-left: -125px;
     }
 
+    .btn-transparent {
+        font-size: 2rem;
+    }
+
 }

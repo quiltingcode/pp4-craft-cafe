@@ -288,6 +288,18 @@ The menu is split into three sections. Food, Drinks, and Desserts. On a desktop 
 
 ### **Workshop Overview**
 
+<details><summary><b>Menu</b></summary>
+
+![Workshops Overview Desktop](static/images/readme/menu-desktop.png)
+
+![Workshops Overview - Tablet](static/images/readme/menu-tablet.png)
+
+![Workshops Overview - Mobile](static/images/readme/menu-mobile.png)
+
+</details><br/>
+
+### **Workshop Overview**
+
 ### **Reviews**
 
 ### **Map**
