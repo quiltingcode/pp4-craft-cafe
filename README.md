@@ -390,7 +390,19 @@ If you click on the 'Craft Cafe Community' option on the navigation bar, you wil
 
 ![Craft Cafe Community login message](static/images/readme/craft-community-loggedout.png)
 
+Once the user is logged in, they will be able to see all approved posts submitted by themselves and other registered craft cafe community members. 
 
+![Craft Cafe Community Page](static/images/readme/posts-page.png)
+
+There is a filter available called 'Select Category' so that users can filter all the posts by their preferred category. 
+
+Each post shows a photo if the user has uploaded one (otherwise a default Craft Cafe image is shown), the Title of the post, who it was posted by and when.
+
+Below this the users can see a count of likes and comments for each post. If they want to like a post, they can click on the heart icon. If they click it again, the like will be removed. 
+
+If they click on the 'Add Post' button at the top, a modal pop-up window appears with a form to submit a new post. 
+
+![Add Post Form](static/images/readme/add-post-modal.png)
 
 ### **Post Details Page**
 ### **Profile Page**

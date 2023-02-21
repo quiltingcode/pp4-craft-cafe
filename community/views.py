@@ -7,6 +7,7 @@ from .forms import CommentForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse_lazy
+from .models import WORKSHOP_CATEGORIES
 
 
 class PostList(generic.ListView):
@@ -26,7 +27,7 @@ class PostList(generic.ListView):
         if chosen_filter and chosen_filter != "All":
             filtered_posts = filtered_posts.filter(category=chosen_filter)
             print(filtered_posts)
-        return render(request, "craft-community.html", {"filtered_posts": filtered_posts, 'selected': chosen_filter, 'categories': Post.objects.all().order_by('category'), "form": PostForm()})
+        return render(request, "craft-community.html", {"filtered_posts": filtered_posts, 'selected': chosen_filter, 'categories': WORKSHOP_CATEGORIES, "form": PostForm()})
 
     def post(self, request):
         post_form = PostForm(request.POST, request.FILES)

@@ -31,7 +31,7 @@
                 <select id="category-filter" class="selectpicker form-control" name="category-filter" onchange="this.form.submit();">
                     <option value="All">Select Category</option>
                     {% for category in categories %}
-                        <option value="{{ category.category }}" {% if selected == category.category %} selected=selected {% endif %}>{{ category.category }}</option>
+                        <option value="{{ category.0 }}" {% if selected == category.0 %} selected=selected {% endif %}>{{ category.0 }}</option>
                     {% endfor %}
                 </select>
             </form>
