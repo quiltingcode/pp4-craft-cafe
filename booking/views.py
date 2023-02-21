@@ -69,7 +69,7 @@ class ContactPage(View):
                 booking_form = BookingForm()
         else:
             messages.add_message(
-                request, messages.SUCCESS,
+                request, messages.ERROR,
                 'The selected date is full. please try a different session.')
 
         return redirect('contact')

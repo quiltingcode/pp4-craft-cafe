@@ -331,8 +331,65 @@ The map was created using the Google Maps API.
 ![Google Map](static/images/readme/map.png)
 
 ### **Craft Workshops**
+
+when the user clicks on the 'Craft Workshops' menu item on the Navigation Bar, or clicks through from the homepage button links in the hero or the Workshops Overview section, they are redirected to this page. 
+
+Workshops are held twice a day, every day apart from on Sundays. From Monday to Friday, they are held in the afternoons from 4 till 6pm and from 6 till 8pm. On Saturdays, the workshops are held in the mornings from 10 till 11.30 and 11.30 till 1. Depending on what day of the week it is determines the theme of the craft activities. Each day has it's own theme, so that users will know the general theme of the craft activity before attending the workshop. If they prefer one particular type of craft, they know this category will always be held on the same day of the week.
+
+There is a button next to each day of the schedule which prompts the user to reserve a place. I don't specify on the website that booking is obligatory, but I try to encourage the users to make a booking throughout the site. If they click on the button, they will be directed down to the bottom of the page where they can make a workshop booking request if they are logged in. 
+
+On desktop and tablet devices, the workshop schedule is displayed with the image on the left and the description on the right. For mobile devices, the image is shown above the description. 
+
+<details><summary><b>Workshops</b></summary>
+
+![Workshops Desktop](static/images/readme/workshops-desktop.png)
+
+![Workshops Tablet](static/images/readme/workshops-tablet.png)
+
+![Workshops - Mobile](static/images/readme/workshops-mobile.png)
+
+</details><br/>
+
 ### **Booking Form**
+
+If you click on the 'Contact Us' menu item from the navigation bar, or you click on the 'Book your Places here' button on the Workshops Page, you will be redirected to the booking request form. 
+
+If you are not logged on, you will see a message saying that you must be logged in to make a booking and there is a link available to login. 
+
+![Booking Form - Not logged in](static/images/readme/booking-form-loggedout.png)
+
+Once the user is logged in, they will be able to see the booking request form. 
+
+![Booking Form - Logged in](static/images/readme/booking-form-tablet.png)
+
+The form consists of four mandatory fields: Workshop, Day, Time, and Places. The calendar field is unavailable until a Workshop category has been selected. Once a Workshop has been selected, the calendar becomes active. Dates in the past are not available and the user is restricted to only select the corresponding day of the week in which the workshop is scheduled for up to five months in advance. For example, if they select the All Things Wool workshop, only Mondays can be selected for the next 5 months. 
+
+If a Monday to Friday workshop is selected, the Time field is restricted to only show the afternoon sessions. If the Saturday Kids Crafts workshop is selected, the afternoon sessions are hidden and the user can only select a morning session. 
+
+The user can select up to 10 places in one booking request. This is the maximum number of places on each workshop activity session. 
+
+If the user changes their mind, and goes back to re-select an alternative workshop, the subsequent fields are reset and the user has to re-select their choices again based on the new workshop selected. 
+
+Once the user is happy with their selections, they can click the 'Submit Booking Request' button to send it for approval. Before reaching the approval stage, the booking form goes through a check system to make sure that there are not already more than 10 places booked up on the same workshop session on the same date and time as the user has requested. If there are not enough places available ie. (Existing places booked + requested places > 10) the user gets an alert back to say that there are not enough places left on this workshop, and can they please amend their booking request. 
+
+Once the user has selected a workshop with a sufficient number of places available for what they need, the booking request form goes through successfully to admin to be approved, the user is redirected to their profile page, and a success alert message is displayed. 
+
+<details><summary><b>Booking Request Alert Messages</b></summary>
+
+![Booking Failed Alert](static/images/readme/alert-message-datefull.png)
+
+![Booking Success Alert](static/images/readme/alert-message-booking-success.png)
+
+</details><br/>
+
+Once the booking request is sent successfully, the user can see the details of the booking in their profile page, and monitor the approval status to see when Admin Confirm the booking. There is currently no notification to the user for this status change at present, but in future I would like to add in an email notification system for when bookings are approved and the status changes to confirmed. 
+
 ### **Craft Cafe Community**
+
+If you click on the 'Craft Cafe Community' option on the navigation bar, you will be taken to the Craft Cafe Community Posts Page where registered users can upload photos of things they have made during the Craft Cafe Workshops, and they can like other user's posts as well. This page is only available for logged in users. If the user is not logged in, they will see a message saying that they must login or sign up to view the Craft Cafe Community Posts. 
+
+![Craft Cafe Community login message](static/images/readme/craft-community-loggedout.png)
+
 ### **Post Details Page**
 ### **Profile Page**
 ### **Admin Dashboard**
