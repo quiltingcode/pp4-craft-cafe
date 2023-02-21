@@ -390,6 +390,8 @@ If you click on the 'Craft Cafe Community' option on the navigation bar, you wil
 
 ![Craft Cafe Community login message](static/images/readme/craft-community-loggedout.png)
 
+
+
 ### **Post Details Page**
 ### **Profile Page**
 ### **Admin Dashboard**

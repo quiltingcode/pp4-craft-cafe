@@ -11,17 +11,17 @@ from django.urls import reverse_lazy
 
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.filter(approved=True).order_by('-created_on')
     template_name = 'craft-community.html'
     paginate_by = 6
 
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
-        context['photos'] = Post.objects.all()
+        context['photos'] = Post.objects.filter(approved=True).order_by('-created_on')
         return context
 
     def get(self, request, *args, **kwargs):
-        filtered_posts = Post.objects.all()
+        filtered_posts = Post.objects.filter(approved=True)
         chosen_filter = self.request.GET.get('category-filter')
         if chosen_filter and chosen_filter != "All":
             filtered_posts = filtered_posts.filter(category=chosen_filter)
