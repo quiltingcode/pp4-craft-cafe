@@ -26,7 +26,7 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
     * [Navigation](<#navigation>)
     * [Hero Image](<#hero-image>)
     * [Craft Cafe Menu](<#craft-cafe-menu>)
-    * [Workshop Overview](<#workshops-overview>)
+    * [Workshops Overview](<#workshops-overview>)
     * [Reviews](<#reviews>)
     * [Map](<#map>)
     * [Craft Workshops](<#craft-workshops>)
@@ -286,19 +286,21 @@ The menu is split into three sections. Food, Drinks, and Desserts. On a desktop 
 
 </details><br/>
 
-### **Workshop Overview**
+### **Workshops Overview**
+
+Scrolling down past the menu on the homepage, the user will find an overview of all the craft workshops held in the Craft Cafe. Each card has a background image displaying an example of the craft category and a clickable title which takes the user into the 'contact.html' page where there is a more detailed summary of each workshop and the option to book places. Underneath the individual workshop cards is also a large button which takes them to the same place. 
+
+On desktop and tablet devices, the cards are displayed on two rows of three, but for mobile devices this changes into three rows of two. 
+
+When you hover over the cards, the font changes colour to indicate that the titles are clickable links.
 
 <details><summary><b>Menu</b></summary>
 
-![Workshops Overview Desktop](static/images/readme/menu-desktop.png)
+![Workshops Overview Desktop](static/images/readme/workshop-overview-desktop.png)
 
-![Workshops Overview - Tablet](static/images/readme/menu-tablet.png)
-
-![Workshops Overview - Mobile](static/images/readme/menu-mobile.png)
+![Workshops Overview - Mobile](static/images/readme/workshop-overview-mobile.png)
 
 </details><br/>
-
-### **Workshop Overview**
 
 ### **Reviews**
 
