@@ -476,6 +476,20 @@ All bookings, posts and comments have an 'Edit' button and a 'Delete' button nex
 
 </details><br/>
 
+<details><summary><b>Delete Bookings, Posts and Comments</b></summary>
+
+![Delete Booking](static/images/readme/delete-booking.png)
+
+![Delete Post](static/images/readme/delete-post.png)
+
+![Delete Comment](static/images/readme/delete-comment.png) 
+
+</details><br/>
+
+If a user clicks the 'Edit' button, they are taken into an edit page where a form is presented to them with the existing data pre-populated from the booking, post or comment they wish to edit. They can update any fields they wish (following the same booking validation guidelines as before) and then save the changes. These changes are then reflected in the profile page list for the user to see.
+
+If a user clicks on the 'Delete' button, they are taken into a confirmation deletion page where they must confirm whether they really want to delete this data or not. If the user changes their mind, they can click the 'Go Back' button to return to their profile without deleting anything. However, if they wish to continue, they can click on the 'Delete' button and the corresponding booking, post or comment will be permanently removed from the site. 
+
 ### **Admin Dashboard**
 ### **Sign Up**
 ### **Sign In**
