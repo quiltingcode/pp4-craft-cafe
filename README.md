@@ -404,7 +404,38 @@ If they click on the 'Add Post' button at the top, a modal pop-up window appears
 
 ![Add Post Form](static/images/readme/add-post-modal.png)
 
+The Post Form has four fields; Title, Category, Image and Content.  The Title and content field are mandatory, but the user can submit the post without uploading a photo. The Category field automatically defaults to 'All Things Wool'. Once the post form has been filled in, it can be viewed in the User Profile Page with a status of Unapproved. Once a superuser has approved the post, it will appear on the Craft Community Posts Page for other users to see and interact with. 
+
 ### **Post Details Page**
+
+If a user wishes to see more details on a particular post, they can click on the Post Title on the Craft Cafe Community Page, and this will take them into the 'Post-detail' page where the full content of the post is published alongside a bigger version of the featured image.
+
+On desktop and tablet devices, the image is displayed on the left and the title and content text on the right. On mobile devices, the title and content text are shown below the image. 
+
+<details><summary><b>Post Details</b></summary>
+
+![Post Details - desktop and tablet](static/images/readme/post-detail.png)
+
+![Post Details - mobile](static/images/readme/post-detail-mobile.png)
+
+</details><br/>
+
+Above the post, there is a button for the user to return to the full page of community posts. 
+
+Below the post is the Comments Section.  This is displayed with existing comments and the comments submission form side by side for desktop and tablet view, but the comments submission form moves below the existing comments for mobile devices. Only approved comments are published on the post-details page. If no comments have been published, the user is prompted to make a comment. The comment submission form consists of one field; the comment content text input box. A user cannot submit a comment without typing something in this box. 
+
+<details><summary><b>Comments</b></summary>
+
+![Comments - desktop and tablet](static/images/readme/comments-desktop.png)
+
+![Comments - mobile](static/images/readme/comments-mobile.png)
+
+</details><br/>
+
+Once the comment has been posted successfully, an alert is shown at the top of the screen that the comment has been posted successfully, and instead of the comments form, the user can now see a message which tells them that their comment is awaiting approval. They can also check on the approval status of their comments on the profile page. 
+
+![Comments - mobile](static/images/readme/alert-message-comment-success.png)
+
 ### **Profile Page**
 ### **Admin Dashboard**
 ### **Sign Up**

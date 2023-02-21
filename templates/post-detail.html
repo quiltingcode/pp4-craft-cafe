@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 {% load crispy_forms_tags %}
 
 
@@ -68,11 +69,6 @@
         <div class="col-md-8 mb-4 mt-2 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                {% if not commented %}
-                <p>
-                  <td>Nobody has made any comments yet... go on! You know you want to.</td>
-                </p>
-                {% else%}
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
@@ -84,7 +80,6 @@
                     {{ comment.comment_content | linebreaks }}
                 </div>
                 {% endfor %}
-                {% endif %}
             </div>
         </div>
         <div class="col-md-4 card comment-card mb-4 mt-2 ">

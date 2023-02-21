@@ -167,7 +167,7 @@
                     <td><strong><a href="{% url 'post-detail' comment.post.slug %}" class="post-link">{{ comment.post }}</a></strong></td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.created_on }}</td>
-                    {% if booking.approved %}
+                    {% if comment.approved %}
                           <td>Approved</td>
                       {% else %}
                           <td>Awaiting approval</td>
