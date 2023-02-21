@@ -321,6 +321,15 @@ In desktop view, the three reviews can be seen side by side in one row. In table
 </details><br/>
 
 ### **Map**
+
+The final part of the homepage is the map section where users can find out the location, opening hours and contact details for the Craft Café.
+
+The Craft Café does not exist, and therefore will not appear in satellite view if the user was to zoom in to the street marked by the address and marker pin. However, if I were to build this café in real life, this pinned highstreet, close to where I grew up,would be a perfect location for it, and so I have chosen to ficticiously pinpoint it's location there. 
+
+The map was created using the Google Maps API. 
+
+![Google Map](static/images/readme/map.png)
+
 ### **Craft Workshops**
 ### **Booking Form**
 ### **Craft Cafe Community**
