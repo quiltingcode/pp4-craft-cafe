@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'tempus_dominus',
     'bootstrap_datepicker_plus',
     'community',
     'booking',
@@ -78,11 +77,6 @@ MESSAGE_TAGS = {
     }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-# TEMPUS_DOMINUS_DATE_FORMAT = 'DD-MM-YYYY'
-# TEMPUS_DOMINUS_TIME_FORMAT = 'HH:mm:ss'
-# TEMPUS_DOMINUS_DATETIME_FORMAT = 'DD-MM-YYYY HH:mm:ss'
-# TEMPUS_DOMINUS_INCLUDE_ASSETS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

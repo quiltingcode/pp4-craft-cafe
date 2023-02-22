@@ -570,15 +570,13 @@ The site footer has three link elements.
 2. The Craft Cafe brand logo. If you click on the link, you are taken back to the top of the Homepage.
 3. Social media links. I have included links to Facebook, Twitter and Instagram. These links simply go to the social media homepage, as this is a ficticious website and does not have any real social media accounts to connect to and follow. 
 
-These three elements are positioned respectively on the far left, center and far right of the screen. For mobile devices, they are all postitioned in the center one above the other in three rows.
+These three elements are positioned respectively on the far left, center and far right of the screen. For mobile devices, they are all positioned in the center one above the other in three rows.
 
 <details><summary><b>Footer</b></summary>
 
 ![Footer - Tablet and Desktop](static/images/readme/footer-desktop.png)
 
 ![Footer - Mobile](static/images/readme/footer-mobile.png)
-
-
 
 </details><br/>
 
@@ -605,28 +603,23 @@ These three elements are positioned respectively on the far left, center and far
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
 
 ## Frameworks & Software
-* [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive, mobile-first sites
-* [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the Review | Alliance site
-* [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.
-* [Microsoft Excel](https://www.microsoft.com/sv-se/microsoft-365/excel) - Used to create testing scenarios.
-* [Github](https://github.com/) - Used to host and edit the website.
-* [GitBash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Terminal in [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository.
+* [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps build solid, responsive, mobile-first sites
+* [Django](https://www.djangoproject.com/) - A model-view-template framework
+* [Balsamiq](https://balsamiq.com/) - Used to create the wireframes
+* [Github](https://github.com/) - Used to host the repository, store the commit history and manage the project board containing user stories and bug reports.
 * [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
-* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
-* [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check.
-* [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - Used to validate the sites accessibility.
-* [a11y Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - Used to test color contrast on the site
-* [Graph Models](https://django-extensions.readthedocs.io/en/latest/graph_models.html) - Used to create a *.dot file of all models in the project.
-* [dreampuf](https://dreampuf.github.io/GraphvizOnline/) - Creates visually appealing database diagrams of *.dot files.
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test site performance.
+* [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used for responsiveness check across devices.
 * [Favicon](https://favicon.io/) - Used to create the favicon.
-* [VSCode](https://code.visualstudio.com/) - Used to create and edit the site.
 * [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
-* [Trello](https://trello.com/en-GB) - A project management tool to organize the project.
-* [Cloudinary](https://cloudinary.com/) - A service that hosts all static files in the project.
+* [Cloudinary](https://cloudinary.com/) - A service that hosts image files in the project.
+* [My Free Logo Maker](https://myfreelogomaker.com/explore) - Used to create the Craft Cafe brand logo
+* [Google Maps API](https://mapsplatform.google.com/) - Used to integrate Google's Place details, search, and autocomplete into apps
+* [Canva](https://www.canva.com/colors/color-wheel/ ) - Used to create the colour palette
 * [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
 * [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
-* [PEP8 Validation](http://pep8online.com/) - At the time for deploying this project the PEP8 Online Validaton service was offline, therefore not used.
 * [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
+
 
 ## Libraries
 
@@ -640,21 +633,223 @@ The libraries used in this project are located in the requirements.txt file and 
 * [Django](https://pypi.org/project/Django/) - Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
 * [django-allauth](https://pypi.org/project/django-allauth/) - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 * [django-crispy-forms](https://pypi.org/project/django-crispy-forms/) - Used to integrate Django DRY forms in the project.
-* [django-extensions](https://pypi.org/project/django-extensions/) - Django Extensions is a collection of custom extensions for the Django Framework.
 * [gunicorn](https://pypi.org/project/gunicorn/) - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
 * [oauthlib](https://pypi.org/project/oauthlib/) - OAuthLib is a framework which implements the logic of OAuth1 or OAuth2 without assuming a specific HTTP request object or web framework.
 * [psycopg2](https://pypi.org/project/psycopg2/) - Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
 * [PyJWT](https://pypi.org/project/PyJWT/) - A Python implementation of RFC 7519.
-* [pylint-django-2.5.3](https://pypi.org/project/pylint-django/) - A Pylint plugin for improving code analysis when analysing code using Django.
-* [pylint-plugin-utils-0.7](https://pypi.org/project/pylint-plugin-utils/) - This is not a direct Pylint plugin, but rather a set of tools and functions used by other plugins such as pylint-django.
 * [python3-openid](https://pypi.org/project/python3-openid/) - OpenID support for modern servers and consumers.
 * [pytz](https://pypi.org/project/pytz/) - This is a set of Python packages to support use of the OpenID decentralized identity system in your application, update to Python 3
 * [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - P    rovides first-class OAuth library support for Requests.
 * [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
-* [cryptography-3.3.23](https://pypi.org/project/cryptography/3.3/) - Cryptography is a package which provides cryptographic recipes and primitives to Python developers.
+* [Summernote](https://summernote.org/) - a JavaScript library that helps you create WYSIWYG editors online.
+
 
 # Testing
 
 Please click [**_here_**](TESTING.md) to read more information about testing The Craft Cafe
 
 [Back to top](<#contents>)
+
+# Deployment
+
+## Deployment To Heroku
+
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+
+1. To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+
+2. Fill in the details for the new repository and then click 'Create Repository From Template'.
+
+3. When the repository has been created, click on the 'Gitpod' button to open it in the GitPod Editor.
+
+4. Now it's time to install Django and the supporting libraries that are needed, using the following commands:
+
+* ```pip3 install 'django<4' gunicorn```
+* ```pip3 install 'dj_database_url psycopg2```
+* ```pip3 install 'dj3-cloudinary-storage```
+
+5. When Django and the libraries are installed we need to create a requirements file.
+
+* ```pip3 freeze --local > requirements.txt``` - This will create and add required libraries to requirements.txt
+
+<details><summary><b>Heroku Deployment - Step 5</b></summary>
+
+![Heroku Deployment Step 5](static/images/readme/requirements.png)
+</details><br />
+
+6. Now it's time to create the project.
+
+* ```django-admin startproject YOUR_PROJECT_NAME .``` - This will create the new project.
+
+7. When the project is created we can now create an application. My project consists of two apps; Community and Booking
+
+* ```python3 manage.py startapp APP_NAME``` - This will create an application
+
+8. We now need to add the application to settings.py in the INSTALLED_APPS list.
+
+8. Now it is time to do our first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+
+* ```python3 manage.py makemigrations``` - This will prepare the migrations
+* ```python3 manage.py migrate``` - This will migrate the changes
+* ```python3 manage.py runserver``` - This runs the server. To test it, click the open browser button that will be visible after the command is run.
+
+9. Now it is time to create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+
+* Once signed into your [Heroku](https://www.heroku.com/) account, click on the button labeled 'New' to create a new app. 
+
+10. Choose a unique app name, choose your region and click 'Create app".
+
+![Heroku App](static/images/readme/heroku-app.png)
+
+11. Next we need to connect an external PostgreSQL database to the app from [ElephantSQL](https://customer.elephantsql.com/login).  Once logged into your ElephantSQL dashboard, you click 'Create New Instance' to create a new database. Give the database a: 
+* Name
+* Tiny Turtle Free Plan
+* Selected data center near you
+
+and click 'Create Instance'. Return to your ElephantSQL Dashboard, and click into your new database instance. Copy the Database URL and head back to Heroku.
+
+12. Back in your Heroku app settings, click on the 'Reveal Config Vars' button. Create a config variable called DATABASE_URL and paste in the URL you copied from ElephantSQL. This connects the database into the app. 
+
+13. Go back to GitPod and create a new env.py in the top level directory. Then add these rows.
+
+* ```import os``` - This imports the os library
+* ```os.environ["DATABASE_URL"]``` - This sets the environment variables.
+* ```os.environ["SECRET_KEY"]``` - Here you can choose whatever secret key you want.
+
+14. Back in the Heroku Config Vars settings, create another variable called SECRET_KEY and copy in the same secret key as you added into the env.py file. Don't forget to add this env.py file into the .gitignore file so that it isn't commited to GitHub for other users to find. 
+
+15. Now we have to connect to our environment and settings.py file. In the settings.py, add the following code:
+
+```import os```
+
+```import dj_database_url```
+
+```if os.path.isfile("env.py"):```
+
+```import env```
+
+16. In the settings file, remove the insecure secret key and replace it with:
+```SECRET_KEY = os.environ.get('SECRET_KEY')```
+
+17. Now we need to comment out the old database settings in the settings.py file (this is because we are going to use the postgres database instead of the sqlite3 database).
+
+Instead, we add the link to the DATABASE_URL that we added to the environment file earlier.
+
+18. Save all your fields and migrate the changes again.
+
+```python3 manage.py migrate```
+
+19. Now we can set up [Cloudinary](https://cloudinary.com/users/login?RelayState=%2Fconsole%2Fmedia_library%2Ffolders%2Fhome%3Fconsole_customer_external_id%3Dc-95a4cb26371c4a6bc47e19b0f130a1#gsc.tab=0) (where we will store our static files). First you need to create a Cloudinary account and from the Cloudinary dashboard copy the API Environment Variable.
+
+20. Go back to the env.py file in Gitpod and add the Cloudinary url (it's very important that the url is correct):
+
+```os.environ["CLOUDINARY_URL"] = "cloudinary://************************"```
+
+21. Let's head back to Heroku and add the Cloudinary url in Config Vars. We also need to add a disable collectstatic variable to get our first deployment to Heroku to work.
+
+22. Back in the settings.py file, we now need to add our Cloudinary Libraries we installed earlier to the INSTALLED_APPS list. Here it is important to get the order correct.
+
+* cloudinary_storage
+* django.contrib.staticfiles
+* cloudinary
+
+23. For Django to be able to understand how to use and where to store static files we need to add some extra rows to the settings.py file.
+
+![Cloudinary Settings](static/images/readme/cloudinary.png)
+
+24. Hang in there, we have just a couple of steps left. Now it's time to tell our app where to find the templates directory, by adding the following code into the settings.py file. 
+
+```TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')```
+
+25. Let's change the templates directory to TEMPLATES_DIR in the templates array.
+
+![Templates Directory Link](static/images/readme/templates.png)
+
+26. To be able to get the application to work through Heroku we also need to add our Heroku app and localhost to the ALLOWED_HOSTS list:
+
+```ALLOWED_HOSTS = ['craft-cafe.herokuapp.com', 'localhost']```
+
+27. Now we just need to create the basic file directory in Gitpod.
+
+* Create 3 folders in the top level directory: **media**, **static**, **templates**
+* Create a file called **Procfile* and add the line ```web: gunicorn PROJ_NAME.wsgi?``` to it.
+
+28. Now you can save all the files and prepare for the first commit and push to Github by writing the lines below.
+
+* ```git add .```
+* ```git commit -m "Deployment Commit```
+* ```git push```
+
+29. Before moving on to the Heroku deployment we just need to add one more thing in the config vars. We need to add "PORT" in the KEY input field and "8000" in the VALUE field. If we don't add this there might be problems with the deployment.
+
+30. Now it's time for deployment. Scroll to the top of the settings page in Heroku and click the 'Deploy' tab. For deployment method, select 'Github'. Search for the repository name you want to deploy and then click connect.
+
+31. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
+
+
+The live link to the Craft Cafe site on Heroku can be found [here](https://craft-cafe.herokuapp.com/). And the Github repository can be found [here](https://github.com/quiltingcode/pp4-craft-cafe).
+
+[Back to top](<#table-of-content>)
+
+## How To Fork The Repository On GitHub
+
+It is possible to make an independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to make changes in the copy without affecting the original repository. To fork the repository, follow these steps:
+
+1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+![Fork](static/images/readme/fork.png)
+
+[Back to top](<#table-of-content>)
+
+## Cloning And Setting Up This Project
+
+To clone and set up this project you need to follow the steps below.
+
+1. When you are in the repository, find the code tab and click it.
+2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
+3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
+4. Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
+
+![Clone](static/images/readme/clone.png)
+
+5. To be able to get the project to work you need to install the requirements. This can be done by using the command below:
+
+* ```pip3 install -r requirements.txt``` - This command downloads and installs all required dependencies that is stated in the requirements file.
+
+6. The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
+
+* ```python3 manage.py migrate``` - This will do the necessary migrations.
+* ```python3 manage.py runserver``` - If everything i setup correctly the project is now live locally.
+
+[Back to top](<#table-of-content>)
+
+# Credits
+
+## Content
+
+* All text content written by Marcus Eriksson.
+
+* Test concert images on review cards taken from [Shutterstock](https://www.shutterstock.com/sv)
+
+* Test album images on review cards taken from [Kollektiv Fem](https://www.kollektivfem.se) which is owned by Marcus Eriksson.
+
+* Featured default review image taken from [FAVPNG](https://favpng.com/png_view/download-clip-art-png/hHNmGh4R)
+
+* Template for read.me provided by Code Institute (*with some additional changes that my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/))* suggested.
+
+## Technical
+
+* Inspiration regarding UpdateView taken from [Learn Django Class Based Views](https://www.youtube.com/watch?v=EUUjJdw3EBM)
+
+* Formatting date format [Formatting Date, Time, and Numbers in Django Templating](https://collinshillary1.medium.com/formatting-date-time-and-numbers-in-django-templating-f53fea027a06)
+
+* Inspiration regarding CSS code to add circle around text [How to Add a Circle Around a Number in CSS](https://www.w3docs.com/snippets/css/how-to-add-a-circle-around-a-number-in-css.html)
+
+* Inspiration regarding adding extra forms in Django Allauth form [How to add more custom fields on signup form?](https://stackoverflow.com/questions/68591755/django-allauth-how-to-add-more-custom-fields-on-signup-form)
+
+# Acknowledgements
+This fictional site was created for Portfolio Project #4 (Full-Stack Tolkin) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for relevant feedback during the project.
+
+*Kelly Hutchison, February 2023*
+
+[Back to top](<#table-of-content>)
