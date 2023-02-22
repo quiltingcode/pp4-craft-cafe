@@ -491,6 +491,54 @@ If a user clicks the 'Edit' button, they are taken into an edit page where a for
 If a user clicks on the 'Delete' button, they are taken into a confirmation deletion page where they must confirm whether they really want to delete this data or not. If the user changes their mind, they can click the 'Go Back' button to return to their profile without deleting anything. However, if they wish to continue, they can click on the 'Delete' button and the corresponding booking, post or comment will be permanently removed from the site. 
 
 ### **Admin Dashboard**
+
+Although all admin CRUD functionality can be accessed and managed through the superuser logon to the /admin page, I also decided to create a frontend admin page where superusers can see a general overview of how well the Craft Cafe website is performing and how much interaction it's getting with its community. Firstly, the superuser can see some website statistics:
+* Total number of bookings made through the site
+* Total number of posts made on the site
+* Total number of comments made on the site
+
+![Site Statistics](static/images/readme/cafe-stats.png)
+
+Below the general site statistics, the superuser can see three lists. 
+
+<details><summary><b>Delete Bookings, Posts and Comments</b></summary>
+
+![All Bookings](static/images/readme/dashboard-bookings.png)
+
+![All Posts](static/images/readme/dashboard-posts.png)
+
+![All Comments](static/images/readme/dashboard-comments.png) 
+
+</details><br/>
+
+In the bookings list, the superuser is shown all bookings made all site users including username, the Workshop Category, the Workshop date and time, and the number of places reserved. The superuser is also shown the approval Status of this booking depending on whether it has been approved yet. This approval status icon is also a toggle button, and can be clicked to approve or unapprove the booking. The icon will change according to the approval status, and an alert message will be shows to confirm the approval/unapproval success.
+
+In the posts list, the superuser is shown all posts information. The user is shown the Author, Title, Category, Date Posted, number of likes, number of comments and the approval status. This approval status icon is also a toggle button, and can be clicked to approve or unapprove the post. The icon will change according to the approval status, and an alert message will be shows to confirm the approval/unapproval success.
+
+In the comments list, the superuser is shown all comments written by all users. The superuser is shown the author, the post the comment was made on, the comment, the date the comment was made and the approval status. This approval status icon is also a toggle button, and can be clicked to approve or unapprove the comment. The icon will change according to the approval status, and an alert message will be shows to confirm the approval/unapproval success.
+
+All bookings, posts and comments have an 'Edit' button and a 'Delete' button next to them. 
+
+<details><summary><b>Edit Bookings, Posts and Comments</b></summary>
+
+![Edit Booking](static/images/readme/admin-editbooking.png)
+
+![Edit Post](static/images/readme/admin-editpost.png)
+
+![Edit Comment](static/images/readme/admin-editcomment.png)
+
+</details><br/>
+
+<details><summary><b>Delete Bookings, Posts and Comments</b></summary>
+
+![Delete Booking](static/images/readme/admin-deletebooking.png)
+
+![Delete Post](static/images/readme/admin-deletepost.png)
+
+![Delete Comment](static/images/readme/admin-deletecomment.png) 
+
+</details><br/>
+
 ### **Sign Up**
 ### **Sign In**
 ### **Sign Out**
@@ -570,4 +618,6 @@ The libraries used in this project are located in the requirements.txt file and 
 
 # Testing
 
-## Testing User Stories
+Please click [**_here_**](TESTING.md) to read more information about testing The Craft Cafe
+
+[Back to top](<#contents>)

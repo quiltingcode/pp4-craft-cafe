@@ -11,10 +11,6 @@
   </div>
   <div class="row text-center">
     <div class="col-8 offset-2">
-      <h3 class="mb-4">
-        Delete {{ booking.workshop }} booked for {{ booking.day }}:
-      </h3>
-
       <form method="POST">
         {% csrf_token %}
         <p>Are you sure? </p>

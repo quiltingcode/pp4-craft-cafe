@@ -207,7 +207,7 @@ class AdminDeletePost(DeleteView):
 class AdminEditComment(UpdateView):
     model = Comment
     template_name = 'admin-edit-comment.html'
-    fields = ['comment_content']
+    fields = ['comment_content', 'approved']
     success_url = reverse_lazy('cafe-dashboard')
 
 
