@@ -499,12 +499,14 @@ If a user clicks on the 'Delete' button, they are taken into a confirmation dele
 
 ### Features Left to Implement
 
-* Email notification system for the following activities:
+* Develop an email notification system for the following activities:
     * Booking confirmation to the user
-    * Booking request pending confirmation to admin
+    * Booking requests pending approval to admin users
 * Add option for a user to submit a review about the Craft Café
 * Ability to click on the comment count speech bubble to add a comment
 * Success alert messages for edits and deletions carried out in the profile page
+* Add a front end admin section to manage user accounts; Edit, delete and manage permissions. 
+* Add a count of total users in the admin dashboard cafe statistics section
 
 [Back to top](<#table-of-content>)
 
