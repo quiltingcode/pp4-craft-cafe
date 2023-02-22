@@ -564,6 +564,23 @@ If the user wishes to sign out, once signed in, the login menu option turns into
 
 ### **Footer**
 
+The site footer has three link elements. 
+
+1. My details as the site designer. If you click on the link, you are taken to my GitHub site.
+2. The Craft Cafe brand logo. If you click on the link, you are taken back to the top of the Homepage.
+3. Social media links. I have included links to Facebook, Twitter and Instagram. These links simply go to the social media homepage, as this is a ficticious website and does not have any real social media accounts to connect to and follow. 
+
+These three elements are positioned respectively on the far left, center and far right of the screen. For mobile devices, they are all postitioned in the center one above the other in three rows.
+
+<details><summary><b>Footer</b></summary>
+
+![Footer - Tablet and Desktop](static/images/readme/footer-desktop.png)
+
+![Footer - Mobile](static/images/readme/footer-mobile.png)
+
+
+
+</details><br/>
 
 ### Features Left to Implement
 
