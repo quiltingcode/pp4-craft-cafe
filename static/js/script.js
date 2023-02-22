@@ -21,41 +21,41 @@ $(document).ready(function() {
         $('#id_places').html(placesDropdownValues);
         /* Subsequent dropdown changes based on workshop dropdown selection */
         if ($(this).val() == 'All things Wool'){
-            console.log(this.value)
-            resetAllDays()
-            enableMondays()
-            removeMorning()
+            console.log(this.value);
+            resetAllDays();
+            enableMondays();
+            removeMorning();
         } else if ($(this).val() == 'Clothing'){
-            console.log(this.value)
-            resetAllDays()
-            enableTuesdays()
-            removeMorning()
+            console.log(this.value);
+            resetAllDays();
+            enableTuesdays();
+            removeMorning();
         } else if ($(this).val() == 'Quilting'){
-            console.log(this.value)
-            resetAllDays()
-            enableWednesdays()
-            removeMorning()
+            console.log(this.value);
+            resetAllDays();
+            enableWednesdays();
+            removeMorning();
         } else if ($(this).val() == 'Home Crafts'){
-            console.log(this.value)
-            resetAllDays()
-            enableThursdays()
-            removeMorning()
+            console.log(this.value);
+            resetAllDays();
+            enableThursdays();
+            removeMorning();
             $("#datepicker").datepicker("destroy");
         } else if ($(this).val() == 'Needlepoint'){
-            console.log(this.value)
-            resetAllDays()
-            enableFridays()
-            removeMorning()
+            console.log(this.value);
+            resetAllDays();
+            enableFridays();
+            removeMorning();
         } else if ($(this).val() == 'Kids Crafts'){
-            console.log(this.value)
-            resetAllDays()
-            enableSaturdays()
-            removeAfternoon()
+            console.log(this.value);
+            resetAllDays();
+            enableSaturdays();
+            removeAfternoon();
         } else {
-            disableAllDays()
+            disableAllDays();
         }
 
-    })
+    });
 
     /* Validation to show available days of the week based on the workshop selected */
 
@@ -67,7 +67,7 @@ $(document).ready(function() {
             beforeShowDay: mondays
         });
         console.log($("#id_day"));
-    };
+    }
 
     function mondays(in_date) {
         if (in_date.getDay() != 1) {
@@ -85,7 +85,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: tuesdays
         });
-    };
+    }
 
     function tuesdays(in_date) {
         if (in_date.getDay() != 2) {
@@ -102,7 +102,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: wednesdays
         });
-    };
+    }
 
     function wednesdays(in_date) {
         if (in_date.getDay() != 3) {
@@ -119,7 +119,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: thursdays
         });
-    };
+    }
 
     function thursdays(in_date) {
         if (in_date.getDay() != 4) {
@@ -136,7 +136,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: fridays
         });
-    };
+    }
 
     function fridays(in_date) {
         if (in_date.getDay() != 5) {
@@ -153,7 +153,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: saturdays
         });
-    };
+    }
 
     function saturdays(in_date) {
         if (in_date.getDay() != 6) {
@@ -170,7 +170,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: disableall
         });
-    };
+    }
 
     function disableall(in_date) {
         if (in_date.getDay() == 1) {
@@ -208,8 +208,8 @@ $(document).ready(function() {
 
      /* Reset the calendar datepicker completely each time a new workshop is selected */
     function resetAllDays() {
-        $('#id_day').datepicker('destroy')
+        $('#id_day').datepicker('destroy');
     }
 
 
-})
+});
