@@ -490,6 +490,8 @@ If a user clicks the 'Edit' button, they are taken into an edit page where a for
 
 If a user clicks on the 'Delete' button, they are taken into a confirmation deletion page where they must confirm whether they really want to delete this data or not. If the user changes their mind, they can click the 'Go Back' button to return to their profile without deleting anything. However, if they wish to continue, they can click on the 'Delete' button and the corresponding booking, post or comment will be permanently removed from the site. 
 
+After editing or deleting, the user is redirected back to their profile page.
+
 ### **Admin Dashboard**
 
 Although all admin CRUD functionality can be accessed and managed through the superuser logon to the /admin page, I also decided to create a frontend admin page where superusers can see a general overview of how well the Craft Cafe website is performing and how much interaction it's getting with its community. Firstly, the superuser can see some website statistics:
@@ -538,6 +540,11 @@ All bookings, posts and comments have an 'Edit' button and a 'Delete' button nex
 ![Delete Comment](static/images/readme/admin-deletecomment.png) 
 
 </details><br/>
+
+If a superuser clicks the 'Edit' button, they are taken into an edit page where a form is presented to them with the existing data pre-populated from the booking, post or comment they wish to edit. They can update any fields they wish (following the same booking validation guidelines as before) and then save the changes. The superuser also has the additional edit field of the approval checkbox if they wish to change the approval status here as well. Once the changes have been saved the superuser is redirected back to the Admin Dashboard.
+
+If a superuser clicks on the 'Delete' button, they are taken into a confirmation deletion page where they must confirm whether they really want to delete this data or not. If the superuser changes their mind, they can click the 'Go Back' button to return to the admin dashboard without deleting anything. However, if they wish to continue, they can click on the 'Delete' button and the corresponding booking, post or comment will be permanently removed from the site. Once the item has been deleted, the superuser is redirected back to the Admin Dashboard.
+
 
 ### **Sign Up**
 ### **Sign In**
