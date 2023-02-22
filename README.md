@@ -39,7 +39,6 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
     * [Sign In](<#sign-in>)
     * [Sign Out](<#sign-out>)
     * [Footer](<#footer>)
-    * [Flash Messages](<#flash-messages>)
 
 * [**Features Left To Implement**](<#features-left-to-implement>)
 
@@ -564,7 +563,7 @@ If the user wishes to sign out, once signed in, the login menu option turns into
 ![Sign Out](static/images/readme/sign-out.png) 
 
 ### **Footer**
-### **Flash Messages**
+
 
 ### Features Left to Implement
 

@@ -6,6 +6,16 @@
 
 The Craft Café site has been passed through the [W3C html Validator](https://validator.w3.org/), the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the [JS Hint Validator](https://jshint.com/).
 
+The Craft Café site has also been passed through the internal PEP8 validation tests which I installed into GitPod. The method I used to do this was as per the Slack Article written by kevin_ci on the 28th September 2022 in #announcements, since the PEP8online website no longer works:
+
+1. Run the command 'pip3 install pycodestyle'
+2. Press Ctrl+Shift+P
+3. Type 'linter' into the search field
+4. Select 'Python: Select Linter
+5. Select 'pycodestyle' from the list
+6. Select the 3 lines menu in the top left hand corner. Select 'View' and then 'Problems'. 
+6. PEP8 errors are now displayed in a list as well as being underlined in red in the central editor window. 
+
 ## W3C html Validation Results
 
 * base.html - 1 error and 1 warning found. Details can be found in the [Bugs](<#known-bugs>) section. The issues were easily fixed and after a retest, no more errors were returned.
@@ -23,6 +33,12 @@ The Craft Café site has been passed through the [W3C html Validator](https://va
 * Script.js - 2 undefined variables found.  Details can be found in the [Bugs](<#known-bugs>) section. The issues were fixed and after further testing, no more errors were returned.
 
 ![JSHint validation test pass results](static/images/testing/js-testing-passed.png)
+
+## PEP8 Validation Results
+
+After resolving all problems in the run.py file, no more errors were produced.
+
+![PEP8 Errors](assets/images/noproblems.png)
 
 ## Responsiveness Test
 
@@ -89,7 +105,7 @@ I do not have any Apple devices available to carry out testing on a Safari brows
 
 ![Index.html validation error](static/images/testing/w3c-html-errors.png)
 
-This error says that I have used an <a></a> tag within a button element for my link back to the home page from the end page, but according to the W3 Validator this is not allowed.  I therefore removed the button element and styled the anchor element to look the same as the other buttons, so from a user point of view there is no difference.
+This error suggested that the Meta charset line was too far down my head section so I moved it to the top so that it would load faster. The warning suggested that the type attribute that I had on my javascript file link was unnecessary so I removed it. 
 
 2. As a result of the JS Hint validation test, 2 undefined variables were found.
 
