@@ -545,10 +545,24 @@ If a superuser clicks the 'Edit' button, they are taken into an edit page where 
 
 If a superuser clicks on the 'Delete' button, they are taken into a confirmation deletion page where they must confirm whether they really want to delete this data or not. If the superuser changes their mind, they can click the 'Go Back' button to return to the admin dashboard without deleting anything. However, if they wish to continue, they can click on the 'Delete' button and the corresponding booking, post or comment will be permanently removed from the site. Once the item has been deleted, the superuser is redirected back to the Admin Dashboard.
 
-
 ### **Sign Up**
+
+Users who are new to the site, or haven't previously created an account can click on the Signup Menu option on the Navigation Bar to create a user account. I have used the standard AllAuth user model for the signup process and fields which appear. 
+
+![Sign Up](static/images/readme/signup.png) 
+
 ### **Sign In**
+
+If a user has a Craft Cafe account, they can click on the Login menu option in the Navigation Bar to login, and gain access to the additional areas of the website for Craft Cafe Community users. If they try to access areas which require a login, they are prompted to follow the links to login, or signup if they don't currently have an account. 
+
+![Sign In](static/images/readme/sign-in.png) 
+
 ### **Sign Out**
+
+If the user wishes to sign out, once signed in, the login menu option turns into a logout menu option for them to select. 
+
+![Sign Out](static/images/readme/sign-out.png) 
+
 ### **Footer**
 ### **Flash Messages**
 
