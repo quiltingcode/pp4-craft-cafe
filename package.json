@@ -1,0 +1,22 @@
+{
+  "name": "pp4-craft-cafe",
+  "version": "1.0.0",
+  "description": "The Craft Café is a regular café where people can go to enjoy a cup of coffee and a piece of cake. However, it's unique selling point is that in the afternoons, Monday to Friday, and on Saturday mornings, it also runs Craft workshops where people can learn crafty skills and make beautiful craft items to take away. Through the Craft Cafe website, users can check the craft workshop schedule, and reserve their places in advance.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quiltingcode/pp4-craft-cafe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quiltingcode/pp4-craft-cafe/issues"
+  },
+  "homepage": "https://github.com/quiltingcode/pp4-craft-cafe#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
