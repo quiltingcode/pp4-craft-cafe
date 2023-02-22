@@ -827,28 +827,36 @@ To clone and set up this project you need to follow the steps below.
 
 ## Content
 
-* All text content written by Marcus Eriksson.
-
-* Test concert images on review cards taken from [Shutterstock](https://www.shutterstock.com/sv)
-
-* Test album images on review cards taken from [Kollektiv Fem](https://www.kollektivfem.se) which is owned by Marcus Eriksson.
-
-* Featured default review image taken from [FAVPNG](https://favpng.com/png_view/download-clip-art-png/hHNmGh4R)
-
-* Template for read.me provided by Code Institute (*with some additional changes that my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/))* suggested.
+* The colour scheme was created using [Canva](https://www.canva.com/colors/color-wheel/)
+* [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
+* The Favicon in the browser was created in https://favicon.io/
+* The fonts were taken from [Google Fonts](https://fonts.google.com/)
+* The logo was created using [My Free Logo Maker](https://myfreelogomaker.com/explore)
+* The images were sourced from [Unsplash](https://unsplash.com/photos/Rs_i9jyJ4rY?like_photo=true)
 
 ## Technical
 
-* Inspiration regarding UpdateView taken from [Learn Django Class Based Views](https://www.youtube.com/watch?v=EUUjJdw3EBM)
-
-* Formatting date format [Formatting Date, Time, and Numbers in Django Templating](https://collinshillary1.medium.com/formatting-date-time-and-numbers-in-django-templating-f53fea027a06)
-
-* Inspiration regarding CSS code to add circle around text [How to Add a Circle Around a Number in CSS](https://www.w3docs.com/snippets/css/how-to-add-a-circle-around-a-number-in-css.html)
-
-* Inspiration regarding adding extra forms in Django Allauth form [How to add more custom fields on signup form?](https://stackoverflow.com/questions/68591755/django-allauth-how-to-add-more-custom-fields-on-signup-form)
+* I took inspiration for how to create a booking system app using the [Dev Genius Blog](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78) tutorial.
+* I installed [Summernote](https://summernote.org/) to help with the text field editor
+* I read a many sections of the [Django documentation](https://docs.djangoproject.com/en/3.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.list_display) with parts of Django I didn't fully understand from the walkthroughs, or with features that I wanted that weren't covered on the course. 
+* I watched this [Study gyaan](https://www.youtube.com/watch?v=qvlPrL7k-VQ) tutorial to help build the initial Homepage which had no views. 
+* I used Django AllAuth to build the login system
+* I used Django Crispy forms to create the forms
+* I read this [Stack Overflow](https://stackoverflow.com/questions/62697613/how-to-navigate-to-a-different-page-using-id-in-django) article explaining how to create a Django url link to a particular section of a template html page. 
+* I read the following article from [ordinarycoders.com](https://ordinarycoders.com/blog/article/add-a-custom-favicon-to-your-django-web-app)on how to add a favicon into a Django project.
+* I used the Google Maps API to create my site location map.
+* I used this article I read on [GeeksforGeeks](https://www.geeksforgeeks.org/verbose_name-django-built-in-field-validation/) on how to display a field name differently to how it is named in the Django model.
+* I watched this tutorial on slugs from [learndjango.com](https://learndjango.com/tutorials/django-slug-tutorial)
+* I watched this tutorial on edit and delete views from [codemy.com](https://www.youtube.com/watch?v=8NPOwmtupiI&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=7)
+* I watched this tutorial on Cloudinary front end uploads from [www.section.io](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)
+* I read this article on how to create a filter on my posts page on [Stack Overflow](https://stackoverflow.com/questions/44369538/creating-django-filter-in-a-bootstrap-dropdown-based-on-the-django-admin-created)
+* I read the following articles when trying to create my calendar datepicker for my booking form:
+    * [GeeksforGeeks](https://www.geeksforgeeks.org/jquery-ui-datepicker-beforeshowday-option/)
+    * [Stack Overflow](https://stackoverflow.com/questions/5416767/get-selected-value-text-from-select-on-change)
+    * [Stack Overflow](https://stackoverflow.com/questions/12932959/remove-values-from-select-list-based-on-condition)
 
 # Acknowledgements
-This fictional site was created for Portfolio Project #4 (Full-Stack Tolkin) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for relevant feedback during the project.
+This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development at the [Code Institute](https://www.codeinstitute.net). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for his support and feedback during the project.
 
 *Kelly Hutchison, February 2023*
 
