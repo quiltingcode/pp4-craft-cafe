@@ -1,3 +1,6 @@
+/* global $ */
+/* global bootstrap */
+
 $(document).ready(function() {
 
     /* Time delay for auto-dismissal script on alert messages */ 
