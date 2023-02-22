@@ -22,7 +22,6 @@
             <table class="table profile-table">
                 <thead>
                   <tr>
-                    <th scope="col">Total Users</th>
                     <th scope="col">Total Bookings</th>
                     <th scope="col">Total Posts</th>
                     <th scope="col">Total Comments</th>
@@ -30,9 +29,6 @@
                 </thead>
                 <tbody class="table-group-divider">
                   <tr>
-                    {% with users.count as total_users %}
-                    <td>{{ total_users }}</td>
-                    {% endwith %}
                     {% with bookings.count as total_bookings %}
                     <td>{{ total_bookings }}</td>
                     {% endwith %} 
