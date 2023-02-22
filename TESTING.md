@@ -8,10 +8,9 @@ The Craft Café site has been passed through the [W3C html Validator](https://va
 
 ## W3C html Validation Results
 
-* Index.html - 1 error. Details can be found in the [Bugs](<#known-bugs>) section. The issue was easily fixed and after a retest, no more errors were returned.
+* base.html - 1 error and 1 warning found. Details can be found in the [Bugs](<#known-bugs>) section. The issues were easily fixed and after a retest, no more errors were returned.
 
-![W3C html home page validation results](assets/readmeimages/w3validator-pass.PNG)
-
+![W3C html home page validation results](static/images/testing/w3c-html-pass.png)
 
 ## W3C CSS Validation Results
 
@@ -84,18 +83,15 @@ I do not have any Apple devices available to carry out testing on a Safari brows
 
 ## Known Bugs
 
-### Resolved
+### Resolved 
 
-1. The .hide class elements have a display setting of 'none' but the #answer-area id element has a display setting of 'grid'. 
+1. As a result of the W3C html validation test, the base.html page had 1 error and 1 warning. 
 
-
-10. As a result of the W3C html validation test, the index.html page had 1 error. 
-
-![Index.html validation error]()
+![Index.html validation error](static/images/testing/w3c-html-errors.png)
 
 This error says that I have used an <a></a> tag within a button element for my link back to the home page from the end page, but according to the W3 Validator this is not allowed.  I therefore removed the button element and styled the anchor element to look the same as the other buttons, so from a user point of view there is no difference.
 
-11. As a result of the JS Hint validation test, 2 undefined variables were found.
+2. As a result of the JS Hint validation test, 2 undefined variables were found.
 
 ![JSHint validation test results](static/images/testing/js-testing.png)
 
