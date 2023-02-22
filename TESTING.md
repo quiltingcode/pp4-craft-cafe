@@ -17,7 +17,7 @@ The Craft Café site has been passed through the [W3C html Validator](https://va
 
 * Style.css – No errors were found.
 
-![CSS validation test pass results](assets/readmeimages/w3c-css-validator-pass.PNG)
+![CSS validation test pass results](static/images/testing/css-test.png)
 
 ## JS Hint Validation Results
 
