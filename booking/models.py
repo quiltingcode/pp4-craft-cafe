@@ -39,7 +39,7 @@ class WorkshopBooking(models.Model):
         User, on_delete=models.CASCADE, null=True, blank=True)
     workshop = models.CharField(
         max_length=50, choices=WORKSHOP_CHOICES, blank=False)
-    day = models.DateField(default=datetime.now)
+    day = models.DateField(null=True)
     time = models.CharField(
         max_length=20, choices=TIME_CHOICES, default="4 - 6pm")
     created_on = models.DateTimeField(default=datetime.now, blank=True)

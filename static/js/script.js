@@ -169,7 +169,7 @@ $(document).ready(function() {
     function disableAllDays() {
         $("#id_day").datepicker({
             dateFormat: 'dd-mm-yy',
-            minDate: +0,
+            minDate: null,
             maxDate: '+5M',
             beforeShowDay: disableall
         });
