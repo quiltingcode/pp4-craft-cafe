@@ -361,7 +361,11 @@ Once the user is logged in, they will be able to see the booking request form.
 
 ![Booking Form - Logged in](static/images/readme/booking-form-tablet.png)
 
-The form consists of four mandatory fields: Workshop, Day, Time, and Places. The calendar field is unavailable until a Workshop category has been selected. Once a Workshop has been selected, the calendar becomes active. Dates in the past are not available and the user is restricted to only select the corresponding day of the week in which the workshop is scheduled for up to five months in advance. For example, if they select the All Things Wool workshop, only Mondays can be selected for the next 5 months. 
+The form consists of four mandatory fields: Workshop, Day, Time, and Places. 
+
+The calendar field is unavailable until a Workshop category has been selected. The Date field in the booking model is set to null=True so that this field stays empty to begin with until a workshop has been selected. I have also set an attribute of 'Read-Only' to this field so that users can not override the calendar datepicker widget and type in strings or dates in the wrong format or outside of the min and max date parameters set against the datepicker calendar.
+
+Once a Workshop has been selected, the calendar becomes active. Dates in the past are not available and the user is restricted to only select the corresponding day of the week in which the workshop is scheduled for up to five months in advance. For example, if they select the All Things Wool workshop, only Mondays can be selected for the next 5 months. 
 
 If a Monday to Friday workshop is selected, the Time field is restricted to only show the afternoon sessions. If the Saturday Kids Crafts workshop is selected, the afternoon sessions are hidden and the user can only select a morning session. 
 
