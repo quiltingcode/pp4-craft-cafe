@@ -5,11 +5,11 @@ $(document).ready(function() {
 
     /* Time delay for auto-dismissal script on alert messages */ 
 
-    setTimeout(function() {
-        let messages = document.getElementById('msg');
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-    }, 3000);
+    // setTimeout(function() {
+    //     let messages = document.getElementById('msg');
+    //     let alert = new bootstrap.Alert(messages);
+    //     alert.close();
+    // }, 3000);
 
     /* Initial reset state of all fields before selection */
     var dayDropDownValues = $("#id_day").attr( 'readOnly' , 'true' )
@@ -218,5 +218,3 @@ $(document).ready(function() {
 
 });
 
-module.exports = setTimeout;
-module.exports.$ = $;
