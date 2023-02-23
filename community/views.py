@@ -158,6 +158,16 @@ class EditComment(UpdateView):
     fields = ['comment_content']
     success_url = '/contact/profile-page'
 
+    def post(self, request, pk):
+        comment = get_object_or_404(Comment, pk=pk)
+        comment.approved = False
+        comment.save()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Comment updated successfully, awaiting re-approval.')
+
+        return redirect('profile-page')
+
 
 class DeleteComment(DeleteView):
     model = Comment
