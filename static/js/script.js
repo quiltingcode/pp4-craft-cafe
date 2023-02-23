@@ -214,5 +214,7 @@ $(document).ready(function() {
         $('#id_day').datepicker('destroy');
     }
 
-
 });
+
+module.exports = setTimeout;
+module.exports.$ = $;

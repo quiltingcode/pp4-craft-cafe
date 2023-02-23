@@ -40,6 +40,28 @@ After resolving all problems in the run.py file, no more errors were produced.
 
 ![PEP8 Errors](assets/images/noproblems.png)
 
+### Manual Testing
+
+In addition to the code validation tests stated above I have performed a series of manual tests. 
+
+| Status | **Homepage - User Logged Out**
+|:-------:|:--------|
+| &check; | Clicking the navbar brand logo loads the home page
+| &check; | Clicking the Home button on the nav bar re-loads the home page
+| &check; | Clicking the Food button on the nav bar scrolls down to the Craft Cafe Menu section of the homepage
+| &check; | Clicking the Craft Workshops button on the nav bar takes you to the top of the contact.html page
+| &check; | Clicking the Contact Us button on the nav bar takes you to the booking form on the contact.html page
+| &check; | Clicking the Craft Cafe Community button on the nav bar takes you to the craft-community.html page with a message saying you must be logged in to view community posts. No posts can be seen.
+| &check; | Clicking the Sign Up button on the nav bar loads the sign up page
+| &check; | Clicking the Login button on the nav bar loads the sign in page
+| &check; | Clicking on the 'Book into a craft workshop here' button on the hero image takes you to the top of the contact.html page
+| &check; | Clicking the 'Wool' button on the Craft Cafe Workshop category cards takes the user to the top of the contact.html page
+| &check; | Clicking on the 'Click here to find out more and book' button takes the user to the top of the contact.html page
+| &check; | Google map is visible with a marker pin showing the exact location of the Craft Cafe
+| &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+
 ## Responsiveness Test
 
 The responsive design tests were carried out manually throughout the build using Google Chrome Dev Tools. I used a mobile first approach basing my initial design around the iPhone 6,7,8 (375 x 667px) which became my first media query break point. I then selected another break point at 768px for tablet devices 992px and above for larger devices, following the bootstrap standard breakpoints. 
