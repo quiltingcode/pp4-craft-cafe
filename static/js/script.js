@@ -12,7 +12,7 @@ $(document).ready(function() {
     }, 3000);
 
     /* Initial reset state of all fields before selection */
-
+    var dayDropDownValues = $("#id_day").attr( 'readOnly' , 'true' )
     var timeDropdownValues = $('#id_time').html();
     var placesDropdownValues = $('#id_places').html();
 
@@ -20,6 +20,7 @@ $(document).ready(function() {
 
     $('#id_workshop').change(function(){ 
         /* Reset fieds each time workshop field is changed */
+        $("#id_day").attr( 'readOnly' , 'true' )
         $('#id_time').html(timeDropdownValues);
         $('#id_places').html(placesDropdownValues);
         /* Subsequent dropdown changes based on workshop dropdown selection */
@@ -173,6 +174,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: disableall
         });
+        $("#id_day").attr( 'readOnly' , 'true' )
     }
 
     function disableall(in_date) {
