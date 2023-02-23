@@ -135,6 +135,16 @@ class EditPost(UpdateView):
     fields = ['title', 'category', 'featured_image', 'content']
     success_url = '/contact/profile-page'
 
+    def post(self, request, pk):
+        post = get_object_or_404(Post, pk=pk)
+        post.approved = False
+        post.save()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Post updated successfully, awaiting re-approval.')
+
+        return redirect('profile-page')
+
 
 class DeletePost(DeleteView):
     model = Post

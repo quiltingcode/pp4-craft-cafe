@@ -154,31 +154,6 @@ class AdminEditBooking(UpdateView):
     fields = ['workshop', 'day', 'time', 'places', 'approved']
     success_url = reverse_lazy('cafe-dashboard')
 
-    # def post(self, request, pk):
-    #     time = request.POST.get("time")
-    #     day = request.session.get('day')
-    #     places = request.POST.get("places")
-    #     booking_form = BookingForm(data=request.POST)
-    #     num_bookings = WorkshopBooking.objects.filter(day=day, time=time).count()
-    #     if num_bookings + int(places) <= 10:   
-    #         if booking_form.is_valid():
-    #             booking = booking_form.save(commit=False)
-    #             booking.user = User.objects.get(id=request.user.id)
-    #             booking.email = request.user.email
-    #             booking.name = request.user.username
-    #             booking.save()
-    #             messages.add_message(
-    #                 request, messages.SUCCESS,
-    #                 'Booking updated successfully, awaiting re-approval.')
-    #         else:
-    #             booking_form = BookingForm()
-    #     else:
-    #         messages.add_message(
-    #             request, messages.SUCCESS,
-    #             'The selected date is full. please try a different session.')  
-
-    #     return redirect('profile-page')
-
 
 class AdminDeleteBooking(DeleteView):
     model = WorkshopBooking
