@@ -94,14 +94,11 @@ class EditBooking(UpdateView):
     fields = ['workshop', 'day', 'time', 'places',]
     success_url = '/contact/profile-page'
 
-    def post(self, request, pk):
-        booking = get_object_or_404(WorkshopBooking, pk=pk)
-        booking.approved = False
-        booking.save()
-        messages.add_message(
-            request, messages.SUCCESS,
-            'Booking updated successfully, awaiting re-approval.')
-
+    def form_valid(self, form):
+        if form.is_valid():
+            edited_booking = form.save(commit=False)
+            edited_booking.approved = False
+            edited_booking.save()
         return redirect('profile-page')
 
 
