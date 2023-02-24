@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime, timedelta
 from .models import WorkshopBooking
 from django.contrib import messages
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views import generic, View
 from .forms import BookingForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -95,8 +96,6 @@ class EditBooking(SuccessMessageMixin, UpdateView):
     model = WorkshopBooking
     template_name = 'edit-booking.html'
     fields = ['workshop', 'day', 'time', 'places',]
-    success_url = ('contact/profile-page')
-    success_message = 'Updated successfully - awaiting re-approval!'
 
     def form_valid(self, form):
         if form.is_valid():

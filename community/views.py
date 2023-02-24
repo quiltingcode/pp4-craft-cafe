@@ -133,17 +133,14 @@ class EditPost(UpdateView):
     model = Post
     template_name = 'edit-post.html'
     fields = ['title', 'category', 'featured_image', 'content']
-    success_url = '/contact/profile-page'
 
-    def post(self, request, pk):
-        post = get_object_or_404(Post, pk=pk)
-        post.approved = False
-        post.save()
-        messages.add_message(
-            request, messages.SUCCESS,
-            'Post updated successfully, awaiting re-approval.')
-
-        return redirect('profile-page')
+    def form_valid(self, form):
+        if form.is_valid():
+            edited_post = form.save(commit=False)
+            edited_post.approved = False
+            edited_post.save()
+            messages.success(self.request, 'Updated successfully - awaiting re-approval!')
+        return redirect('profile-page') 
 
 
 class DeletePost(DeleteView):
