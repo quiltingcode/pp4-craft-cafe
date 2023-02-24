@@ -66,7 +66,7 @@ class ContactPage(View):
                 booking.save()
                 messages.add_message(
                     request, messages.SUCCESS,
-                    'Booking request submitted successfully, awaiting approval.')
+                    'Booking request successful, awaiting approval.')
 
                 return redirect('profile-page')
             else:
@@ -85,9 +85,12 @@ class ProfilePageView(ListView):
 
     def get_context_data(self):
         context = super(ProfilePageView, self).get_context_data()
-        context['bookings'] = WorkshopBooking.objects.filter(user=self.request.user).order_by("-day")
-        context['posts'] = Post.objects.filter(author=self.request.user).order_by("-created_on")
-        context['comments'] = Comment.objects.filter(name=self.request.user).order_by("-created_on")
+        context['bookings'] = WorkshopBooking.objects.filter(
+            user=self.request.user).order_by("-day")
+        context['posts'] = Post.objects.filter(
+            author=self.request.user).order_by("-created_on")
+        context['comments'] = Comment.objects.filter(
+            name=self.request.user).order_by("-created_on")
 
         return context
 
@@ -104,7 +107,7 @@ class EditBooking(SuccessMessageMixin, UpdateView):
             edited_booking.save()
             messages.success(
                 self.request, 'Updated successfully - awaiting re-approval!')
-        return redirect('profile-page') 
+        return redirect('profile-page')
 
 
 class DeleteBooking(DeleteView):
