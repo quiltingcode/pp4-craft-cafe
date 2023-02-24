@@ -36,11 +36,26 @@ The Craft Café site has also been passed through the internal PEP8 validation t
 
 ## PEP8 Validation Results
 
-After resolving all problems in the run.py file, no more errors were produced.
+### Booking App py files
 
-![PEP8 Errors](assets/images/noproblems.png)
+* admin.py - No problems or warnings found
+* apps.py - No problems or warnings found
+* forms.py - No problems or warnings found
+* models.py - No problems or warnings found
+* urls.py - No problems or warnings found
+* views.py - No problems or warnings found
 
-### Manual Testing
+### Community App py files
+
+* admin.py - No problems or warnings found
+* apps.py - No problems or warnings found
+* forms.py - No problems or warnings found
+* models.py - No problems or warnings found
+* urls.py - No problems or warnings found
+* views.py - No problems or warnings found
+
+
+## Manual Testing
 
 In addition to the code validation tests stated above I have performed a series of manual tests. 
 
@@ -50,17 +65,119 @@ In addition to the code validation tests stated above I have performed a series 
 | &check; | Clicking the Home button on the nav bar re-loads the home page
 | &check; | Clicking the Food button on the nav bar scrolls down to the Craft Cafe Menu section of the homepage
 | &check; | Clicking the Craft Workshops button on the nav bar takes you to the top of the contact.html page
-| &check; | Clicking the Contact Us button on the nav bar takes you to the booking form on the contact.html page
+| &check; | Clicking the Contact Us button on the nav bar takes you to the booking form section on the contact.html page but the user can't see the booking form
 | &check; | Clicking the Craft Cafe Community button on the nav bar takes you to the craft-community.html page with a message saying you must be logged in to view community posts. No posts can be seen.
 | &check; | Clicking the Sign Up button on the nav bar loads the sign up page
 | &check; | Clicking the Login button on the nav bar loads the sign in page
+| &check; | The user can not see the personal profile icon in the navigation bar
+| &check; | The user can not see the admin menu option in the navigation bar
 | &check; | Clicking on the 'Book into a craft workshop here' button on the hero image takes you to the top of the contact.html page
-| &check; | Clicking the 'Wool' button on the Craft Cafe Workshop category cards takes the user to the top of the contact.html page
+| &check; | Clicking the 'Wool' button on the Craft Cafe Workshop category cards takes the user to the Mondays: All things Wool section of the Contact Page
+| &check; | Clicking the 'Quilting' button on the Craft Cafe Workshop category cards takes the user to the Wednesdays: Quilting section of the Contact Page
+| &check; | Clicking the 'Clothing' button on the Craft Cafe Workshop category cards takes the user to the Tuesdays: Clothing section of the Contact Page
+| &check; | Clicking the 'Home Crafts' button on the Craft Cafe Workshop category cards takes the user to the Thursdays: Home Crafts section of the Contact Page
+| &check; | Clicking the 'Needlepoint' button on the Craft Cafe Workshop category cards takes the user to the Fridays: Needlepoint section of the Contact Page
+| &check; | Clicking the 'Kids Crafts' button on the Craft Cafe Workshop category cards takes the user to the Saturdays: Kids Crafts section of the Contact Page
 | &check; | Clicking on the 'Click here to find out more and book' button takes the user to the top of the contact.html page
+| &check; | Desktop users can see three reviews
+| &check; | Tablet and Mobile users can see two reviews
 | &check; | Google map is visible with a marker pin showing the exact location of the Craft Cafe
+| &check; | Clicking the KH Designs link in the footer area opens my GitHub profile in a new window
+| &check; | Clicking the Craft Cafe brand logo in the footer area takes the user back to the top of the homepage
 | &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
 | &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
 | &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+
+| Status | **Contact Page - User Logged Out**
+|:-------:|:--------|
+| &check; | The user can view the workshop schedule for Mondays, including pricing, example activites, and session times. 
+| &check; | The user can view the workshop schedule for Tuesdays, including pricing, example activites, and session times.
+| &check; | The user can view the workshop schedule for Wednesdays, including pricing, example activites, and session times.
+| &check; | The user can view the workshop schedule for Thursdays, including pricing, example activites, and session times.
+| &check; | The user can view the workshop schedule for Fridays, including pricing, example activites, and session times. 
+| &check; | The user can view the workshop schedule for Saturdays, including pricing, example activites, and session times.
+| &check; | Clicking the 'Book your places here' button for any day takes the user down to the contact form section
+| &check; | In the booking form section, the user can't see the booking form
+| &check; | In the booking form section, the user can see a message saying 'You must be logged in to make a booking'.
+| &check; | Clicking on the 'Log in Here' link takes the user to the sign in page.
+
+| Status | **Craft Community Page - User Logged Out**
+|:-------:|:--------|
+| &check; | The user can't view community posts  
+| &check; | The user can see a message informing them that 'You must be logged in to view community posts'.. 
+| &check; | Clicking on the 'Join the Craft Cafe Community Here' link takes the user to the sign in page.
+
+These testing scenarios fulfil the objectives set out in the initial user stories for a logged out user. 
+
+| Status | **Homepage - User Logged In**
+|:-------:|:--------|
+| &check; | Clicking the navbar brand logo loads the home page
+| &check; | Clicking the Home button on the nav bar re-loads the home page
+| &check; | Clicking the Food button on the nav bar scrolls down to the Craft Cafe Menu section of the homepage
+| &check; | Clicking the Craft Workshops button on the nav bar takes you to the top of the contact.html page
+| &check; | Clicking the Contact Us button on the nav bar takes you to the booking form section on the contact.html page 
+| &check; | Clicking the Craft Cafe Community button on the nav bar takes you to the craft-community.html page
+| &check; | The user can't see the Log In button in the navigation bar
+| &check; | The user can't see the Sign Up button in the navigation bar
+| &check; | The user can see the Log Out button in the navigation bar
+| &check; | Clicking the Logout button on the nav bar loads the sign out page
+| &check; | The user can see the personal profile icon in the navigation bar
+| &check; | The user can not see the admin menu option in the navigation bar
+| &check; | Clicking the personal profile icon on the nav bar loads the user's profile page
+| &check; | Clicking on the 'Book into a craft workshop here' button on the hero image takes you to the top of the contact.html page
+| &check; | Clicking the 'Wool' button on the Craft Cafe Workshop category cards takes the user to the Mondays: All things Wool section of the Contact Page
+| &check; | Clicking the 'Quilting' button on the Craft Cafe Workshop category cards takes the user to the Wednesdays: Quilting section of the Contact Page
+| &check; | Clicking the 'Clothing' button on the Craft Cafe Workshop category cards takes the user to the Tuesdays: Clothing section of the Contact Page
+| &check; | Clicking the 'Home Crafts' button on the Craft Cafe Workshop category cards takes the user to the Thursdays: Home Crafts section of the Contact Page
+| &check; | Clicking the 'Needlepoint' button on the Craft Cafe Workshop category cards takes the user to the Fridays: Needlepoint section of the Contact Page
+| &check; | Clicking the 'Kids Crafts' button on the Craft Cafe Workshop category cards takes the user to the Saturdays: Kids Crafts section of the Contact Page
+| &check; | Clicking on the 'Click here to find out more and book' button takes the user to the top of the contact.html page
+| &check; | Desktop users can see three reviews
+| &check; | Tablet and Mobile users can see two reviews
+| &check; | Google map is visible with a marker pin showing the exact location of the Craft Cafe
+| &check; | Clicking the KH Designs link in the footer area opens my GitHub profile in a new window
+| &check; | Clicking the Craft Cafe brand logo in the footer area takes the user back to the top of the homepage
+| &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
+| &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
+| &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+
+| Status | **Contact Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view the workshop schedule for Mondays, including pricing, example activites, and session times. 
+| &check; | The user can view the workshop schedule for Tuesdays, including pricing, example activites, and session times.
+| &check; | The user can view the workshop schedule for Wednesdays, including pricing, example activites, and session times.
+| &check; | The user can view the workshop schedule for Thursdays, including pricing, example activites, and session times.
+| &check; | The user can view the workshop schedule for Fridays, including pricing, example activites, and session times. 
+| &check; | The user can view the workshop schedule for Saturdays, including pricing, example activites, and session times.
+| &check; | Clicking the 'Book your places here' button for any day takes the user down to the contact form section
+| &check; | In the booking form section, the user can see the booking form
+| &check; | The user's username is automatically populated in the 'booking as' field
+| &check; | The user can't open the 'Day' field calendar if the 'Workshop' field has not been selected first. 
+| &check; | The user can view a list of the six workshop categories on clicking the 'Workshop' field dropdown selection
+| &check; | The user can open the 'Day' field calendar after having selected a workshop.
+| &check; | The user can't select any dates in the past
+| &check; | The user can only select dates up to 5 months in the future, from today's date.
+| &check; | The user can't manually type anything into the 'Day' field
+| &check; | On selecting the 'All Things Wool' workshop, the user can only select Mondays from the calendar
+| &check; | On selecting the 'Quilting' workshop, the user can only select Wednesdays from the calendar
+| &check; | On selecting the 'Clothing' workshop, the user can only select Tuesdays from the calendar
+| &check; | On selecting the 'Home Crafts' workshop, the user can only select Thursdays from the calendar
+| &check; | On selecting the 'Needlepoint' workshop, the user can only select Fridays from the calendar
+| &check; | On selecting the 'Kids Crafts' workshop, the user can only select Saturdays from the calendar
+| &check; | On selecting the 'All Things Wool', 'Quilting', 'Clothing', 'Home Crafts' or 'Needlepoint workshop, the user can only select the afternoon options of 4 - 6pm or 6 - 8pm from the 'Time' field dropdown menu.
+| &check; | On selecting the 'Kids Crafts' workshop, the user can only select the morning options of 10 - 11.30 or 11.30 till 1 from the 'Time' field dropdown menu.
+| &check; | The user can view a list of the number of places they wish to book from 1 to 10 in the 'Places' field dropdown selection
+| &cross; | On changing the 'Workshop' field selection, the date field is reset to blank.
+| &check; | On changing the 'Workshop' field selection, the Time field is reset to correspond with the selected workshop.
+| &check; | On changing the 'Workshop' field selection, the Places field is reset to 1.
+| &check; | Clicking 'Submit booking request', the user will see an error message alert above the contact form saying 'The selected date is full. Please try a different session', if there are already more than 10 places reserved on the same workshop session requested.
+| &check; | On submitting a booking request on a session where there are not enough places available, the user is redirected back to the booking form and the fields have been reset
+| &check; | Clicking 'Submit booking request', if there are enough places available, the user is redirected to the profile page so that they can see the details of the booking.
+| &check; | Clicking 'Submit booking request', if there are enough places available, the user can see an alert message saying 'Booking request successful, awaiting approval'.
+| &check; | On submitting a booking request with no Workshop selected, a message pops up telling the user to select a workshop
+| &cross; | On submitting a booking request with no date selected, a message pops up telling the user to select a date
+
+
 
 ## Responsiveness Test
 
