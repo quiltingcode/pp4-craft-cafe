@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from django.views.generic import TemplateView, ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import UpdateView, DeleteView
 from .forms import CommentForm, PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -18,7 +19,8 @@ class PostList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
-        context['photos'] = Post.objects.filter(approved=True).order_by('-created_on')
+        context['photos'] = Post.objects.filter(
+            approved=True).order_by('-created_on')
         return context
 
     def get(self, request, *args, **kwargs):
@@ -27,7 +29,13 @@ class PostList(generic.ListView):
         if chosen_filter and chosen_filter != "All":
             filtered_posts = filtered_posts.filter(category=chosen_filter)
             print(filtered_posts)
-        return render(request, "craft-community.html", {"filtered_posts": filtered_posts, 'selected': chosen_filter, 'categories': WORKSHOP_CATEGORIES, "form": PostForm()})
+        return render(
+            request, "craft-community.html", {
+                "filtered_posts": filtered_posts,
+                'selected': chosen_filter,
+                'categories': WORKSHOP_CATEGORIES,
+                "form": PostForm()
+                })
 
     def post(self, request):
         post_form = PostForm(request.POST, request.FILES)
@@ -139,8 +147,9 @@ class EditPost(UpdateView):
             edited_post = form.save(commit=False)
             edited_post.approved = False
             edited_post.save()
-            messages.success(self.request, 'Updated successfully - awaiting re-approval!')
-        return redirect('profile-page') 
+            messages.success(
+                self.request, 'Updated successfully - awaiting re-approval!')
+        return redirect('profile-page')
 
 
 class DeletePost(DeleteView):
@@ -153,16 +162,14 @@ class EditComment(UpdateView):
     model = Comment
     template_name = 'edit-comment.html'
     fields = ['comment_content']
-    success_url = '/contact/profile-page'
 
-    def post(self, request, pk):
-        comment = get_object_or_404(Comment, pk=pk)
-        comment.approved = False
-        comment.save()
-        messages.add_message(
-            request, messages.SUCCESS,
-            'Comment updated successfully, awaiting re-approval.')
-
+    def form_valid(self, form):
+        if form.is_valid():
+            edited_comment = form.save(commit=False)
+            edited_comment.approved = False
+            edited_comment.save()
+            messages.success(
+                self.request, 'Updated successfully - awaiting re-approval!')
         return redirect('profile-page')
 
 

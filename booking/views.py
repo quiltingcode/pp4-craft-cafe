@@ -102,7 +102,8 @@ class EditBooking(SuccessMessageMixin, UpdateView):
             edited_booking = form.save(commit=False)
             edited_booking.approved = False
             edited_booking.save()
-            messages.success(self.request, 'Updated successfully - awaiting re-approval!')
+            messages.success(
+                self.request, 'Updated successfully - awaiting re-approval!')
         return redirect('profile-page') 
 
 
