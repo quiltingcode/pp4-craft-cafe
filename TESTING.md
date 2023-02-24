@@ -185,15 +185,74 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | The user can click on the heart icon to like a post
 | &check; | The user can filter the posts by their desired category, so that they can only see posts in one workshop category.
 | &check; | Clicking on the Title of a post, the user can see the 'post-details' page
+| &check; | Clicking on the 'Add a Post' button, a modal pop up appears containing the Post form.
+| &check; | The author of the post form is automatically assigned as the username
+| &check; | The user can no submit the form without filling in the TItle and the Content fields.
+| &check; | The user can submit the form without uploading an image file
+| &check; | The user can submit the form without uploading an image file
+| &check; | The user can see a success message alert when the post has been successfully submitted
+| &check; | The user can view their post on the craft community posts page once it has been approved by admin.
+
 
 | Status | **Post Details Page - User Logged In**
 |:-------:|:--------|
 | &check; | The user can view additional an text description relating to one selected post 
 | &check; | The user can view the number of likes on each post
 | &check; | The user can view the number of comments on each post
+| &check; | Clicking the 'Back to Posts' button takes the user back to the Craft Cafe Community Posts page
 | &check; | The user can click on the heart icon to like a post
 | &check; | The user can filter the posts by their desired category, so that they can only see posts in one workshop category.
 | &check; | Clicking on the Title of a post, the user can see the 'post-details' page
+| &check; | The user can view all approved comments made about this post
+| &check; | The user can add a comment to this post
+| &check; | The user can not submit a blank comment
+| &check; | The user can see a success message once they submit a post telling them that it's awaiting approval.
+
+| Status | **Profile Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view their username and email address in the personal details section 
+| &check; | clicking the 'Delete Account' button will take the user to the delete-account page
+| &check; | The user can view a list of bookings they have submitted successfully
+| &check; | Users who haven't made any bookings, can see a message saying they have no bookings
+| &check; | Users who haven't made any bookings, clicking the 'here' link takes them to the contact page
+| &check; | Users can see an 'Edit' button next to each booking made
+| &check; | On clicking 'Edit' next to a booking, the user is taken to the edit-booking page
+| &check; | Users can see a 'Delete' button next to each booking made
+| &check; | On clicking 'Delete' next to a booking, the user is taken to the delete-booking page
+| &check; | The user can view the approval status of all their bookings
+| &check; | The user can view a list of posts they have submitted successfully
+| &check; | Users who haven't written any posts, can see a message saying they have no posts
+| &check; | Users who haven't written any posts, clicking the 'here' link takes them to the craft community page
+| &check; | Clicking on the post title, the user is taken to the post-details page for that post
+| &check; | Users can see an 'Edit' button next to each post made
+| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-post page
+| &check; | Users can see a 'Delete' button next to each post made
+| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-post page
+| &check; | The user can view the approval status of all their posts
+| &check; | The user can view a list of comment they have submitted successfully
+| &check; | Users who haven't written any comments, can see a message saying they have no comments
+| &check; | Users who haven't written any comments, clicking the 'here' link takes them to the craft community page
+| &check; | Clicking on the commented post title, the user is taken to the post-details page for that post
+| &check; | Users can see an 'Edit' button next to each comment made
+| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-comment page
+| &check; | Users can see a 'Delete' button next to each comment made
+| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-comment page
+| &check; | The user can view the approval status of all their comments
+
+
+| Status | **Delete Account Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view their username
+| &check; | clicking the 'Delete My Account' button will remove their user details from the site
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the account
+
+| Status | **Edit Booking Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view their username and email address in the personal details section 
+| &check; | clicking the 'Delete Account' button will take the user to the delete-account page
+| &check; | The user can view the number of comments on each post
+| &check; | The user can click on the heart icon to like a post
+
 
 ## Responsiveness Test
 
