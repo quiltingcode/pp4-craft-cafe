@@ -3,13 +3,6 @@
 
 $(document).ready(function() {
 
-    /* Time delay for auto-dismissal script on alert messages */ 
-
-    // setTimeout(function() {
-    //     let messages = document.getElementById('msg');
-    //     let alert = new bootstrap.Alert(messages);
-    //     alert.close();
-    // }, 3000);
 
     /* Initial reset state of all fields before selection */
     var dayDropDownValues = $("#id_day").attr( 'readOnly' , 'true' )
@@ -20,7 +13,7 @@ $(document).ready(function() {
 
     $('#id_workshop').change(function(){ 
         /* Reset fieds each time workshop field is changed */
-        $("#id_day").attr( 'readOnly' , 'true' )
+        $("#id_day").attr( 'readOnly', 'true' ).addClass('required');
         $('#id_time').html(timeDropdownValues);
         $('#id_places').html(placesDropdownValues);
         /* Subsequent dropdown changes based on workshop dropdown selection */
@@ -215,6 +208,12 @@ $(document).ready(function() {
     function resetAllDays() {
         $('#id_day').datepicker('destroy');
     }
+
+    $('#booking-form-btn').click(function(){
+        if ($('#id_day').value = '') {
+            alert('Dear User, You are required to fill at least one of Home Re')
+        }
+    })
 
 });
 

@@ -177,7 +177,23 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | On submitting a booking request with no Workshop selected, a message pops up telling the user to select a workshop
 | &cross; | On submitting a booking request with no date selected, a message pops up telling the user to select a date
 
+| Status | **Craft Community Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view all approved community posts  
+| &check; | The user can view the number of likes on each post
+| &check; | The user can view the number of comments on each post
+| &check; | The user can click on the heart icon to like a post
+| &check; | The user can filter the posts by their desired category, so that they can only see posts in one workshop category.
+| &check; | Clicking on the Title of a post, the user can see the 'post-details' page
 
+| Status | **Post Details Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view additional an text description relating to one selected post 
+| &check; | The user can view the number of likes on each post
+| &check; | The user can view the number of comments on each post
+| &check; | The user can click on the heart icon to like a post
+| &check; | The user can filter the posts by their desired category, so that they can only see posts in one workshop category.
+| &check; | Clicking on the Title of a post, the user can see the 'post-details' page
 
 ## Responsiveness Test
 
