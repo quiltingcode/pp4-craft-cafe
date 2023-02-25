@@ -130,7 +130,7 @@
                   <tr>
                     {% for post in posts %}
                     <td>{{ post.author }}</td>
-                    <td>{{ post.title }}</td>
+                    <td><strong><a href="{% url 'post-detail' post.slug %}" class="post-link">{{ post.title }}</a></strong></td>
                     <td>{{ post.category }}</td>
                     <td>{{ post.created_on }}</td>
                     <td>{{ post.number_of_likes }}</td>
@@ -189,7 +189,7 @@
                   <tr>
                     {% for comment in comments %}
                     <td>{{ comment.name }}</td>
-                    <td>{{ comment.post }}</td>
+                    <td><strong><a href="{% url 'post-detail' comment.post.slug %}" class="post-link">{{ comment.post }}</a></strong></td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.created_on }}</td>
                     <td>
