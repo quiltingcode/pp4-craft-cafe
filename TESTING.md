@@ -262,9 +262,9 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | Users who haven't written any comments, clicking the 'here' link takes them to the craft community page
 | &check; | Clicking on the commented post title, the user is taken to the post-details page for that post
 | &check; | Users can see an 'Edit' button next to each comment made
-| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-comment page
+| &check; | On clicking 'Edit' next to a comment, the user is taken to the edit-comment page
 | &check; | Users can see a 'Delete' button next to each comment made
-| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-comment page
+| &check; | On clicking 'Delete' next to a comment, the user is taken to the delete-comment page
 | &check; | The user can view the approval status of all their comments
 
 | Status | **Delete Account Page - User Logged In**
@@ -358,30 +358,96 @@ A logged in Admin superuser can perform all the same functions as a normal logge
 | &check; | The superuser can view a list of all bookings made on the site
 | &check; | If no bookings have been made, the superuser can see a message saying 'there are no bookings'
 | &check; | The superuser can see an 'Edit' button next to each booking made
-| &check; | On clicking 'Edit' next to a booking, the user is taken to the admin-edit-booking page
+| &check; | On clicking 'Edit' next to a booking, the superuser is taken to the admin-edit-booking page
 | &check; | The superuser can see a 'Delete' button next to each booking made
-| &check; | On clicking 'Delete' next to a booking, the user is taken to the admin-delete-booking page
+| &check; | On clicking 'Delete' next to a booking, the superuser is taken to the admin-delete-booking page
 | &check; | The superuser can can view the approval status of all the bookings
-| &check; | The superuser can can edit the approval status by clicking on the approval toggle icon
+| &check; | The superuser can can edit the booking approval status by clicking on the approval toggle icon
 | &check; | On clicking the approval icon, it toggles between red cross (unapproved) and green tick (approved)
 | &check; | On clicking the approval icon, the superuser can view a success message for 'approved' or 'unapproved'
 | &check; | The superuser can view a list of all posts submitted to the site
 | &check; | If no posts have been made, the superuser can see a message saying 'there are no posts yet'
-| &check; | Clicking on the post title, the user is taken to the post-details page for that post
-| &check; | Users can see an 'Edit' button next to each post made
-| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-post page
-| &check; | Users can see a 'Delete' button next to each post made
-| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-post page
-| &check; | The user can view the approval status of all their posts
-| &check; | The user can view a list of comments they have submitted successfully
-| &check; | Users who haven't written any comments, can see a message saying they have no comments
-| &check; | Users who haven't written any comments, clicking the 'here' link takes them to the craft community page
-| &check; | Clicking on the commented post title, the user is taken to the post-details page for that post
-| &check; | Users can see an 'Edit' button next to each comment made
-| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-comment page
-| &check; | Users can see a 'Delete' button next to each comment made
-| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-comment page
-| &check; | The user can view the approval status of all their comments
+| &check; | Clicking on the post title, the superuser is taken to the post-details page for that post
+| &check; | The superuser can see an 'Edit' button next to each post made
+| &check; | On clicking 'Edit' next to a post, the superuser is taken to the admin-edit-post page
+| &check; | The superuser can see a 'Delete' button next to each post made
+| &check; | On clicking 'Delete' next to a post, the superuser is taken to the admin-delete-post page
+| &check; | The superuser can can the approval status of all the posts
+| &check; | The superuser can can edit the post approval status by clicking on the approval toggle icon
+| &check; | The superuser can view a list of all site comments submitted successfully
+| &check; | If no comments have been made, the superuser can see a message saying 'there are no comments yet'
+| &check; | Clicking on the commented post title, the superuser is taken to the post-details page for that post
+| &check; | The superuser can see an 'Edit' button next to each comment made
+| &check; | On clicking 'Edit' next to a comment, the user is taken to the admin-edit-comment page
+| &check; | The superuser can can see a 'Delete' button next to each comment made
+| &check; | On clicking 'Delete' next to a comment, the user is taken to the admin-delete-comment page
+| &check; | The superuser can view the approval status of all each comment
+| &check; | The superuser can can edit the comment approval status by clicking on the approval toggle icon
+
+| Status | **Admin Edit Booking Page - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The superuser can view the booking form pre-populated with the existing booking data
+| &check; | The superuser can view thename of the user who made the booking
+| &check; | The superuser can edit the workshop selection
+| &check; | The superuser can edit the date selection, based on the schedule for the selected workshop
+| &check; | The superuser can edit the time selection, based on the schedule for the selected workshop
+| &check; | The superuser can edit the number of places 
+| &check; | The superuser can edit the approval status 
+| &check; | On clicking 'Save Changes', the superuser is redirected back to the cafe dashboard page
+| &check; | On clicking 'Save Changes', the superuser can view the updated booking details in the bookings list in the cafe dashboard page
+| &check; | On clicking 'Save Changes', the user can view the updated booking details in the bookings list in their profile page
+
+| Status | **Admin Delete Booking Page - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The user can view a message asking them if they are sure they want to delete the booking
+| &check; | clicking the 'Delete Booking' button will remove the booking from the site
+| &check; | clicking the 'Delete Booking' button will remove the booking from the profile page bookings list
+| &check; | clicking the 'Delete Booking' button will redirect the user back to the profile page
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the booking
+
+| Status | **Admin Edit Post Page - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The user can view the post form pre-populated with the existing post data
+| &check; | The user can edit the Title 
+| &check; | The user can edit the post category
+| &check; | The user can edit the image
+| &check; | The user can view the image file-name currently saved with this post
+| &check; | The user can edit the post content
+| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
+| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'Post updated successfully, awaiting re-approval'
+| &check; | On clicking 'Save Changes', the user can view the updated post in the posts list on the profile page
+| &check; | On clicking 'Save Changes', the post approval status changes to 'Awaiting approval'
+
+| Status | **Admin Delete Post Page - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The user can view a message asking them if they are sure they want to delete the post
+| &check; | The user can view the title of the post they have selected for deletion
+| &check; | clicking the 'Delete Post' button will remove the post from the site
+| &check; | clicking the 'Delete Post' button will remove the post from the profile page posts list
+| &check; | clicking the 'Delete Post' button will remove the post from the craft cafe community posts page
+| &check; | clicking the 'Delete Post' button will redirect the user back to the profile page
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the post
+
+| Status | **Admin Edit Comment Page - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The user can view the comment form pre-populated with the existing comment data
+| &check; | The user can view which post the comment relates to
+| &check; | The user can edit the Comment content field
+| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
+| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'Comment updated successfully, awaiting re-approval'
+| &check; | On clicking 'Save Changes', the user can view the updated comment in the comments list on the profile page
+| &check; | On clicking 'Save Changes', the comment approval status changes to 'Awaiting approval'
+
+| Status | **Admin Delete Comment Page - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The user can view a message asking them if they are sure they want to delete the comment
+| &check; | The user can view the title of the post which the comment relates to
+| &check; | The user can view the date and time the comment was written
+| &check; | clicking the 'Delete Comment' button will remove the comment from the site
+| &check; | clicking the 'Delete Comment' button will remove the comment from the profile page comments list
+| &check; | clicking the 'Delete Comment' button will remove the comment from the post-details post page
+| &check; | clicking the 'Delete Comment' button will redirect the user back to the profile page
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the comment
 
 ## Responsiveness Test
 
