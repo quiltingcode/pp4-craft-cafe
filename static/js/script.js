@@ -6,11 +6,14 @@ $(document).ready(function() {
 
     /* Initial reset state of all fields before selection */
     var workshopDropDownValues = $("#id_workshop").val();
+    var dateFieldValue = $("#id_day").val();
     var dayDropDownValues = $("#id_day").attr( 'readOnly' , 'true' );
     var timeDropdownValues = $('#id_time').html();
     var placesDropdownValues = $('#id_places').html();
 
-    checkFieldData()
+     /* Check pre-populated field data in the edit booking page */
+    checkWorkshopField()
+    checkDateField()
 
     /* Booking Form Validation - check which workshop option has been selected */
 
@@ -212,30 +215,45 @@ $(document).ready(function() {
         $('#id_day').datepicker('destroy');
     }
 
-     /* Check pre-populated field data in the edit booking page */
-   function checkFieldData() {
-    console.log('checking fields')
-    console.log(workshopDropDownValues)
-    if (workshopDropDownValues == 'Kids Crafts'){
-        removeAfternoon();
-        enableSaturdays();
-    } else if (workshopDropDownValues == 'Clothing'){
-        removeMorning();
-        enableTuesdays();
-    } else if (workshopDropDownValues == 'All things Wool'){
-        removeMorning();
-        enableMondays();
-   } else if (workshopDropDownValues == 'Quilting'){
-        removeMorning();
-        enableWednesdays();
-   } else if (workshopDropDownValues == 'Home Crafts'){
-        removeMorning();
-        enableThursdays();
-   } else if (workshopDropDownValues == 'Needlepoint'){
-        removeMorning();
-        enableFridays();
+     /* Set the correct filters based on the pre-populated workshop category selected */
+    function checkWorkshopField() {
+        console.log('checking fields');
+        console.log(workshopDropDownValues);
+        if (workshopDropDownValues == 'Kids Crafts'){
+            removeAfternoon();
+            enableSaturdays();
+        } else if (workshopDropDownValues == 'Clothing'){
+            removeMorning();
+            enableTuesdays();
+        } else if (workshopDropDownValues == 'All things Wool'){
+            removeMorning();
+            enableMondays();
+        } else if (workshopDropDownValues == 'Quilting'){
+                removeMorning();
+                enableWednesdays();
+        } else if (workshopDropDownValues == 'Home Crafts'){
+                removeMorning();
+                enableThursdays();
+        } else if (workshopDropDownValues == 'Needlepoint'){
+                removeMorning();
+                enableFridays();
+        }
     }
-   }
+
+    function checkDateField() {
+        console.log('checking date');
+        console.log(dateFieldValue)
+        if (dateFieldValue == '') {
+            $('#booking-form-btn').click(function() {
+                alert();
+            })  
+        }
+        
+    }
+
+    function alert() {
+        alert('Please select a date from the calendar');
+    }
 
 });
 

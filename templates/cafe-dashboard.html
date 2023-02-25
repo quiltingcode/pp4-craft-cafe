@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-
+{% if user.is_superuser %}
 <!-- Account Details Container -->
 <div class="container">
     <div class="row text-center my-3">
@@ -219,6 +219,20 @@
       </div>
   </div>
 </div>
+{% else %}
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>
+                You must be an administrator to view this page. 
+            </h3>
+            <a href="{% url 'account_login' %}">Log in Here</a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
 
 
 {%endblock%}

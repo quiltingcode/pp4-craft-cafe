@@ -193,7 +193,6 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | The user can see a success message alert when the post has been successfully submitted
 | &check; | The user can view their post on the craft community posts page once it has been approved by admin.
 
-
 | Status | **Post Details Page - User Logged In**
 |:-------:|:--------|
 | &check; | The user can view additional an text description relating to one selected post 
@@ -229,7 +228,7 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | Users can see a 'Delete' button next to each post made
 | &check; | On clicking 'Delete' next to a post, the user is taken to the delete-post page
 | &check; | The user can view the approval status of all their posts
-| &check; | The user can view a list of comment they have submitted successfully
+| &check; | The user can view a list of comments they have submitted successfully
 | &check; | Users who haven't written any comments, can see a message saying they have no comments
 | &check; | Users who haven't written any comments, clicking the 'here' link takes them to the craft community page
 | &check; | Clicking on the commented post title, the user is taken to the post-details page for that post
@@ -239,20 +238,119 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | On clicking 'Delete' next to a post, the user is taken to the delete-comment page
 | &check; | The user can view the approval status of all their comments
 
-
 | Status | **Delete Account Page - User Logged In**
 |:-------:|:--------|
 | &check; | The user can view their username
 | &check; | clicking the 'Delete My Account' button will remove their user details from the site
+| &check; | clicking the 'Delete My Account' button will redirect the user back to the homepage 
+| &check; | clicking the 'Delete My Account' button will change the user into a logged out user
+| &check; | clicking the 'Delete My Account' button will remove the ability to view the profile page icon on the nav bar
 | &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the account
 
 | Status | **Edit Booking Page - User Logged In**
 |:-------:|:--------|
+| &check; | The user can view the booking form pre-populated with the existing booking data
+| &check; | The user can view the booking form is being booked under their own username
+| &check; | The user can edit the workshop selection
+| &check; | The user can edit the date selection, based on the schedule for the selected workshop
+| &check; | The user can edit the time selection, based on the schedule for the selected workshop
+| &check; | The user can edit the number of places they wish to reserve
+| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
+| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'The booking has been changed successfully, awaiting re-approval'
+| &check; | On clicking 'Save Changes', the user can view the updated booking request in the bookings list on the profile page
+| &check; | On clicking 'Save Changes', the booking status changes to 'Awaiting approval'
+
+| Status | **Delete Booking Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view a message asking them if they are sure they want to delete the booking
+| &check; | clicking the 'Delete Booking' button will remove the booking from the site
+| &check; | clicking the 'Delete Booking' button will remove the booking from the profile page bookings list
+| &check; | clicking the 'Delete Booking' button will redirect the user back to the profile page
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the booking
+
+| Status | **Edit Post Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view the post form pre-populated with the existing post data
+| &check; | The user can edit the Title 
+| &check; | The user can edit the post category
+| &check; | The user can edit the image
+| &check; | The user can view the image file-name currently saved with this post
+| &check; | The user can edit the post content
+| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
+| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'Post updated successfully, awaiting re-approval'
+| &check; | On clicking 'Save Changes', the user can view the updated post in the posts list on the profile page
+| &check; | On clicking 'Save Changes', the post approval status changes to 'Awaiting approval'
+
+| Status | **Delete Post Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view a message asking them if they are sure they want to delete the post
+| &check; | The user can view the title of the post they have selected for deletion
+| &check; | clicking the 'Delete Post' button will remove the post from the site
+| &check; | clicking the 'Delete Post' button will remove the post from the profile page posts list
+| &check; | clicking the 'Delete Post' button will remove the post from the craft cafe community posts page
+| &check; | clicking the 'Delete Post' button will redirect the user back to the profile page
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the post
+
+| Status | **Edit Comment Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view the comment form pre-populated with the existing comment data
+| &check; | The user can view which post the comment relates to
+| &check; | The user can edit the Comment content field
+| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
+| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'Comment updated successfully, awaiting re-approval'
+| &check; | On clicking 'Save Changes', the user can view the updated comment in the comments list on the profile page
+| &check; | On clicking 'Save Changes', the comment approval status changes to 'Awaiting approval'
+
+| Status | **Delete Comment Page - User Logged In**
+|:-------:|:--------|
+| &check; | The user can view a message asking them if they are sure they want to delete the comment
+| &check; | The user can view the title of the post which the comment relates to
+| &check; | The user can view the date and time the comment was written
+| &check; | clicking the 'Delete Comment' button will remove the comment from the site
+| &check; | clicking the 'Delete Comment' button will remove the comment from the profile page comments list
+| &check; | clicking the 'Delete Comment' button will remove the comment from the post-details post page
+| &check; | clicking the 'Delete Comment' button will redirect the user back to the profile page
+| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the comment
+
+These testing scenarios fulfil the objectives set out in the initial user stories for a logged in normal user. 
+
+A logged in Admin superuser can perform all the same functions as a normal logged in user, with one addition. A super user has access to the cafe-dashboard pages and it's respective administrative features.
+
+| Status | **Homepage - SuperUser Logged In**
+|:-------:|:--------|
+| &check; | The superuser can see the admin menu option in the navigation bar
+| &check; | Clicking the Admin button on the nav bar takes the superuser to the cafe-dashboard page
+
+| Status | **Profile Page - SuperUser Logged In**
+|:-------:|:--------|
 | &check; | The user can view their username and email address in the personal details section 
 | &check; | clicking the 'Delete Account' button will take the user to the delete-account page
-| &check; | The user can view the number of comments on each post
-| &check; | The user can click on the heart icon to like a post
-
+| &check; | The user can view a list of bookings they have submitted successfully
+| &check; | Users who haven't made any bookings, can see a message saying they have no bookings
+| &check; | Users who haven't made any bookings, clicking the 'here' link takes them to the contact page
+| &check; | Users can see an 'Edit' button next to each booking made
+| &check; | On clicking 'Edit' next to a booking, the user is taken to the edit-booking page
+| &check; | Users can see a 'Delete' button next to each booking made
+| &check; | On clicking 'Delete' next to a booking, the user is taken to the delete-booking page
+| &check; | The user can view the approval status of all their bookings
+| &check; | The user can view a list of posts they have submitted successfully
+| &check; | Users who haven't written any posts, can see a message saying they have no posts
+| &check; | Users who haven't written any posts, clicking the 'here' link takes them to the craft community page
+| &check; | Clicking on the post title, the user is taken to the post-details page for that post
+| &check; | Users can see an 'Edit' button next to each post made
+| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-post page
+| &check; | Users can see a 'Delete' button next to each post made
+| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-post page
+| &check; | The user can view the approval status of all their posts
+| &check; | The user can view a list of comments they have submitted successfully
+| &check; | Users who haven't written any comments, can see a message saying they have no comments
+| &check; | Users who haven't written any comments, clicking the 'here' link takes them to the craft community page
+| &check; | Clicking on the commented post title, the user is taken to the post-details page for that post
+| &check; | Users can see an 'Edit' button next to each comment made
+| &check; | On clicking 'Edit' next to a post, the user is taken to the edit-comment page
+| &check; | Users can see a 'Delete' button next to each comment made
+| &check; | On clicking 'Delete' next to a post, the user is taken to the delete-comment page
+| &check; | The user can view the approval status of all their comments
 
 ## Responsiveness Test
 
