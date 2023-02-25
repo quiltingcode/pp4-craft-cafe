@@ -93,6 +93,15 @@ In addition to the code validation tests stated above I have performed a series 
 | &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-edit-booking/58' url into the browser, the user sees a message saying 'You must be an administrator to amend a booking'
 | &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-delete-booking/58' url into the browser, the user can not access the admin-delete-booking page
 | &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-delete-booking/58' url into the browser, the user sees a message saying 'You must be an administrator to delete a booking'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-post/28' url into the browser, the user can not access the admin-edit-post page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-post/28' url into the browser, the user sees a message saying 'You must be an administrator to edit a post'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-post/28' url into the browser, the user can not access the admin-delete-post page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-post/28' url into the browser, the user sees a message saying 'You must be an administrator to delete a post'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-comment/22' url into the browser, the user can not access the admin-edit-comment page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-comment/22' url into the browser, the user sees a message saying 'You must be an administrator to edit a comment'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-comment/22' url into the browser, the user can not access the admin-delete-comment page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-comment/22' url into the browser, the user sees a message saying 'You must be an administrator to delete a comment'
+
 
 | Status | **Contact Page - User Logged Out**
 |:-------:|:--------|
@@ -146,6 +155,20 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
 | &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
 | &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/cafe-dashboard' url into the browser, the user can not access the cafe-dashboard page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/cafe-dashboard' url into the browser, the user sees a message saying 'You must be an administrator to view this page'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-edit-booking/58' url into the browser, the user can not access the admin-edit-booking page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-edit-booking/58' url into the browser, the user sees a message saying 'You must be an administrator to amend a booking'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-delete-booking/58' url into the browser, the user can not access the admin-delete-booking page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-delete-booking/58' url into the browser, the user sees a message saying 'You must be an administrator to delete a booking'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-post/28' url into the browser, the user can not access the admin-edit-post page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-post/28' url into the browser, the user sees a message saying 'You must be an administrator to edit a post'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-post/28' url into the browser, the user can not access the admin-delete-post page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-post/28' url into the browser, the user sees a message saying 'You must be an administrator to delete a post'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-comment/22' url into the browser, the user can not access the admin-edit-comment page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-edit-comment/22' url into the browser, the user sees a message saying 'You must be an administrator to edit a comment'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-comment/22' url into the browser, the user can not access the admin-delete-comment page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/craft-community/admin-delete-comment/22' url into the browser, the user sees a message saying 'You must be an administrator to delete a comment'
 
 | Status | **Contact Page - User Logged In**
 |:-------:|:--------|
