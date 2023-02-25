@@ -1,5 +1,4 @@
 /* global $ */
-/* global bootstrap */
 
 $(document).ready(function() {
 
@@ -11,7 +10,7 @@ $(document).ready(function() {
     var placesDropdownValues = $('#id_places').html();
 
      /* Check pre-populated field data in the edit booking page */
-    checkWorkshopField()
+    checkWorkshopField();
 
 
     /* Booking Form Validation - check which workshop option has been selected */
@@ -172,7 +171,7 @@ $(document).ready(function() {
             maxDate: '+5M',
             beforeShowDay: disableall
         });
-        $("#id_day").attr( 'readOnly' , 'true' )
+        $("#id_day").attr( 'readOnly' , 'true' );
     }
 
     function disableall(in_date) {

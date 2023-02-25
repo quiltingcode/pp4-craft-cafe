@@ -484,9 +484,9 @@ During the testing process I also used the [Responsive Design Checker](https://w
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
 
-I chose not to test the iPhone models 3, 4, or 5 as these have a smaller screen (320 x 480) and were only supported officially by Apple until March 2021. 
+(Bug #100) Testing on small devices, the footer doesn't all fit across one row. The social media links go onto a separate line and are not centred. I have added a media query to fix this and set the three elements of the footer into separate centred rows on mobile devices. 
 
- 
+![Mobile footer](static/images/testing/mobile-footer.png)
 
 ### Tablet Devices
 
@@ -540,12 +540,111 @@ Initially, I had a lot of missing semi-colons which were easy to add back in. Th
 * $
 * bootstrap
 
-I created a global variable at the top of the file for each of these, and I no longer saw the error messages.
+I created a global variable at the top of the file for the jQuery '$', and I moved the bootstrap Timeout function into the base.html file and into a Django if statement as it was causing javascript error messages in the console. I then got 1 unused variable warning caused by var 'dayDropDownValues' but if I remove this global variable, the booking form date field stops being read-only, so I have decided to leave it in place. 
 
+As I was building the project, I logged all major bugs that could not be immediately resolved as a GitHub issue, and tracked the progress of these through the GitHub project board alongside my user stories. See my GitHub Bug Log [here](https://github.com/quiltingcode/pp4-craft-cafe/issues?q=bug)
+
+3. (Bug #71) On the index.html page, I created three col-4 menu cards to sit in-line in one row on desktop devices, but the thirc menu card (desserts) was being pushed down onto a second line. this menu card should only drop down onto a second line when being viewed on tablet devices. 
+
+Solution: I realised that the 'offset-md-3' class was also affecting all screens sizes medium and ABOVE so I added an additional class 'offset-lg-0', to stop this class being used for large screen sizes, and so the third menu card wasn't offset and would sit nicely next to the other cards on one row in large screen sizes.
+
+4. (Bug #72) Whilst I was adding in the href links to my various templates, I coded {% url 'craft-community' %} into the href link for the craft cafe community nav bar option. The site could not resolve this url, and produced an error causing the entire site to error with a debug message of "No Reverse Match - 'craft-community' not found". 
+
+Solution: Looking in my urls.py file I had set up the name of this template as 'community' and not 'craft-community'. Once this name was changed, the nar bar link worked correctly.
+
+5. (Bug #75) Looking at the data render for my posts, I wasn't happy with the data that was being displayed for the DateTime stamp for when the post was created. I felt that having the time displayed as well was too much information and not necessary or usual for a blog site. Perhaps for the comments where you could receive several on one particular date, but not for the post itself. 
+
+Solution: I found that this was pulling through from the arguments setup in the model, so I changed the model field type from 'DateTime' to just 'Date'. 
+
+6. (Bug #83) In the Django admin page, the actions drop-down is only showing delete, but not approve, which I added in the admin.py file
+
+Solution: Checking again in the admin.py file, the approve method that I created had a typo. I had written 'def approve_comments' instead of 'def approve_bookings' to match the action name above.
+
+7. (Bug #85) The site wass opening correctly on the homepage but if i use the /extension to manually open the contact page or /workshops page I was getting an error - page not found 404.
+
+Solution: I amended my urls.py file paths to correct this error
+
+8. (Bug #86) On the index.html menu section, the menu list and prices are set out in a table. The table width is wider than the menu card image, even though it's all together inside one bootstrap card. Between 768px and down to 332px, the card is not all the same width which doesn't look very good. 
+
+Solution: I set a max width for the menu tables and updated the responsive deisgn classes and set them to be centred. Responsive design on desktop, tablet and mobile devices is much better now. 
+
+9. (Bug #90) The index.html page jumbotron container suddenly wasn't transparent anymore, so it changed to a grey colour and didn't look nice on top of the background image. 
+
+Solution: Whilst altering the bootstrap cdn scripts to try to get a calendar icon to display on my bootstrap datepicker widget, I seemed to have broken the bootstrap jumbotron classes. I changed the cdn scripts back and the jumbotron container went back to being transparent. I decided to leave the datepicker field with no calendar icon. 
+
+10. (Bug #91) On the craft-community.html page, when a new post has been submitted through the 'Add a Post' button, the craft community page re-loads but it's empty. All the published posts are not rendered on the page and it's left with just the background image. 
+
+Solution: I joined a Thursday evening Study Group session, and opened up this problem to the group, and they explained to me that my views.py file was not redirecting correctly back to render the full craft-community view, but just the template with no view data on top. Instead of having a 'redirect_field_name = "/craft-community"' I changed this to 'return redirect "craft-community"' which loads the full craft-community page view. 
+
+11. (Bug #92) Posts were bring submitted successfully from the front end 'Add Post' form and I could see them in the admin panel but the slug-field wasn't being automatically created, and was therefore causing errors.
+
+Solution: After researching this, I imported slugify and added a method for this into the Post model, which fixed the issue. 
+
+12. (Bug #93 and #94) I created a view for the user profile page, which needs to display three separate lists from three separate models; the bookings list, the posts list, and the comments list. The bookings list displays correctly, but no posts or comments are showing even though the user has submitted some. 
+
+Solution: Having done some research into this, I found that this required a get_context_data method to render multiple views to the same page. I amended the ProfilePage view to include this method, listing a context for each list I wanted to display. Now all the data renders correctly to the template. 
+
+13. (Bug #95) New posts could be submitted correctly now through the 'Add a Post' button on the craft-community page. However, even after being approved in the Django admin panel, these posts were not being displayed on the craft-community posts page. 
+
+Solution: On post submission, the post status was not changing from draft to published, and the posts filter only looked for published posts. I set the status to change when the post is saved in the view and now it appears on the craft-community posts page, albeit without the uploaded image (see bug #98).
+
+14. (Bug #98) New posts are being uploaded correctly on the frontend, but the uploaded image is not being saved alongside the other post data. 
+
+Solution: I read an article on [Section.io](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/) on using Cloudinary on the front-end, and it turns out, that uploading images to a post through the Django admin panel is different to uploading them through a front end form. I needed to add 'request.FILES' to the PostListview post method and also put a {% load cloudinary %} tag at the top of the craft-comunity page. Once I had added in these missing Cloudinary settings, the images uploaded correctly. 
+
+15. (Bug #102) Having set up the 'Delete Account' feature on the profile-page, when I went to confirm the deletion in the delete-account page I got an error message - TypeError at contact/profile-page 'AnonymousUser' object is not iterable.
+
+Solution: Looking in the admin panel, the account was successfully deleted, so I guessed that maybe it just didn't know where to redirect to once the deletion had occurred. After changing the reverse lazy path of the DeleteView from 'profile-page' to 'home' the user was redirected back to the homepage, and logged out, and they were no longer authorised to view the profile-page, so the url path was not accessible.
+
+16. (Bug #108) At the top of several pages there is a band of white space between the navbar and the first page container, but I'm wasn't sure why. On some pages it's bigger on some it's smaller.  I restructured my html div tags and this seems to have reduced it down a lot but there still remains about 10px of white space which doesn't look good. This seems to have appeared since I put in a flex-wrapper into the base.html file to push the footer down to the bottom of the screen on pages where they wasn't much content such as the sign in/out pages. 
+
+Solution: Removed the mt-3 bootstrap class from the top row of all the pages which seems to clash with the flex-wrapper. All edit and delete pages, as well as the contact page seems to be displaying correctly now. Where I want to add margin at the top of the container, I have added margin to the first header tag instead. 
+
+17. (Bug #109) Now that there are more posts on the page and it's height is bigger, the background-color css styling was not covering the full height of the page, so there wass a white space behind the post cards before the footer is reached.  Also, the footer was no longer visible at all.
+
+Solution: Instead of trying to spread an image across the whole varying height space, I changed the background to a color and set the background-size to cover which seemed to fix the issue. 
+
+18. (Bug #110) I wanted to use the same edit and delete pages I created for the profile page edit and delete buttons to go to, but the problem was with the redirect at the end. When the user is editing or deleting, I want them to be redirected back to their profile page afterwards. But if a superuser is editing or deleting from the admin dashboard, I wanted them to be redirected back to the admin dashboard. 
+
+Solution: I couldn't find an easy way to set up multiple redirect paths based on which type of user it was, or where they started from, so in the end I decided to create a copy of the pages but I renamed them admin-edit and admin-delete to carry out these same functions but being redirected to a different page afterwards. I decided to make the most of the separate pages in the end, and then I was also able to add the extra feature of the superuser being able to edit the approval status within the edit page too. 
+
+19. (Bug #111) I decidede to create a 'Go Back' button inside the delete pages so that if the user changes their mind and doesn't want to go ahead with the deletion they can click 'go back' instead of having to use the back button on the browser. However, having created the button, when I tested it, this button still seems to be confirming the deletion and would delete the object from the database. 
+
+Solution: I moved the 'Go Back' button to sit outside the the post method form tags so that it no longer triggers the POST view function on click.  I have copied this across to delete-booking, delete-account, delete-post and delete-comment.
+
+20. (Bug #121) I wanted to use the same images from the homepage workshop overview cards, as in the Workshop details section on the contact.html page. I gave all the images the same bootstrap img-thumbnail class so I thought this would standardize all their sizes, but it didn't. Some images which were smaller or more rectangular than square could not be manipulated by bootstrap to fit the same img container. I felt it looked a bit odd that not all the thumbnail images were the same dimensions. 
+
+Solution: In the end, I did another search on Unsplash, and I also looked through some personal craft images of my own, and found some alternative square shaped images that fit the thumbnail container. I set media query classes on them all, and now they look a lot more uniform. 
+
+21. (Bug #126) See Bug #91. When you submitted a booking successfully, you are redirected to the profile page all but the lists are empty even though there are valid bookings, posts and comments in the tables which should render to the page.
+
+Solution: This was the same issue as in no. 13. My redirect in the view was only redirecting to the page, but without the view ontop. I have changed the view to return redirect ('profile-page') and now the full template with views is rendered correctly on redirect. 
+
+22. (Bug #129) In the booking form on the contact.html page, when a workshop is selected from the first dropdown, the datepicker calendar filters itself to show the available days for that workshop.  However, if the user changes their mind and reselects an alternative workshop, the datepicker doesn't reset to show the new available dates according to the alternative workshop selected.I don't know why this field won't reset like the others. The times and the places reset but the calendar doesn't.
+
+Solution: On clicking the workshop input dropdown field, I have created a Jvascript function called resetAllDays() where a method called 'destroy' is carried out on the datepicker widget. This resets the calendar, and then it looks again at the workshop and re-filters to show the correct days. 
+
+23. (Bug #134) Once I added some more posts to the craft community page, I noticed that the category filter was showing multiple entries for each category. I realised it wasn't grouping the categories, but adding an instance of the category for each post that matched it in the displayed posts. 
+
+Solution: Instead of looping through the published posts to display the categories, I decided to pull the category list directly from the model and display them all individually in the selection drop down. Now it is possible that a user selects a category where the are no corresponding posts, but then the page just displays no posts and the user can re-select an alternative category. Once the site gets up and running and has more posts, this shouldn't be an issue. 
+
+24. (Bug #135) In the edit-page.html page, the fields come pre-populated with the existing booking data.  This causes an issue however, because the calendar only becomes active on the first click of a workshop category. But in the edit scenario, if the user doesn't want to change the workshop but only the date, the datepicker field is not available until a new workshop is selected. So you are forced to make a click to change the workshop and then change it back again if you want to stick with the same workshop but on a different date and this is not very nice UX.
+
+Solution: Ive created a new Javascript function called 'checkFieldData', which reads the pre-populated workshop field when the page opens, and sets the calendar filter and time filter immediately, without having to re-select the workshop.
+
+25. (Bug #136) On the booking form, the date field is not a required field, so the submit booking button can be selected and the form tries to submit before a date has been selected from the datepicker.This causes an error 500 message and a JS error in the console.
+
+Solution: I tried to user Javascript to set the date field to required, but I think this didn't work because the field is already set as read-only (to stop users typing in dates outside of the date limits or typing something that isn't a date). I tried to change the field settings in the model, but this didn't seem to make a difference either. In the model, I did remove the default = Date.now(), so that the user can't save the booking with today's date when the workshop selected may not actually be happening today. Finally, I found an article on [Tutorialpoint.com](https://www.tutorialspoint.com/How-to-stop-form-submission-using-JavaScript) which explained how to delay the form submission until field validation had been done through Javascript. I have set up a script for this which sits at the bottom of the contact.html page, which checks that the fields have been filled in before submission. If the workshop or date field have not been selected, the user will see a Javascipt alert popup telling them to complete the form before submission. 
 
 ### Unresolved
 
-1. In the console log, I can see that when the End Page is loaded
+1. (Bug #99) On the delete-booking page and the admin-delete-booking page, the details of the booking selected for deletion do not pull through to the template. The bookings details are passed through to the delete-booking page correctly, because once you click to confirm, the selected booking does get deleted. The page has been set up in the same way as the delete-post page and the delete-comment page, and these pages display the data correctly. I did not have time to get to the bottom of this issue, so in the end, I have just left the page with no data showing, and at least the user still passes through this confirmation page before the deletion is carried out, and they can still press the back button if they are not sure which booking they are deleting. 
+
+2. (Bug #122) I wanted to create category filter on the posts page. At first I just used standard HTML syntax to create the select tags with the option tags inside. The filter box looked a bit dated and square cut, but it had a little down arrow on the right to indicate it was a dropdown box. Then after a bit more investigation, I found I could give it a bootstrap class of 'selectpicker' to style it. I added this class, and the box now looks nice and modern with rounded edges and a blue shaded border, but I seem to have lost my down arrow. I have looked into this a bit more, and this just seems to be the bootstrap styling so I have decided to stick with the modern look and feel but with no down arrow. 
+
+3. (Bug #128) For some reason, during testing I have noticed that the like button on the craft-community page toggles correctly and counts the number of likes up and down correctly, but the heart icon doesn't change to full or empty depending on the like count. This works on the post-details page, but not on the craft community page. For the time being, as the like functionality still works, I am focusing my time on other issues that are causing bigger problems and error messsages, and then I will come back to look at this in more detail. 
+
+4. (Bug #130) In the admin cafe dashboard page, at the top, alongside the Craft Cafe Statistics, where it displays the counts for bookings, posts and comments, I also wanted to show a count of how many users were registered on the site. I felt that this was also a reflection of how well the site was doing - how many people wanted to create an account to interact with the site. However, as the User model does not appear in the models.py file like my other custom models, as it is created automatically through AllAuth, I didn't know how to gain access to the model, to be able to write a count method for it. If I have time in future I would like to look into this further as I think the functionality and the statistic would benefit the site. For now, I have removed this colum from the table as it was displaying blank. 
 
 ## Additional Testing
 
