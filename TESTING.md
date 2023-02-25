@@ -350,21 +350,23 @@ A logged in Admin superuser can perform all the same functions as a normal logge
 | &check; | The superuser can see the admin menu option in the navigation bar
 | &check; | Clicking the Admin button on the nav bar takes the superuser to the cafe-dashboard page
 
-| Status | **Profile Page - SuperUser Logged In**
+| Status | **Craft Cafe Admin Dashboard - SuperUser Logged In**
 |:-------:|:--------|
-| &check; | The user can view their username and email address in the personal details section 
-| &check; | clicking the 'Delete Account' button will take the user to the delete-account page
-| &check; | The user can view a list of bookings they have submitted successfully
-| &check; | Users who haven't made any bookings, can see a message saying they have no bookings
-| &check; | Users who haven't made any bookings, clicking the 'here' link takes them to the contact page
-| &check; | Users can see an 'Edit' button next to each booking made
-| &check; | On clicking 'Edit' next to a booking, the user is taken to the edit-booking page
-| &check; | Users can see a 'Delete' button next to each booking made
-| &check; | On clicking 'Delete' next to a booking, the user is taken to the delete-booking page
-| &check; | The user can view the approval status of all their bookings
-| &check; | The user can view a list of posts they have submitted successfully
-| &check; | Users who haven't written any posts, can see a message saying they have no posts
-| &check; | Users who haven't written any posts, clicking the 'here' link takes them to the craft community page
+| &check; | The superuser can view total bookings made on the site
+| &check; | The superuser can view total posts made on the site
+| &check; | The superuser can view total comments made on the site
+| &check; | The superuser can view a list of all bookings made on the site
+| &check; | If no bookings have been made, the superuser can see a message saying 'there are no bookings'
+| &check; | The superuser can see an 'Edit' button next to each booking made
+| &check; | On clicking 'Edit' next to a booking, the user is taken to the admin-edit-booking page
+| &check; | The superuser can see a 'Delete' button next to each booking made
+| &check; | On clicking 'Delete' next to a booking, the user is taken to the admin-delete-booking page
+| &check; | The superuser can can view the approval status of all the bookings
+| &check; | The superuser can can edit the approval status by clicking on the approval toggle icon
+| &check; | On clicking the approval icon, it toggles between red cross (unapproved) and green tick (approved)
+| &check; | On clicking the approval icon, the superuser can view a success message for 'approved' or 'unapproved'
+| &check; | The superuser can view a list of all posts submitted to the site
+| &check; | If no posts have been made, the superuser can see a message saying 'there are no posts yet'
 | &check; | Clicking on the post title, the user is taken to the post-details page for that post
 | &check; | Users can see an 'Edit' button next to each post made
 | &check; | On clicking 'Edit' next to a post, the user is taken to the edit-post page
