@@ -2,6 +2,16 @@
 
 # Testing
 
+# Table of Content
+
+* [**Testing**](<#testing>)
+    * [Code Validation](<#code-validation>)
+    * [Manual Testing](<#manual-testing>)
+    * [Automatic Testing](<#automatic-testing>)
+    * [Responsiveness Testing](<#responsiveness-testing>)
+    * [Known Bugs](<#known-bugs>)
+    * [Additional Testing](<#additional-testing>)
+
 ## Code Validation
 
 The Craft Café site has been passed through the [W3C html Validator](https://validator.w3.org/), the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the [JS Hint Validator](https://jshint.com/).
@@ -456,7 +466,9 @@ A logged in Admin superuser can perform all the same functions as a normal logge
 | &check; | clicking the 'Delete Comment' button will redirect the superuser back to the cafe dashboard page
 | &check; | clicking the 'Go Back' button will return the superuser to the cafe dashboard page without deleting the comment
 
-## Responsiveness Test
+## Automatic Testing
+
+## Responsiveness Testing
 
 The responsive design tests were carried out manually throughout the build using Google Chrome Dev Tools. I used a mobile first approach basing my initial design around the iPhone 6,7,8 (375 x 667px) which became my first media query break point. I then selected another break point at 768px for tablet devices 992px and above for larger devices, following the bootstrap standard breakpoints. 
 
@@ -502,7 +514,7 @@ Playing the quiz on the 10inch Notebook, the display appears odd because the dim
 
 ![Notebook view of quiz post-scroll](assets/readmeimages/afterscroll-notebook.PNG)
 
-## Browser Compatibility 
+### Browser Compatibility 
 
 The Craft Café was tested on the following browsers:
 
@@ -511,7 +523,6 @@ The Craft Café was tested on the following browsers:
 - Mozilla Firefox
 
 I do not have any Apple devices available to carry out testing on a Safari browser. Appearance and functionality appear to be consistent throughout all browsers.
-  
 
 ## Known Bugs
 
@@ -571,7 +582,7 @@ In general this is OK results. The performance is affected in a negative way by 
 ![Lighthouse Profile Page](static/images/testing/lighthouse-profile.png)
 </details><br/>
 
-## Peer Review
+### Peer Review
 
 In addition to the above tests, I asked my peers to create a profile and interact with the site and their overall response was very positive. 
  
