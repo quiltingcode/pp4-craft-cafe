@@ -392,62 +392,69 @@ A logged in Admin superuser can perform all the same functions as a normal logge
 | &check; | The superuser can edit the date selection, based on the schedule for the selected workshop
 | &check; | The superuser can edit the time selection, based on the schedule for the selected workshop
 | &check; | The superuser can edit the number of places 
-| &check; | The superuser can edit the approval status 
+| &check; | The superuser can edit the booking approval status 
 | &check; | On clicking 'Save Changes', the superuser is redirected back to the cafe dashboard page
 | &check; | On clicking 'Save Changes', the superuser can view the updated booking details in the bookings list in the cafe dashboard page
 | &check; | On clicking 'Save Changes', the user can view the updated booking details in the bookings list in their profile page
 
 | Status | **Admin Delete Booking Page - SuperUser Logged In**
 |:-------:|:--------|
-| &check; | The user can view a message asking them if they are sure they want to delete the booking
+| &check; | The superuser can view a message asking them if they are sure they want to delete this booking
 | &check; | clicking the 'Delete Booking' button will remove the booking from the site
+| &check; | clicking the 'Delete Booking' button will remove the booking from the cafe dashboard page bookings list
 | &check; | clicking the 'Delete Booking' button will remove the booking from the profile page bookings list
-| &check; | clicking the 'Delete Booking' button will redirect the user back to the profile page
-| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the booking
+| &check; | clicking the 'Delete Booking' button will redirect the user back to the cafe dashboard page
+| &check; | clicking the 'Go Back' button will return the superuser to the cafe dashboard page without deleting the booking
 
 | Status | **Admin Edit Post Page - SuperUser Logged In**
 |:-------:|:--------|
-| &check; | The user can view the post form pre-populated with the existing post data
-| &check; | The user can edit the Title 
-| &check; | The user can edit the post category
-| &check; | The user can edit the image
-| &check; | The user can view the image file-name currently saved with this post
-| &check; | The user can edit the post content
-| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
-| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'Post updated successfully, awaiting re-approval'
-| &check; | On clicking 'Save Changes', the user can view the updated post in the posts list on the profile page
-| &check; | On clicking 'Save Changes', the post approval status changes to 'Awaiting approval'
+| &check; | The superuser can view the post form pre-populated with the existing post data
+| &check; | The superuser can view the name of the user who submitted the post
+| &check; | The superuser can edit the Title 
+| &check; | The superuser can edit the post category
+| &check; | The superuser can edit the image
+| &check; | The superuser can view the image file-name currently saved with this post
+| &check; | The superuser can edit the post content
+| &check; | The superuser can edit the post approval status 
+| &check; | On clicking 'Save Changes', the superuser is redirected back to the cafe dashboard page
+| &check; | On clicking 'Save Changes', the superuser can view the updated post in the posts list on the cafe dashboard
+| &check; | On clicking 'Save Changes', the user can view the updated post in the posts list on their profile page
 
 | Status | **Admin Delete Post Page - SuperUser Logged In**
 |:-------:|:--------|
-| &check; | The user can view a message asking them if they are sure they want to delete the post
-| &check; | The user can view the title of the post they have selected for deletion
+| &check; | The superuser can view a message asking them if they are sure they want to delete the post
+| &check; | The superuser can view the title of the post they have selected for deletion
+| &check; | The superuser can view the author of the post they have selected for deletion
 | &check; | clicking the 'Delete Post' button will remove the post from the site
-| &check; | clicking the 'Delete Post' button will remove the post from the profile page posts list
+| &check; | clicking the 'Delete Post' button will remove the post from the cafe dashboard posts list
+| &check; | clicking the 'Delete Post' button will remove the post from the user's profile page posts list
 | &check; | clicking the 'Delete Post' button will remove the post from the craft cafe community posts page
-| &check; | clicking the 'Delete Post' button will redirect the user back to the profile page
-| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the post
+| &check; | clicking the 'Delete Post' button will redirect the user back to the cafe dashboard
+| &check; | clicking the 'Go Back' button will return the superuser to the cafe dashboard page without deleting the post
 
 | Status | **Admin Edit Comment Page - SuperUser Logged In**
 |:-------:|:--------|
-| &check; | The user can view the comment form pre-populated with the existing comment data
-| &check; | The user can view which post the comment relates to
-| &check; | The user can edit the Comment content field
-| &check; | On clicking 'Save Changes', the user is redirected back to the profile page
-| &check; | On clicking 'Save Changes', the user gets a success alert saying the 'Comment updated successfully, awaiting re-approval'
-| &check; | On clicking 'Save Changes', the user can view the updated comment in the comments list on the profile page
-| &check; | On clicking 'Save Changes', the comment approval status changes to 'Awaiting approval'
+| &check; | The superuser can view the comment form pre-populated with the existing comment data
+| &check; | The superuser can view which post the comment relates to
+| &check; | The superuser can view author of the comment selected
+| &check; | The superuser can edit the Comment content field
+| &check; | The superuser can edit the comment approval status 
+| &check; | On clicking 'Save Changes', the superuser is redirected back to the cafe dashboard page
+| &check; | On clicking 'Save Changes', the superuser can view the updated comment in the comments list on the cafe dashboard page
+| &check; | On clicking 'Save Changes', the user can view the updated comment in the comments list on their profile page
 
 | Status | **Admin Delete Comment Page - SuperUser Logged In**
 |:-------:|:--------|
-| &check; | The user can view a message asking them if they are sure they want to delete the comment
-| &check; | The user can view the title of the post which the comment relates to
-| &check; | The user can view the date and time the comment was written
+| &check; | The superuser can view a message asking them if they are sure they want to delete the comment
+| &check; | The superuser can view the title of the post which the comment relates to
+| &check; | The superuser can view the date and time the comment was written
+| &check; | The superuser can view the author of the comment
 | &check; | clicking the 'Delete Comment' button will remove the comment from the site
-| &check; | clicking the 'Delete Comment' button will remove the comment from the profile page comments list
+| &check; | clicking the 'Delete Comment' button will remove the comment from the cafe dashboard page comments list
+| &check; | clicking the 'Delete Comment' button will remove the comment from the user's profile page comments list
 | &check; | clicking the 'Delete Comment' button will remove the comment from the post-details post page
-| &check; | clicking the 'Delete Comment' button will redirect the user back to the profile page
-| &check; | clicking the 'Go Back' button will return the user to the profile page without deleting the comment
+| &check; | clicking the 'Delete Comment' button will redirect the superuser back to the cafe dashboard page
+| &check; | clicking the 'Go Back' button will return the superuser to the cafe dashboard page without deleting the comment
 
 ## Responsiveness Test
 

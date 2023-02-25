@@ -591,7 +591,8 @@ These three elements are positioned respectively on the far left, center and far
     * Booking requests pending approval to admin users
 * Add option for a user to submit a review about the Craft Café
 * Ability to click on the comment count speech bubble to add a comment
-* Success alert messages for edits and deletions carried out in the profile page
+* Success alert messages for deletions carried out in the profile page
+* Success alert messages for edits and deletions carried out in the admin cafe dashboard page
 * Add a front end admin section to manage user accounts; Edit, delete and manage permissions. 
 * Add a count of total users in the admin dashboard cafe statistics section
 
