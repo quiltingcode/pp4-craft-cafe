@@ -232,13 +232,13 @@
 
 {% endif %}
 
-<!--Stop Form submission is datefield has not been filled in-->
+<!--Stop booking form submission if datefield has not been filled in-->
 <script>
         function validateForm() {
         var date = $('#id_day').datepicker('getDate');
         if (date === null) {
             event.preventDefault();
-            alert('Please select a date from the calendar');
+            alert('Please complete all the fields');
         } else {
 
         }

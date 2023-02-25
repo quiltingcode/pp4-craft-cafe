@@ -468,9 +468,11 @@ A logged in Admin superuser can perform all the same functions as a normal logge
 
 ## Automatic Testing
 
+Due to time constraints and the complexity of this project, I was unable to dedicate time to setting up automatic testing. I felt that my time was better spent improving the basic functionality of the website and refining the booking form validation. Manual testing over the course of the build, however, has been extensive. 
+
 ## Responsiveness Testing
 
-The responsive design tests were carried out manually throughout the build using Google Chrome Dev Tools. I used a mobile first approach basing my initial design around the iPhone 6,7,8 (375 x 667px) which became my first media query break point. I then selected another break point at 768px for tablet devices 992px and above for larger devices, following the bootstrap standard breakpoints. 
+The responsive design tests were carried out manually throughout the build using Google Chrome Dev Tools. I used a mobile first approach basing my initial design around the iPhone 6,7,8 (375 x 667px) which became my first media query break point. I then selected another break point at 768px for tablet devices and 992px and above for larger devices, following the bootstrap standard breakpoints. 
 
 During the testing process I also used the [Responsive Design Checker](https://www.responsivedesignchecker.com/) website to simulate the website on several other devices. Here are my findings:
 
@@ -484,7 +486,7 @@ During the testing process I also used the [Responsive Design Checker](https://w
 
 I chose not to test the iPhone models 3, 4, or 5 as these have a smaller screen (320 x 480) and were only supported officially by Apple until March 2021. 
 
-On devices with a height of 640 pixels, such as the Samsung mobile devices, once the quiz has begun, you have to scroll down after choosing an answer to see the bottom of the question container in some cases where the question is longer. The next button sometimes is slightly hidden, but I find this scrolling acceptable in the case of certain longer questions for shorter devices. 
+ 
 
 ### Tablet Devices
 
@@ -494,11 +496,7 @@ On devices with a height of 640 pixels, such as the Samsung mobile devices, once
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
 
-When I tested the form page on the Samsung Galaxy Tab 10, the background image was not reaching the bottom of the screen, so it was leaving a blank area across the bottom of the device. I changed the CSS styling of the background size from 'Auto' to '200rem' and I have re-tested. The image now seems to cover the full screen, on taller devices. I don't like it however that the image is moving on each click of the buttons, so I have adjusted the CSS styling of the background image to set the background attachment to fixed. 
-
-![tablet device view of quiz](assets/readmeimages/samsung-tablet-testing.PNG)
-
-On the larger Apple iPad Pro, the rules text appears very small in comparison with the relative screen size. I have therefore decided to create a third media query break point at 1200px to make the font bigger for wider screens.
+ 
 
 ### Desktop Devices
 
@@ -508,7 +506,7 @@ On the larger Apple iPad Pro, the rules text appears very small in comparison wi
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
 
-Playing the quiz on the 10inch Notebook, the display appears odd because the dimensions are very wide but very short; shorter in fact than most mobile devices. Therefore, when this device is in use, more scrolling is required. You have to scroll down slightly in the 'Rules' screen to reach the 'Start Quiz' button which is only half visible, and then once the quiz has begun, you have to scroll down to see all the answer options at once which means you lose sight of the header whilst playing. I find this acceptable as once the quiz has begun and you have scrolled down to the game area, you don't have to scroll anymore whilst playing the game.
+
 
 ![Notebook view of quiz pre-scroll](assets/readmeimages/beforescroll-notebook.PNG)
 
