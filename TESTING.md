@@ -87,6 +87,12 @@ In addition to the code validation tests stated above I have performed a series 
 | &check; | Clicking the Facebook link in the footer area opens Facebook in a new window
 | &check; | Clicking the Twitter link in the footer area opens Twitter in a new window
 | &check; | Clicking the Instagram link in the footer area opens Instagram in a new window
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/cafe-dashboard' url into the browser, the user can not access the cafe-dashboard page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/cafe-dashboard' url into the browser, the user sees a message saying 'You must be an administrator to view this page'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-edit-booking/58' url into the browser, the user can not access the admin-edit-booking page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-edit-booking/58' url into the browser, the user sees a message saying 'You must be an administrator to amend a booking'
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-delete-booking/58' url into the browser, the user can not access the admin-delete-booking page
+| &check; | Typing 'https://craft-cafe.herokuapp.com/contact/admin-delete-booking/58' url into the browser, the user sees a message saying 'You must be an administrator to delete a booking'
 
 | Status | **Contact Page - User Logged Out**
 |:-------:|:--------|
