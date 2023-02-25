@@ -48,10 +48,7 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
     * [Libraries](<#libraries>)
 
 * [**Testing**](<#testing>)
-    * [Testing User Stories](<#testing-user-stories>)
-    * [Code Validation](<#code-validation>)
-    * [Additional Testing](<#additional-testing>)
-    * [Known Bugs](<#known-bugs>)
+
 * [Deployment](<#deployment>)
 * [Credits](<#credits>)
 * [Acknowledgements](<#acknowledgements>)
