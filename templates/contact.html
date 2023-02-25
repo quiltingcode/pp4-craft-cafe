@@ -209,7 +209,7 @@
                 {{ booking_form | crispy }}
                 <div class="row text-center">
                     <div class="col-12">
-                        <button type="submit" id="booking-form-btn" class="btn btn-lg btn-info my-3">Submit Booking Request</button>
+                        <button type="submit" onclick="validateForm()" id="booking-form-btn" class="btn btn-lg btn-info my-3">Submit Booking Request</button>
                     </div>
                 </div>
             </form>
@@ -231,6 +231,19 @@
 </div>
 
 {% endif %}
+
+<!--Stop Form submission is datefield has not been filled in-->
+<script>
+        function validateForm() {
+        var date = $('#id_day').datepicker('getDate');
+        if (date === null) {
+            event.preventDefault();
+            alert('Please select a date from the calendar');
+        } else {
+
+        }
+    }  
+</script>
 
 <!--Link to Javascript-->
 <script src="{% static 'js/script.js' %}" type="text/javascript"></script>

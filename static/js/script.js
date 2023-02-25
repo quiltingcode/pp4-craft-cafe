@@ -6,14 +6,13 @@ $(document).ready(function() {
 
     /* Initial reset state of all fields before selection */
     var workshopDropDownValues = $("#id_workshop").val();
-    var dateFieldValue = $("#id_day").val();
     var dayDropDownValues = $("#id_day").attr( 'readOnly' , 'true' );
     var timeDropdownValues = $('#id_time').html();
     var placesDropdownValues = $('#id_places').html();
 
      /* Check pre-populated field data in the edit booking page */
     checkWorkshopField()
-    checkDateField()
+
 
     /* Booking Form Validation - check which workshop option has been selected */
 
@@ -240,20 +239,6 @@ $(document).ready(function() {
         }
     }
 
-    function checkDateField() {
-        console.log('checking date');
-        console.log(dateFieldValue)
-        if (dateFieldValue == '') {
-            $('#booking-form-btn').click(function() {
-                alert();
-            })  
-        }
-        
-    }
-
-    function alert() {
-        alert('Please select a date from the calendar');
-    }
 
 });
 
