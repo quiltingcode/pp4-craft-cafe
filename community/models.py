@@ -29,7 +29,6 @@ class Post(models.Model):
     featured_image = CloudinaryField(
         'image',
         default='placeholder',
-        verbose_name="Upload a photo"
         )
     category = models.CharField(
         max_length=50,
