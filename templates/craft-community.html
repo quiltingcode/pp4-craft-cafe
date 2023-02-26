@@ -44,7 +44,7 @@
             <div class="row">
                 {% if filtered_posts %}
                 {% for post in filtered_posts %}
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-md-4">
                     <div class="card mb-2" style="width: 18rem;">
                         {% if "placeholder" in post.featured_image.url %}
                         <img class="card-img-top" src="{% static 'images/cafe-sign-post.png' %}">
@@ -58,10 +58,10 @@
                                 </a>
                                 <p class="card-text text-muted">Crafted By: {{ post.author }} on
                                     {{ post.created_on}}</p>
+                                <!-- Likes and Comments counts -->
                                 <div class="row">
                                     <div class="col-6">
                                         <strong>
-                                            {% if user.is_authenticated %}
                                             <form class="d-inline" action="{% url 'post_like2' post.slug %}"
                                                 method="POST">
                                                 {% csrf_token %}
@@ -73,9 +73,6 @@
                                                     class="btn-like"><i class="far fa-heart"></i></button>
                                                 {% endif %}
                                             </form>
-                                            {% else %}
-                                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                                            {% endif %}
                                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                                         </strong>
                                     </div>
