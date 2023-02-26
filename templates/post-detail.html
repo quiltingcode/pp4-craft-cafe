@@ -2,7 +2,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-
+{% if user.is_authenticated %}
 <div class="container-fluid post-details-container">
     <!-- Back to all posts button -->
     <div class="row mx-3">
@@ -18,10 +18,10 @@
             {% else %}
             <img src=" {{ post.featured_image.url }}" width="100%" class="img-fluid post-detail-img">
             {% endif %}
+                <!-- Likes and Comments counts -->
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-8 col-sm-8 col-lg-10">
                         <strong>
-                            {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
@@ -30,16 +30,12 @@
                                 <button type="submit" name="like-heart_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4 col-sm-4 col-lg-2">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -104,5 +100,20 @@
         </div>
     </div>
 </div>
+
+{% else %}
+
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h3>
+                You must be logged in to view community posts. 
+            </h3>
+            <a href="{% url 'account_login' %}">Join the Craft Cafe Community Here</a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
 
 {% endblock content %}
