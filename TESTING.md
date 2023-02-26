@@ -206,15 +206,15 @@ These testing scenarios fulfil the objectives set out in the initial user storie
 | &check; | On selecting the 'All Things Wool', 'Quilting', 'Clothing', 'Home Crafts' or 'Needlepoint workshop, the user can only select the afternoon options of 4 - 6pm or 6 - 8pm from the 'Time' field dropdown menu.
 | &check; | On selecting the 'Kids Crafts' workshop, the user can only select the morning options of 10 - 11.30 or 11.30 till 1 from the 'Time' field dropdown menu.
 | &check; | The user can view a list of the number of places they wish to book from 1 to 10 in the 'Places' field dropdown selection
-| &cross; | On changing the 'Workshop' field selection, the date field is reset to blank.
+| &check; | On changing the 'Workshop' field selection, the date field is reset to blank.
 | &check; | On changing the 'Workshop' field selection, the Time field is reset to correspond with the selected workshop.
 | &check; | On changing the 'Workshop' field selection, the Places field is reset to 1.
 | &check; | Clicking 'Submit booking request', the user will see an error message alert above the contact form saying 'The selected date is full. Please try a different session', if there are already more than 10 places reserved on the same workshop session requested.
 | &check; | On submitting a booking request on a session where there are not enough places available, the user is redirected back to the booking form and the fields have been reset
 | &check; | Clicking 'Submit booking request', if there are enough places available, the user is redirected to the profile page so that they can see the details of the booking.
 | &check; | Clicking 'Submit booking request', if there are enough places available, the user can see an alert message saying 'Booking request successful, awaiting approval'.
-| &check; | On submitting a booking request with no Workshop selected, a message pops up telling the user to select a workshop
-| &cross; | On submitting a booking request with no date selected, a message pops up telling the user to select a date
+| &check; | On submitting a booking request with no Workshop selected, a message pops up telling the user to complete all fields
+| &check; | On submitting a booking request with no date selected, a message pops up telling the user to complete all fields
 
 | Status | **Craft Community Page - User Logged In**
 |:-------:|:--------|
@@ -478,13 +478,15 @@ During the testing process I also used the [Responsive Design Checker](https://w
 
 ### Mobile Devices
 
-||<p>iPhone 6/7 plus</p><p>414 x 736</p>|<p>Samsung Galaxy S5/6/7</p><p>360 x 640</p>|<p>Google Pixel/Nexus 5/6</p><p>411 x 731</p>|
+||<p>iPhone 6/6s/7</p><p>375 x 667</p>|<p>Samsung Galaxy S5/6/7</p><p>360 x 640</p>|<p>Google Pixel/Nexus 5</p><p>411 x 731</p>|
 | :- | :-: | :-: | :-: |
 |Render|Pass |Pass|Pass|
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
 
-(Bug #100) Testing on small devices, the footer doesn't all fit across one row. The social media links go onto a separate line and are not centred. I have added a media query to fix this and set the three elements of the footer into separate centred rows on mobile devices. 
+1. (Bug #100) Testing on small devices, the footer doesn't all fit across one row. The social media links go onto a separate line and are not centred. I have added a media query to fix this and set the three elements of the footer into separate centred rows on mobile devices. 
+
+2. I realised that I had a media query for the font size of the workshop overview card buttons to reduce the font size down to 2 rem but I didn't reduce down the hover font-size so that titles were growing bigger than the containers on mouse over. Media query for reduced font size added for the hover pseudo-class. I realised later that this was not picked up through dev tools, because the hover function doesn't work when your mouse is in 'inspect' mode. 
 
 ![Mobile footer](static/images/testing/mobile-footer.png)
 
