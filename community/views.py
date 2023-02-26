@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .models import WORKSHOP_CATEGORIES
+from django.core.paginator import Paginator
 
 
 class PostList(generic.ListView):
@@ -18,9 +19,10 @@ class PostList(generic.ListView):
     paginate_by = 6
 
     def get_context_data(self, **kwargs):
-        context = super(PostList, self).get_context_data(**kwargs)
+        context = super(PostList, self).get_context_data(*args, **kwargs)
         context['photos'] = Post.objects.filter(
             approved=True).order_by('-created_on')
+        paginator = self.paginate_by
         return context
 
     def get(self, request, *args, **kwargs):

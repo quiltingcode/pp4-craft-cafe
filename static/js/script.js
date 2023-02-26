@@ -220,8 +220,6 @@ $(document).ready(function() {
 
      /* Set the correct filters based on the pre-populated workshop category selected */
     function checkWorkshopField() {
-        console.log('checking fields');
-        console.log(workshopDropDownValues);
         if (workshopDropDownValues == 'Kids Crafts'){
             removeAfternoon();
             enableSaturdays();
