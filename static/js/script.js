@@ -9,16 +9,14 @@ $(document).ready(function() {
     var timeDropdownValues = $('#id_time').html();
     var placesDropdownValues = $('#id_places').html();
 
-     /* Check pre-populated field data in the edit booking page */
+    /* Check pre-populated field data in the edit booking page */
     checkWorkshopField();
     setPlaceholders();
 
+    /* Set placeholder text over the booking form date field */
     function setPlaceholders() {
-        console.log('placeholders')
         $("#id_day").attr('placeholder', 'Select a Date' );
-        $("#id_workshop").attr('placeholder', 'Select a Workshop' );
     }
-
 
     /* Booking Form Validation - check which workshop option has been selected */
 
