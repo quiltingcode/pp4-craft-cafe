@@ -514,6 +514,8 @@ The Craft Café was tested on the following browsers:
 - Microsoft Edge
 - Mozilla Firefox
 
+Testing the social media links on Mozilla Firefox, I realised I had a spelling error in my link to Facebook, so I fixed this. 
+
 I do not have any Apple devices available to carry out testing on a Safari browser. Appearance and functionality appear to be consistent throughout all browsers.
 
 ## Known Bugs
