@@ -484,21 +484,19 @@ During the testing process I also used the [Responsive Design Checker](https://w
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
 
-1. (Bug #100) Testing on small devices, the footer doesn't all fit across one row. The social media links go onto a separate line and are not centred. I have added a media query to fix this and set the three elements of the footer into separate centred rows on mobile devices. 
-
-2. I realised that I had a media query for the font size of the workshop overview card buttons to reduce the font size down to 2 rem but I didn't reduce down the hover font-size so that titles were growing bigger than the containers on mouse over. Media query for reduced font size added for the hover pseudo-class. I realised later that this was not picked up through dev tools, because the hover function doesn't work when your mouse is in 'inspect' mode. 
+1. (Bug #100) Testing on small devices, the footer doesn't all fit across one row. The social media links go onto a separate line and are not centred. I have added a media query to fix this and set the three elements of the footer into separate centred rows on mobile devices.
 
 ![Mobile footer](static/images/testing/mobile-footer.png)
+
+2. I realised that I had a media query for the font size of the workshop overview card buttons to reduce the font size down to 2 rem but I didn't reduce down the hover font-size so that titles were growing bigger than the containers on mouse over. Media query for reduced font size added for the hover pseudo-class. I realised later that this was not picked up through dev tools, because the hover function doesn't work when your mouse is in 'inspect' mode. 
 
 ### Tablet Devices
 
 ||<p>Amazon Kindle Fire</p><p>768 x 1024</p>|<p>Samsung Galaxy Tab 10</p><p>800 x 1280</p>|<p>Apple iPad Pro</p><p>1366 x 1024</p><p></p>|
 | :- | :-: | :-: | :-: |
-|Render|Pass|Pass(2nd time)|Pass |
+|Render|Pass|Pass|Pass |
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
-
- 
 
 ### Desktop Devices
 
@@ -507,12 +505,6 @@ During the testing process I also used the [Responsive Design Checker](https://w
 |Render|Pass|Pass|Pass|
 |Images|Pass|Pass|Pass|
 |Links|Pass|Pass|Pass|
-
-
-
-![Notebook view of quiz pre-scroll](assets/readmeimages/beforescroll-notebook.PNG)
-
-![Notebook view of quiz post-scroll](assets/readmeimages/afterscroll-notebook.PNG)
 
 ### Browser Compatibility 
 
