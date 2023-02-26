@@ -13,9 +13,12 @@ $(document).ready(function() {
     checkWorkshopField();
     setPlaceholders();
 
-    /* Set placeholder text over the booking form date field */
+    /* Set placeholder text over the booking form date field, the Comments comment field */
     function setPlaceholders() {
         $("#id_day").attr('placeholder', 'Select a Date' );
+        $("#id_comment").attr('placeholder', 'Write your comments here');
+        $("#id_content").attr('placeholder', 'Describe your craft creation here');
+        $("#id_title").attr('placeholder', 'Give your post a title');
     }
 
     /* Booking Form Validation - check which workshop option has been selected */

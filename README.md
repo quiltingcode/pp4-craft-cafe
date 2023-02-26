@@ -1,6 +1,6 @@
 # **The Craft Café**
 
-The Craft Café is a regular café where people can go to enjoy a cup of coffee and a piece of cake. However, it's unique selling point is that in the afternoons, Monday to Friday, and on Saturday mornings, it also runs Craft workshops where people can learn crafty skills and make beautiful craft items to take away. Through the Craft Cafe website, users can check the craft workshop schedule, and reserve their places in advance. 
+The Craft Café is a regular café where people can go to enjoy a cup of coffee and a piece of cake. However, it's unique selling point is that in the afternoons, Monday to Friday, and on Saturday mornings, it also runs craft workshops where people can learn crafty skills, socialise with crafty companions, and make beautiful craft items to take away. Through the Craft Cafe website, users can check the craft workshop schedule, and reserve their places in advance, as well as upload photos of their creations and comment on others. 
 
 This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 
@@ -49,9 +49,11 @@ This fictional site was created for Portfolio Project #4 (Full-Stack Toolkit) - 
 
 * [**Testing**](<#testing>)
 
-* [Deployment](<#deployment>)
-* [Credits](<#credits>)
-* [Acknowledgements](<#acknowledgements>)
+* [**Deployment**](<#deployment>)
+
+* [**Credits**](<#credits>)
+
+* [**Acknowledgements**](<#acknowledgements>)
 
 # **Project**
 
@@ -184,7 +186,7 @@ Here I have listed the main user stories for three types of user. A normal user 
 
 ## Site Structure
 
-The Craft Café site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages are available for the user. When the user is logged out the pages: *Home*, *Food*, and *Craft Workshops* are avaliable from the Navigation Bar menu. When the user is logged in *Contact Us*, *Craft Cafe Community*, and *Profile Page* are available. If you are logged in as an administrator an *admin* dashboard page is also available. The site is intuitive and prompts the user to sign in if they try to access areas which require a user profile.
+The Craft Café site is split up in two parts: **when the user is logged out** and **when the user is logged in**. Depending on login status different pages are available for the user. When the user is logged out the pages: *Home*, *Menu*, and *Craft Workshops* are available from the Navigation Bar menu. When the user is logged in *Bookings*, *Craft Cafe Community*, and *Profile Page* are available. If you are logged in as an administrator an *Admin* dashboard page is also available. The site is intuitive and prompts the user to sign in if they try to access areas which require a user profile.
 
 Read more about the different choices in the [Features](<#features>) section.
 
@@ -317,7 +319,7 @@ When you hover over the cards, the font changes colour to indicate that the titl
 
 ### **Reviews**
 
-Scrolling down past the Workshop Overview Cards, you can read some glowing reviews from Craft Café customers. There is a mixture of reviews to cover all aspects of the products and services it provides. One review relates to the Food, one review relates to the craft workshops and the final review relates to a bespoke craft party that was held at the café.
+Scrolling down past the Workshop Overview Cards, you can read some glowing reviews from Craft Café customers. There is a mixture of reviews to cover all aspects of the products and services it provides. One review relates to the food, one review relates to the craft workshops and the final review relates to a bespoke craft party that was held at the café.
 
 In desktop view, the three reviews can be seen side by side in one row. In tablet and mobile view, only the first two reviews are shown, in tablet view side by side and in mobile view one above the other. 
 
@@ -363,7 +365,7 @@ On desktop and tablet devices, the workshop schedule is displayed with the image
 
 ### **Booking Form**
 
-If you click on the 'Contact Us' menu item from the navigation bar, or you click on the 'Book your Places here' button on the Workshops Page, you will be redirected to the booking request form. 
+If you click on the 'Bookings' menu item from the navigation bar, or you click on the 'Book your Places here' button on the Workshops Page, you will be redirected to the booking request form. 
 
 If you are not logged on, you will see a message saying that you must be logged in to make a booking and there is a link available to login. 
 
@@ -373,7 +375,9 @@ Once the user is logged in, they will be able to see the booking request form.
 
 ![Booking Form - Logged in](static/images/readme/booking-form-tablet.png)
 
-The form consists of four mandatory fields: Workshop, Day, Time, and Places. 
+The form consists of four mandatory fields from the WorkshopBooking model: Workshop, Day, Time, and Places. If the user tries to submit the form without selection a workshop and a date, an alert will be show to remind them to fill in the fields. The Time field and Places field default to the first option on the list. 
+
+![Booking Form - All fields required](static/images/readme/booking-form-incomplete.png)
 
 The calendar field is unavailable until a Workshop category has been selected. The Date field in the booking model is set to null=True so that this field stays empty to begin with until a workshop has been selected. I have also set an attribute of 'Read-Only' to this field so that users can not override the calendar datepicker widget and type in strings or dates in the wrong format or outside of the min and max date parameters set against the datepicker calendar.
 
@@ -397,7 +401,7 @@ Once the user has selected a workshop with a sufficient number of places availab
 
 </details><br/>
 
-Once the booking request is sent successfully, the user can see the details of the booking in their profile page, and monitor the approval status to see when Admin Confirm the booking. There is currently no notification to the user for this status change at present, but in future I would like to add in an email notification system for when bookings are approved and the status changes to confirmed. 
+Once the booking request is sent successfully, the user can see the details of the booking in their profile page, and monitor the approval status to see when Admin confirms the booking. There is currently no external email notification to the user for this status change at present, but in future I would like to add in an email notification system for when bookings are approved and the status changes to confirmed. 
 
 ### **Craft Cafe Community**
 
