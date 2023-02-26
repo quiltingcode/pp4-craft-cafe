@@ -92,7 +92,22 @@ The wireframes for the site were created in the software [Balsamiq](https://bals
 
 <details><summary><b>Wireframes</b></summary>
 
-![Wireframes](static/images/readme/)
+![Homepage - desktop](static/images/readme/wireframes/homepage-desktop.png)
+![Homepage - tablet](static/images/readme/wireframes/homepage-tablet.png)
+![Homepage - mobile](static/images/readme/wireframes/homepage-mobile.png)
+![Workshops - desktop](static/images/readme/wireframes/workshops-desktop.png)
+![Workshops - tablet](static/images/readme/wireframes/workshops-tablet.png)
+![Workshops - mobile](static/images/readme/wireframes/workshops-mobile.png)
+![Community Page - desktop](static/images/readme/wireframes/community.png)
+![Community Page - tablet](static/images/readme/wireframes/community-page-tablet.png)
+![Community Page - mobile](static/images/readme/wireframes/community-mobile.png)
+![Post Details Page - desktop](static/images/readme/wireframes/post-page-desktop.png)
+![Post Details Page - tablet](static/images/readme/wireframes/post-details-tablet.png)
+![Post Details Page - mobile](static/images/readme/wireframes/post-details-mobile.png)
+![Profile Page - desktop](static/images/readme/wireframes/profile-page-desktop.png)
+![Profile Page - tablet](static/images/readme/wireframes/profile-page-tablet.png)
+![Profile Page - mobile](static/images/readme/wireframes/profile-mobile.png)
+
 </details><br/>
 
 ## User Stories
