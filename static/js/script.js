@@ -11,6 +11,13 @@ $(document).ready(function() {
 
      /* Check pre-populated field data in the edit booking page */
     checkWorkshopField();
+    setPlaceholders();
+
+    function setPlaceholders() {
+        console.log('placeholders')
+        $("#id_day").attr('placeholder', 'Select a Date' );
+        $("#id_workshop").attr('placeholder', 'Select a Workshop' );
+    }
 
 
     /* Booking Form Validation - check which workshop option has been selected */
