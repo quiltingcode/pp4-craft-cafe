@@ -853,6 +853,8 @@ To clone and set up this project you need to follow the steps below.
 * I watched this tutorial on Cloudinary front end uploads from [www.section.io](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)
 * I read this article on how to create a filter on my posts page on [Stack Overflow](https://stackoverflow.com/questions/44369538/creating-django-filter-in-a-bootstrap-dropdown-based-on-the-django-admin-created)
 * I read this article on how to set up Cloudinary uploads on the front-end [Section.io](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)
+* I found an article on [Tutorialpoint.com](https://www.tutorialspoint.com/How-to-stop-form-submission-using-JavaScript) which explained how to delay the form submission until field validation had been done through Javascript
+* I found an article on [Stack Overflow](https://stackoverflow.com/questions/50869566/jquery-datepicker-cant-read-value-using-val-method) which helped to read the value of a datapicker field using Javascript
 * I read the following articles when trying to create my calendar datepicker for my booking form:
     * [GeeksforGeeks](https://www.geeksforgeeks.org/jquery-ui-datepicker-beforeshowday-option/)
     * [Stack Overflow](https://stackoverflow.com/questions/5416767/get-selected-value-text-from-select-on-change)
