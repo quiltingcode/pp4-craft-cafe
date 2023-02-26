@@ -404,6 +404,7 @@ hr.rounded {
 
     .btn-profile {
         font-size: 0.8rem;
+        padding: 6px;
     }
 }
 
@@ -424,4 +425,8 @@ hr.rounded {
         font-size: 2rem;
     }
 
+    .profile-table td {
+        padding: 0.3rem 0.1rem;
+        font-size: 0.8rem;
+    }
 }
