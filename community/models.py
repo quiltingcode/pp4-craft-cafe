@@ -17,16 +17,28 @@ WORKSHOP_CATEGORIES = (
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(
+        max_length=200,
+        unique=True,
+        verbose_name="Title of your Post"
+        )
     slug = models.SlugField(max_length=200, null=False, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="community_posts"
     )
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField(
+        'image',
+        default='placeholder',
+        verbose_name="Upload a photo"
+        )
     category = models.CharField(
-        max_length=50, choices=WORKSHOP_CATEGORIES, default="All Things Wool")
+        max_length=50,
+        choices=WORKSHOP_CATEGORIES,
+        default="All Things Wool",
+        verbose_name="Choose a Post Category"
+        )
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = models.TextField(verbose_name="Describe your crafty creation")
     created_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
