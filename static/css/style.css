@@ -334,6 +334,7 @@ hr.rounded {
 .profile-table {
     height: auto;
     width: 90%;
+
 }
 
 /* Edit Pages */
@@ -393,6 +394,16 @@ hr.rounded {
    
     .jumbotron {
         margin-right: 1rem;
+    }
+
+    .profile-table {
+        height: auto;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    .btn-profile {
+        font-size: 0.rem;
     }
 }
 
