@@ -100,22 +100,33 @@ class EditBooking(SuccessMessageMixin, UpdateView):
     template_name = 'edit-booking.html'
     fields = ['workshop', 'day', 'time', 'places',]
 
-    def get_context_data(self, **kwargs):
-        data = super(EditBooking, self).get_context_data(**kwargs)
-        if self.request.POST:
-            data['booking'] = BookingForm()
-        return data
-
     def form_valid(self, form):
-        context = self.get_context_data()
-        day = context['day']
+        booking = None
+        time = form.cleaned_data.get('time')
+        day = form.cleaned_data.get('day')
+        places = form.cleaned_data.get('places')
+        # booking_form = BookingForm(data=request.POST)
         print(day)
-        if form.is_valid():
-            edited_booking = form.save(commit=False)
-            edited_booking.approved = False
-            edited_booking.save()
-            messages.success(
-                self.request, 'Updated successfully - awaiting re-approval!')
+        print(time)
+        print(places)
+
+        # day = day.split('-')
+        # day.reverse()
+        # day = '-'.join(day)
+
+        bookings_made = WorkshopBooking.objects.filter(day=day, time=time)
+        places_reserved = 0
+        for b in bookings_made:
+            places_reserved += int(b.places)
+        
+        if places_reserved + int(places) <= 10:
+
+            if form.is_valid():
+                edited_booking = form.save(commit=False)
+                edited_booking.approved = False
+                edited_booking.save()
+                messages.success(
+                    self.request, 'Updated successfully - awaiting re-approval!')
         return redirect('profile-page')
 
 
