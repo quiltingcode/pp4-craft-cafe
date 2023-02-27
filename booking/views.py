@@ -38,7 +38,7 @@ class ContactPage(View):
         day = request.POST.get('day')
         places = request.POST.get("places")
         booking_form = BookingForm(data=request.POST)
-        print(time)
+
         # split the string by a common separator, reverse the order, and put
         #  it back together again
         day = day.split('-')
@@ -100,13 +100,16 @@ class EditBooking(SuccessMessageMixin, UpdateView):
     template_name = 'edit-booking.html'
     fields = ['workshop', 'day', 'time', 'places',]
 
+    def get_context_data(self, **kwargs):
+        data = super(EditBooking, self).get_context_data(**kwargs)
+        if self.request.POST:
+            data['booking'] = BookingForm()
+        return data
+
     def form_valid(self, form):
-        time = form.cleaned_data['time']
-        day = request.form.get('day')
-        places = request.POST.get("places")
-        print(time)
+        context = self.get_context_data()
+        day = context['day']
         print(day)
-        print(places)
         if form.is_valid():
             edited_booking = form.save(commit=False)
             edited_booking.approved = False
