@@ -103,7 +103,7 @@ class EditBooking(SuccessMessageMixin, UpdateView):
     fields = ['workshop', 'day', 'time', 'places',]
 
     def form_valid(self, form):
-        # Get the form booking data field vales
+        # Get the form booking data field values
         booking = None
         time = form.cleaned_data.get('time')
         day = form.cleaned_data.get('day')
