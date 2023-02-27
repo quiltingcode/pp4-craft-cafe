@@ -103,7 +103,7 @@ class EditBooking(SuccessMessageMixin, UpdateView):
     def form_valid(self, form):
         time = form.cleaned_data['time']
         day = request.form.get('day')
-        places = request.form.get("places")
+        places = request.POST.get("places")
         print(time)
         print(day)
         print(places)
