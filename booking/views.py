@@ -9,10 +9,12 @@ from .forms import BookingForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from community.models import Post, Comment
 from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse
 
 
 class ContactPage(View):
@@ -74,7 +76,7 @@ class ContactPage(View):
         else:
             messages.add_message(
                 request, messages.ERROR,
-                'The selected date is full. please try a different session.')
+                'The selected workshop is full. Try a different workshop.')
 
         return redirect('contact')
 
@@ -102,14 +104,13 @@ class EditBooking(SuccessMessageMixin, UpdateView):
 
     def form_valid(self, form):
         # Get the form booking data field vales
-        booking = None 
+        booking = None
         time = form.cleaned_data.get('time')
         day = form.cleaned_data.get('day')
         places = form.cleaned_data.get('places')
 
         # Check all bookings made on that day at that time, then add up the
         # total places reserved already in these existing bookings.
-
         bookings_made = WorkshopBooking.objects.filter(day=day, time=time)
         places_reserved = 0
         for b in bookings_made:
@@ -117,13 +118,19 @@ class EditBooking(SuccessMessageMixin, UpdateView):
         print(places)
         print(places_reserved)
         if places_reserved + int(places) <= 10:
-
             if form.is_valid():
                 edited_booking = form.save(commit=False)
                 edited_booking.approved = False
                 edited_booking.save()
                 messages.success(
-                    self.request, 'Updated successfully - awaiting re-approval!')
+                    self.request,
+                    'Updated successfully - awaiting re-approval!')
+                return redirect('profile-page')
+        else:
+            messages.error(
+                self.request,
+                'The selected workshop is full. Try a different workshop.')
+
         return redirect('profile-page')
 
 
