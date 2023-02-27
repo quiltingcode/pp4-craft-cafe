@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header class="header">
-        <div>
-            <img src="{% static 'css/images/logo.png' %}" alt="logo" class="404-logo">
-        </div>
-        <div>
-            <p>Sorry this page doesn't exist.</p>
-            <p>Click <a href="https://craft-cafe.herokuapp.com/">here</a> to return back to the Craft Cafe Homepage</p>
+    <header>
+        <div class="container">
+            <div class="text-center">
+                <div>
+                    <h4>Sorry this page doesn't exist.</h4>
+                    <h5>Click <a href="https://craft-cafe.herokuapp.com/">here</a> to return back to the Craft Cafe Homepage</h5>
+                    <div>
+                        <img src="{% static 'css/images/logo.png' %}" alt="logo" class="404-logo">
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 </body>
