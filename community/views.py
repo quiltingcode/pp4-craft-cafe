@@ -18,11 +18,10 @@ class PostList(generic.ListView):
     template_name = 'craft-community.html'
     paginate_by = 6
 
-    def get_context_data(self, **kwargs):
-        context = super(PostList, self).get_context_data(*args, **kwargs)
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostList, self).get_context_data(**kwargs)
         context['photos'] = Post.objects.filter(
             approved=True).order_by('-created_on')
-        paginator = self.paginate_by
         return context
 
     def get(self, request, *args, **kwargs):
@@ -31,6 +30,10 @@ class PostList(generic.ListView):
         if chosen_filter and chosen_filter != "All":
             filtered_posts = filtered_posts.filter(category=chosen_filter)
             print(filtered_posts)
+        # context['filtered_posts'] = filtered_posts,
+        # context['selected'] = chosen_filter,
+        # context['categories'] = WORKSHOP_CATEGORIES,
+        # context['form'] = PostForm()
         return render(
             request, "craft-community.html", {
                 "filtered_posts": filtered_posts,
@@ -38,6 +41,7 @@ class PostList(generic.ListView):
                 'categories': WORKSHOP_CATEGORIES,
                 "form": PostForm()
                 })
+        return context
 
     def post(self, request):
         post_form = PostForm(request.POST, request.FILES)

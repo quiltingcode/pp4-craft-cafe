@@ -66,6 +66,7 @@
                                                 method="POST">
                                                 {% csrf_token %}
                                                 {% if liked %}
+                                               
                                                 <button type="submit" name="like-heart_id" value="{{post.slug}}"
                                                     class="btn-like"><i class="fas fa-heart"></i></button>
                                                 {% else %}
