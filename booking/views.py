@@ -101,24 +101,21 @@ class EditBooking(SuccessMessageMixin, UpdateView):
     fields = ['workshop', 'day', 'time', 'places',]
 
     def form_valid(self, form):
-        booking = None
+        # Get the form booking data field vales
+        booking = None 
         time = form.cleaned_data.get('time')
         day = form.cleaned_data.get('day')
         places = form.cleaned_data.get('places')
-        # booking_form = BookingForm(data=request.POST)
-        print(day)
-        print(time)
-        print(places)
 
-        # day = day.split('-')
-        # day.reverse()
-        # day = '-'.join(day)
+        # Check all bookings made on that day at that time, then add up the
+        # total places reserved already in these existing bookings.
 
         bookings_made = WorkshopBooking.objects.filter(day=day, time=time)
         places_reserved = 0
         for b in bookings_made:
             places_reserved += int(b.places)
-        
+        print(places)
+        print(places_reserved)
         if places_reserved + int(places) <= 10:
 
             if form.is_valid():
