@@ -38,5 +38,3 @@ urlpatterns = [
 
 ]
 
-handler404 = 'booking.views.error_404'
-handler500 = 'booking.views.error_500'

@@ -26,5 +26,14 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('accounts/', include('allauth.urls')),
     path('contact/', include('booking.urls')),
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico')))
+    path(
+        'favicon.ico',
+        RedirectView.as_view(url=staticfiles_storage.url(
+            'images/favicon.ico')))
 ]
+
+handler404 = 'community.views.error_404'
+handler500 = 'community.views.error_500'
+
+handler404 = 'booking.views.error_404'
+handler500 = 'booking.views.error_500'
