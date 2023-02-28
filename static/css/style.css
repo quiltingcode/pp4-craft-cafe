@@ -384,7 +384,9 @@ hr.rounded {
     width: 20px;
 }
 
-
+.error-container {
+    background: url('https://res.cloudinary.com/dkolsfjkx/image/upload/v1677264147/logo_u3njf4.png');
+}
 
 
 /* Media Queries */

@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Craft Cafe</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="text-center">
-                <div>
-                    <h4>Sorry this page doesn't exist.</h4>
-                    <h5>Click <a href="{% url 'home' %}">here</a> to return back to the Craft Cafe Homepage</h5>
-                    <div>
-                        <img src="{% static 'css/images/logo.png' %}" alt="logo" class="404-logo">
-                    </div>
-                </div>
-            </div>
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="container error-container">
+    <div class="row text-center">
+        <div class="col-6">
+            <img src="https://res.cloudinary.com/dkolsfjkx/image/upload/v1677252952/logo_skz2dv.jpg">
+            <img src="{% 'static/images/logo.png %}">
         </div>
-    </header>
-</body>
-</html>
+        <div class="col-6">
+            <h4>Sorry this page doesn't exist.</h4>
+            <h5>Click <a href="{% url 'home' %}">here</a> to return back to the Craft Cafe Homepage</h5>
+        </div>
+
+    </div>
+</div>
+
+
+
+{%endblock%}
 

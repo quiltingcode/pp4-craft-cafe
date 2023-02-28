@@ -54,6 +54,3 @@ urlpatterns = [
         name='approve-comment'
         ),
 ]
-
-handler404 = 'community.views.error_404'
-handler500 = 'community.views.error_500'
